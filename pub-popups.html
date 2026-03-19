@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flava Base – Pub Pop-Ups</title>
+<meta name="description" content="Flava Base – Modern Punjabi Street Kitchen serving Northamptonshire and surrounding areas.">
+<style>
+:root{
+  --green:#1F3D2B;
+  --orange:#f39a2e;
+  --cream:#fff8ef;
+  --white:#fffdf9;
+  --text:#2d2a26;
+  --muted:#6f6a63;
+  --line:#eadcca;
+  --veg:#2d8d5d;
+  --accent:#ffe8c8;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:90px}
+body{
+  margin:0;
+  font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+  background:linear-gradient(180deg,#fffaf4 0%, var(--cream) 100%);
+  color:var(--text);
+  line-height:1.6;
+}
+.temple-header{
+  height:92px;
+  background:linear-gradient(180deg,#fff8f1 0%, #fffdf9 100%);
+  border-bottom:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+.temple-header:after{content:""; position:absolute; inset:0; pointer-events:none;}
+
+.tricolour-bar{width:100%;display:block;background:#fff}
+.tricolour-bar span{display:block;height:4px}
+.tricolour-bar .saffron{background:#FF9933}
+.tricolour-bar .white{background:#FFFFFF}
+.tricolour-bar .green{background:#138808}
+.saffron-line{height:3px;background:#F59E0B}
+.container{width:min(1120px,92%); margin:0 auto}
+nav{
+  background:rgba(255,255,255,.95);
+  border-bottom:1px solid var(--line);
+  position:sticky; top:0; z-index:20;
+  backdrop-filter:blur(6px);
+}
+.nav-inner{
+  width:min(1120px,92%);
+  margin:0 auto;
+  display:flex; justify-content:space-between; align-items:center;
+  gap:16px; padding:14px 0;
+}
+.brand{
+  color:var(--green); text-decoration:none; font-weight:900; letter-spacing:1px;
+}
+.nav-links{display:flex; gap:18px; flex-wrap:wrap}
+.nav-links a{
+  color:var(--green); text-decoration:none; font-weight:800;
+}
+.hero{
+  text-align:center;
+  padding:34px 20px 50px;
+  margin-top:-34px;
+}
+.hero-shell{
+  max-width:800px;
+  margin:0 auto;
+  background:#fffaf4;
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:24px 18px 24px;
+  box-shadow:0 10px 24px rgba(90,67,35,.06);
+  position:relative;
+  overflow:hidden;
+}
+.hero-shell:before,.hero-shell:after{display:none;}
+.hero-shell > *{position:relative; z-index:1}
+.logo-box{
+  max-width:600px; margin:0 auto 16px;
+  background:#fff8f1; border:1px solid var(--line);
+  border-radius:24px; padding:16px;
+}
+.logo-placeholder{
+  width:100%; display:block; border-radius:12px;
+}
+h1{
+  margin:0;
+  font-size:clamp(2.8rem,5.8vw,5rem);
+  line-height:1.02;
+  color:var(--green);
+  letter-spacing:1px;
+}
+.sub{
+  margin-top:12px;
+  font-size:clamp(1rem,2vw,1.22rem);
+}
+.sub strong{color:var(--orange)}
+.small{color:var(--muted)}
+.actions{
+  display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
+  margin-top:22px;
+}
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:999px;
+  border:2px solid var(--green);
+  text-decoration:none;
+  font-weight:800;
+  transition:.2s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--orange); border-color:var(--orange); color:#fff}
+.btn-secondary{background:#fff; color:var(--green)}
+.section{padding:62px 0}
+.section-alt{
+  background:#fffdf9;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.kicker{
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--orange);
+  font-size:.82rem;
+  font-weight:800;
+}
+h2{
+  margin:6px 0 18px;
+  color:var(--green);
+  font-size:clamp(1.65rem,2.9vw,2.35rem);
+}
+h3{margin:0 0 10px; color:var(--green)}
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:24px;
+  box-shadow:0 10px 24px rgba(90,67,35,.05);
+}
+.pattern-bg{position:relative; overflow:hidden}
+.pattern-bg:before,.pattern-bg:after{display:none;}
+.pattern-bg > *{position:relative; z-index:1}
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.tile{
+  min-height:170px;
+  display:flex; align-items:flex-end;
+  font-weight:800; color:var(--green);
+  background:
+    linear-gradient(180deg, rgba(243,154,46,.12), rgba(255,255,255,.18)),
+    linear-gradient(180deg,#fffdf9,#f8f0e4);
+}
+.banner{
+  background:linear-gradient(135deg,#fff1de 0%, #fff9f1 100%);
+  border:1px solid #f4d7ae;
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 10px 24px rgba(90,67,35,.05);
+}
+.banner strong{color:var(--green)}
+.menu-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+.menu-item{
+  display:flex; justify-content:space-between; gap:14px;
+  padding:10px 0; border-bottom:1px dashed #e4d6c4;
+}
+.menu-item:last-child{border-bottom:none}
+.item-name{font-weight:800}
+.menu-item strong{color:var(--green); white-space:nowrap}
+.menu-note{font-size:.95rem; color:var(--muted); margin:8px 0 0}
+.veg{
+  display:inline-block; margin-left:8px; padding:2px 7px;
+  border-radius:999px; background:var(--veg); color:#fff;
+  font-size:12px; font-weight:800; vertical-align:middle;
+}
+.pill{
+  display:inline-block; background:var(--accent); color:#9a5a0b;
+  border:1px solid #f1d1a3; padding:6px 10px;
+  border-radius:999px; font-size:.92rem; font-weight:800; margin-bottom:12px;
+}
+.list{margin:0; padding-left:18px}
+.list li{margin-bottom:8px}
+.social a{
+  display:inline-block; margin:8px 12px 0 0;
+  color:var(--green); font-weight:800; text-decoration:none;
+}
+.pub-highlight{
+  border:2px solid #f4d7ae;
+  background:linear-gradient(135deg,#fff4e6,#fffaf3);
+}
+.footer{
+  background:var(--green);
+  color:#fff;
+  text-align:center;
+  padding:30px 20px;
+  margin-top:8px;
+}
+.footer .small{color:#e7efe7}
+.popup-wrap{
+  position:fixed; right:20px; bottom:20px;
+  width:min(360px, calc(100vw - 32px));
+  z-index:9999;
+}
+.popup{
+  position:relative;
+  background:#fff9f1;
+  border:1px solid #f4d7ae;
+  border-radius:20px;
+  box-shadow:0 14px 34px rgba(0,0,0,.16);
+  padding:20px 18px 18px;
+}
+
+.form-box{background:#fffdf9;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 10px 24px rgba(90,67,35,.05)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-grid .full{grid-column:1 / -1}
+label{display:block;font-weight:800;color:var(--green);margin-bottom:6px}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d9c7b0;border-radius:14px;font:inherit;background:#fff}
+textarea{min-height:120px;resize:vertical}
+.helper{font-size:.92rem;color:var(--muted);margin-top:8px}
+.contact-split{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.form-grid,.contact-split{grid-template-columns:1fr}}
+
+@media (max-width:900px){
+  .grid-2,.grid-3,.grid-4,.menu-grid{grid-template-columns:1fr}
+  .nav-inner{flex-direction:column; align-items:flex-start}
+  .hero{margin-top:-54px}
+  .temple-header{height:72px}
+}
+</style>
+</head>
+<body>
+<div class="tricolour-bar"><span class="saffron"></span><span class="white"></span><span class="green"></span></div>
+<div class="saffron-line"></div>
+
+<div class="temple-header"></div>
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="/index.html">FLAVA BASE</a>
+    <div class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="/menu.html">Event Menu</a>
+      <a href="/corporate.html">Corporate</a>
+      <a href="/weddings.html">Weddings & Parties</a>
+      <a href="/pub-popups.html">Pub Pop-Ups</a>
+      <a href="/catering.html">Catering</a>
+      <a href="/story.html">Our Story</a>
+      <a href="/bookings.html">Bookings</a>
+      <a class="btn btn-primary" style="padding:8px 14px;" href="/bookings.html">Check Availability</a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-shell">
+      <h1>Pub Pop-Ups</h1>
+      <div class="sub"><strong>Perfect for pub food nights & beer gardens</strong></div>
+    </div>
+  </div>
+</section>
+
+<main class="container section">
+  <div class="grid-2">
+    <div class="card pattern-bg">
+      <div class="kicker">Why Pubs Book Us</div>
+      <h2>Bring in customers without a full kitchen</h2>
+      <ul class="list">
+        <li>Friday food nights</li>
+        <li>Beer garden events</li>
+        <li>Summer pop-ups</li>
+        <li>Special pub events</li>
+      </ul>
+    </div>
+    <div class="card pattern-bg">
+      <div class="kicker">What We Serve</div>
+      <h2>Modern Punjabi street food</h2>
+      <ul class="list">
+        <li>Tandoori chicken wraps</li>
+        <li>Punjabi curry boxes</li>
+        <li>Masala noodles</li>
+        <li>Loaded masala fries</li>
+        <li>Milkshakes & freakshakes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:18px;">
+    <div class="card pattern-bg pub-highlight">
+      <div class="kicker">Custom Event Display</div>
+      <h2>Add the pub name to the serving hatch screen</h2>
+      <p>Our TV display under the serving hatch can show <strong>pub names, event messages and venue branding</strong> to make each pop-up night feel tailored to the venue.</p>
+      <p class="small">A great touch for photos, promotions and repeat pub nights.</p>
+    </div>
+    <div class="card pattern-bg">
+      <div class="kicker">Pub Pop-Up Venues</div>
+      <h2>Add your venue name to our event screen</h2>
+      <p>We can show your pub or venue name on the serving hatch screen during your event.</p>
+      <ul class="list">
+        <li>Your pub or venue name</li>
+        <li>Custom event message</li>
+      </ul>
+      <p class="small">Perfect for pub pop-ups, special nights and venue branding.</p>
+    </div>
+  </div>
+
+  <div class="banner" style="margin-top:18px;">
+    <div class="kicker">Pub Bookings</div>
+    <h2>Ready to plan a pub pop-up?</h2>
+    <p>For pub nights, beer gardens and venue bookings email <a href="mailto:popups@flavabase.co.uk">popups@flavabase.co.uk</a>.</p>
+    <div class="actions" style="justify-content:flex-start; margin-top:16px;">
+      <a class="btn btn-primary" href="mailto:popups@flavabase.co.uk">Email Pop-Ups</a>
+    </div>
+  </div>
+
+  <section class="section section-alt">
+    <div class="card form-box">
+      <div class="kicker">Pub Pop-Up Enquiry</div>
+      <h2>Ask about a Flava Base pub night</h2>
+      <p>Pubs and venues can use this quick form for pop-up nights, beer gardens and regular residency enquiries.</p>
+      <form action="mailto:popups@flavabase.co.uk" method="post" enctype="text/plain">
+        <div class="form-grid">
+          <div><label for="venue-name">Pub / Venue Name</label><input id="venue-name" name="Pub / Venue Name" type="text"></div>
+          <div><label for="contact-name">Contact Name</label><input id="contact-name" name="Contact Name" type="text"></div>
+          <div><label for="popup-email">Email</label><input id="popup-email" name="Email" type="email"></div>
+          <div><label for="popup-location">Location</label><input id="popup-location" name="Location" type="text"></div>
+          <div class="full"><label for="popup-message">Message</label><textarea id="popup-message" name="Message" placeholder="Tell us about your pub or venue"></textarea></div>
+        </div>
+        <div class="actions" style="justify-content:flex-start; margin-top:16px;">
+          <button class="btn btn-primary" type="submit">Enquire About a Pop-Up</button>
+          <a class="btn btn-secondary" href="mailto:popups@flavabase.co.uk">popups@flavabase.co.uk</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+
+
+
+<div class="popup-wrap" id="bookingPopup" style="display:none;">
+  <div class="popup">
+    <button class="popup-close" id="popupClose" aria-label="Close popup" title="Close popup">×</button>
+    <div class="kicker">Bookings</div>
+    <h3 style="margin-right:46px;">Planning an event?</h3>
+    <p style="margin:0 0 10px;">Corporate events, weddings, private parties and pub pop-ups from 50 guests.</p>
+    <p style="margin:0 0 14px;"><a href="mailto:events@flavabase.co.uk">events@flavabase.co.uk</a><br><span class="small">Pub pop-ups: <a href="mailto:popups@flavabase.co.uk">popups@flavabase.co.uk</a></span></p>
+    <a class="btn btn-primary" href="/bookings.html">Check Availability</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div><strong>Punjabi Street Food Catering for Events</strong></div>
+  <div class="small">Corporate Events • Weddings • Private Parties • Festivals • Events from 50 guests</div>
+  <div class="small" style="margin-top:8px;">General enquiries: <a href="mailto:info@flavabase.co.uk" style="color:#fff;">info@flavabase.co.uk</a> • Event bookings: <a href="mailto:events@flavabase.co.uk" style="color:#fff;">events@flavabase.co.uk</a> • Pub pop-ups: <a href="mailto:popups@flavabase.co.uk" style="color:#fff;">popups@flavabase.co.uk</a></div>
+</footer>
+</body>
+</html>
