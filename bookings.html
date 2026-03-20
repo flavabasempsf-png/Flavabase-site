@@ -1,481 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flava Base – Bookings</title>
-<meta name="description" content="Flava Base – Modern Punjabi Street Kitchen serving Northamptonshire and surrounding areas.">
-<style>
-:root{
-  --green:#1F3D2B;
-  --orange:#f39a2e;
-  --cream:#fff8ef;
-  --white:#fffdf9;
-  --text:#2d2a26;
-  --muted:#6f6a63;
-  --line:#eadcca;
-  --veg:#2d8d5d;
-  --accent:#ffe8c8;
-}
-*{box-sizing:border-box}
-html{scroll-padding-top:90px}
-body{
-  margin:0;
-  font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
-  background:linear-gradient(180deg,#fffaf4 0%, var(--cream) 100%);
-  color:var(--text);
-  line-height:1.6;
-}
-.temple-header{
-  height:92px;
-  background:linear-gradient(180deg,#fff8f1 0%, #fffdf9 100%);
-  border-bottom:1px solid var(--line);
-  position:relative;
-  overflow:hidden;
-}
-.temple-header:after{content:""; position:absolute; inset:0; pointer-events:none;}
-
-.tricolour-bar{width:100%;display:block;background:#fff}
-.tricolour-bar span{display:block;height:4px}
-.tricolour-bar .saffron{background:#FF9933}
-.tricolour-bar .white{background:#FFFFFF}
-.tricolour-bar .green{background:#138808}
-.saffron-line{height:3px;background:#F59E0B}
-.container{width:min(1120px,92%); margin:0 auto}
-nav{
-  background:rgba(255,255,255,.95);
-  border-bottom:1px solid var(--line);
-  position:sticky; top:0; z-index:20;
-  backdrop-filter:blur(6px);
-}
-.nav-inner{
-  width:min(1120px,92%);
-  margin:0 auto;
-  display:flex; justify-content:space-between; align-items:center;
-  gap:16px; padding:14px 0;
-}
-.brand{
-  color:var(--green); text-decoration:none; font-weight:900; letter-spacing:1px;
-}
-.nav-links{display:flex; gap:18px; flex-wrap:wrap}
-.nav-links a{
-  color:var(--green); text-decoration:none; font-weight:800;
-}
-.hero{
-  text-align:center;
-  padding:34px 20px 50px;
-  margin-top:-34px;
-}
-.hero-shell{
-  max-width:800px;
-  margin:0 auto;
-  background:#fffaf4;
-  border:1px solid var(--line);
-  border-radius:30px;
-  padding:24px 18px 24px;
-  box-shadow:0 10px 24px rgba(90,67,35,.06);
-  position:relative;
-  overflow:hidden;
-}
-.hero-shell:before,.hero-shell:after{display:none;}
-.hero-shell > *{position:relative; z-index:1}
-.logo-box{
-  max-width:600px; margin:0 auto 16px;
-  background:#fff8f1; border:1px solid var(--line);
-  border-radius:24px; padding:16px;
-}
-.logo-placeholder{
-  width:100%; display:block; border-radius:12px;
-}
-h1{
-  margin:0;
-  font-size:clamp(2.8rem,5.8vw,5rem);
-  line-height:1.02;
-  color:var(--green);
-  letter-spacing:1px;
-}
-.sub{
-  margin-top:12px;
-  font-size:clamp(1rem,2vw,1.22rem);
-}
-.sub strong{color:var(--orange)}
-.small{color:var(--muted)}
-.actions{
-  display:flex; justify-content:center; gap:12px; flex-wrap:wrap;
-  margin-top:22px;
-}
-.btn{
-  display:inline-block;
-  padding:12px 18px;
-  border-radius:999px;
-  border:2px solid var(--green);
-  text-decoration:none;
-  font-weight:800;
-  transition:.2s ease;
-}
-.btn:hover{transform:translateY(-1px)}
-.btn-primary{background:var(--orange); border-color:var(--orange); color:#fff}
-.btn-secondary{background:#fff; color:var(--green)}
-.section{padding:62px 0}
-.section-alt{
-  background:#fffdf9;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.kicker{
-  text-transform:uppercase;
-  letter-spacing:1px;
-  color:var(--orange);
-  font-size:.82rem;
-  font-weight:800;
-}
-h2{
-  margin:6px 0 18px;
-  color:var(--green);
-  font-size:clamp(1.65rem,2.9vw,2.35rem);
-}
-h3{margin:0 0 10px; color:var(--green)}
-.card{
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:24px;
-  box-shadow:0 10px 24px rgba(90,67,35,.05);
-}
-.pattern-bg{position:relative; overflow:hidden}
-.pattern-bg:before,.pattern-bg:after{display:none;}
-.pattern-bg > *{position:relative; z-index:1}
-.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-.grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
-.tile{
-  min-height:170px;
-  display:flex; align-items:flex-end;
-  font-weight:800; color:var(--green);
-  background:
-    linear-gradient(180deg, rgba(243,154,46,.12), rgba(255,255,255,.18)),
-    linear-gradient(180deg,#fffdf9,#f8f0e4);
-}
-.banner{
-  background:linear-gradient(135deg,#fff1de 0%, #fff9f1 100%);
-  border:1px solid #f4d7ae;
-  border-radius:22px;
-  padding:22px;
-  box-shadow:0 10px 24px rgba(90,67,35,.05);
-}
-.banner strong{color:var(--green)}
-.menu-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-.menu-item{
-  display:flex; justify-content:space-between; gap:14px;
-  padding:10px 0; border-bottom:1px dashed #e4d6c4;
-}
-.menu-item:last-child{border-bottom:none}
-.item-name{font-weight:800}
-.menu-item strong{color:var(--green); white-space:nowrap}
-.menu-note{font-size:.95rem; color:var(--muted); margin:8px 0 0}
-.veg{
-  display:inline-block; margin-left:8px; padding:2px 7px;
-  border-radius:999px; background:var(--veg); color:#fff;
-  font-size:12px; font-weight:800; vertical-align:middle;
-}
-.pill{
-  display:inline-block; background:var(--accent); color:#9a5a0b;
-  border:1px solid #f1d1a3; padding:6px 10px;
-  border-radius:999px; font-size:.92rem; font-weight:800; margin-bottom:12px;
-}
-.list{margin:0; padding-left:18px}
-.list li{margin-bottom:8px}
-.social a{
-  display:inline-block; margin:8px 12px 0 0;
-  color:var(--green); font-weight:800; text-decoration:none;
-}
-.pub-highlight{
-  border:2px solid #f4d7ae;
-  background:linear-gradient(135deg,#fff4e6,#fffaf3);
-}
-.footer{
-  background:var(--green);
-  color:#fff;
-  text-align:center;
-  padding:30px 20px;
-  margin-top:8px;
-}
-.footer .small{color:#e7efe7}
-.popup-wrap{
-  position:fixed; right:20px; bottom:20px;
-  width:min(360px, calc(100vw - 32px));
-  z-index:9999;
-}
-.popup{
-  position:relative;
-  background:#fff9f1;
-  border:1px solid #f4d7ae;
-  border-radius:20px;
-  box-shadow:0 14px 34px rgba(0,0,0,.16);
-  padding:20px 18px 18px;
-}
-
-.form-box{background:#fffdf9;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 10px 24px rgba(90,67,35,.05)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.form-grid .full{grid-column:1 / -1}
-label{display:block;font-weight:800;color:var(--green);margin-bottom:6px}
-input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d9c7b0;border-radius:14px;font:inherit;background:#fff}
-textarea{min-height:120px;resize:vertical}
-.helper{font-size:.92rem;color:var(--muted);margin-top:8px}
-.contact-split{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media (max-width:900px){.form-grid,.contact-split{grid-template-columns:1fr}}
-
-@media (max-width:900px){
-  .grid-2,.grid-3,.grid-4,.menu-grid{grid-template-columns:1fr}
-  .nav-inner{flex-direction:column; align-items:flex-start}
-  .hero{margin-top:-54px}
-  .temple-header{height:72px}
-}
-
-.addons-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
-.addon-card{background:#fffdf9;border:1px solid #eadcca;border-radius:20px;padding:18px;box-shadow:0 8px 24px rgba(31,61,43,.06)}
-.addon-card h3{margin:0 0 8px;color:var(--green);font-size:1.12rem}
-.addon-card p{margin:0;color:var(--text)}
-.addons-note{margin-top:14px;color:var(--muted)}
-@media (max-width:800px){.addons-grid{grid-template-columns:1fr}}
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 160px;
-}
-
-section[id] {
-  scroll-margin-top: 160px;
-}
-
-.section {
-  padding: 60px 20px;
-}
-
-.hero {
-  padding: 60px 20px 30px;
-}
-
-.jump-nav-wrap {
-  top: 90px;
-}
-
-.section h2 {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flava Base – Bookings</title>
+  <link rel="stylesheet" href="assets/assets/styles.css" />
 </head>
 <body>
-<div class="tricolour-bar"><span class="saffron"></span><span class="white"></span><span class="green"></span></div>
-<div class="saffron-line"></div>
-
-<div class="temple-header"></div>
-<nav>
-  <div class="nav-inner">
-    <a class="brand" href="/index.html">FLAVA BASE</a>
-    <div class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="/menu.html">Event Menu</a>
-      <a href="/story.html">Our Story</a>
-      <a href="/bookings.html">Bookings</a>
-      <a class="btn btn-primary" style="padding:8px 14px;" href="/bookings.html">Check Availability</a>
-    </div>
-  </div>
-</nav>
-
-
-
-
-<section class="hero">
-  <div class="hero-inner">
-    <h1>Book Flava Base 🔥</h1>
-
-<p style="font-size:1.1rem; max-width:600px;">
-  Bring the Flava of Punjab to your event. From pub pop-ups to weddings and private parties — we serve bold, fresh Punjabi street food your guests will love.
-</p>
-
-<div style="margin-top:20px;">
-  <h3>We Cater For:</h3>
-  <ul>
-    <li>🍻 Pub Pop-Ups</li>
-    <li>💍 Weddings</li>
-    <li>🎉 Private Parties</li>
-    <li>🏢 Corporate Events</li>
-    <li>🎪 Festivals & Street Food Events</li>
-  </ul>
-</div>
-
-<div style="margin-top:25px;">
-  <a class="btn btn-primary" href="mailto:events@flavabase.co.uk">
-    Enquire Now 📩
-  </a>
-</div>
-
-<p style="margin-top:10px; font-size:0.9rem; color:#6f6a63;">
-  Or email us directly: events@flavabase.co.uk
-</p>
-
-      From weddings and private parties to pub pop-ups and corporate events,
-      choose your booking type below and send us an enquiry.
-    </p>
-  </div>
-</section>
-
-<div class="jump-nav-wrap">
-  <div class="jump-nav">
-    <a href="#weddings">Weddings</a>
-    <a href="#corporate">Corporate</a>
-    <a href="#private">Private Parties</a>
-    <a href="#popups">Pub Pop-Ups</a>
-    <a href="#festivals">Festivals</a>
-    <a href="#enquire">Enquire</a>
-  </div>
-</div>
-
-<section class="section">
-  <h2 class="section-title">Choose your booking type</h2>
-  <p class="section-subtitle">
-    Packages tailored to your event — pricing available on enquiry.
-  </p>
-</section>
-
-<!-- WEDDINGS -->
-<section id="weddings" class="section">
-  <div class="booking-block">
-    <h2>Weddings</h2>
-    <p>
-      Flava Base brings bold Punjabi street food to wedding evenings, receptions and special celebrations.
-      A standout food van, fresh service and proper flavour for guests to remember.
-    </p>
-
-    <p><strong>Packages tailored to your event — pricing available on enquiry.</strong></p>
-
-    <div class="cta-row">
-      <a href="mailto:bookings@flavabase.co.uk?subject=Wedding Booking Enquiry" class="btn btn-primary">
-        Enquire About Weddings
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="assets/flava_base_logo_12000px.jpeg" alt="Flava Base logo" class="site-logo" />
       </a>
+
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="story.html">Our Story</a>
+        <a href="bookings.html">Bookings</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- CORPORATE -->
-<section id="corporate" class="section">
-  <div class="booking-block">
-    <h2>Corporate Events</h2>
-    <p>
-      Freshly cooked Punjabi street food for office events, launches, team celebrations and business functions.
-      Perfect for companies looking for something more memorable than standard catering.
-    </p>
+  <main>
+    <section class="section">
+      <div class="container narrow center">
+        <h1>Book Flava Base</h1>
+        <p class="tagline">Modern Punjabi Street Kitchen 🇮🇳</p>
+        <p class="section-subtitle">
+          Bring bold Punjabi street food to your event with a fully branded setup
+          and fast, fresh service.
+        </p>
+      </div>
+    </section>
 
-    <p><strong>Packages tailored to your event — pricing available on enquiry.</strong></p>
+    <section class="section alt">
+      <div class="container narrow">
+        <h2>We Cater For</h2>
+        <ul class="menu-list">
+          <li>Weddings</li>
+          <li>Corporate events</li>
+          <li>Private parties</li>
+          <li>Festivals</li>
+          <li>Pub pop-ups</li>
+        </ul>
+      </div>
+    </section>
 
-    <div class="cta-row">
-      <a href="mailto:bookings@flavabase.co.uk?subject=Corporate Event Enquiry" class="btn btn-primary">
-        Enquire About Corporate Events
-      </a>
-    </div>
-  </div>
-</section>
+    <section class="section">
+      <div class="container narrow">
+        <h2>Weddings</h2>
+        <p>
+          Flava Base brings bold Punjabi street food to wedding evenings,
+          receptions and special celebrations — a standout food van, fresh service
+          and proper flavour for guests to remember.
+        </p>
 
-<!-- PRIVATE -->
-<section id="private" class="section">
-  <div class="booking-block">
-    <h2>Private Parties</h2>
-    <p>
-      Birthdays, family celebrations and private gatherings made better with proper Punjabi street food.
-      Flava Base brings flavour, atmosphere and a setup that feels part of the event.
-    </p>
+        <h2>Corporate Events</h2>
+        <p>
+          Freshly cooked Punjabi street food for office events, launches, team
+          celebrations and business functions.
+        </p>
 
-    <p><strong>Packages tailored to your event — pricing available on enquiry.</strong></p>
+        <h2>Private Parties</h2>
+        <p>
+          Birthdays, family celebrations and private gatherings made better with
+          proper Punjabi street food.
+        </p>
 
-    <div class="cta-row">
-      <a href="mailto:bookings@flavabase.co.uk?subject=Private Party Enquiry" class="btn btn-primary">
-        Enquire About Private Parties
-      </a>
-    </div>
-  </div>
-</section>
+        <h2>Pub Pop-Ups</h2>
+        <p>
+          Flava Base is available for pub pop-ups and venue partnerships. We bring
+          a full Punjabi street food setup designed to attract customers, increase
+          footfall and keep people coming back.
+        </p>
 
-<!-- POP UPS (YOUR MAIN SECTION) -->
-<section id="popups" class="section">
-  <div class="booking-block">
-    <h2>Pub Pop-Ups</h2>
+        <h3>Standard Setup</h3>
+        <p>
+          Wraps, Flava Boxes, rice boxes and loaded fries served from a clean,
+          branded van setup.
+        </p>
 
-    <p>
-      Flava Base is available for pub pop-ups, venue partnerships and regular food residencies.
-      A strong fit for pubs looking to bring in quality street food and increase footfall.
-    </p>
+        <h3>Enhanced Setup</h3>
+        <p>
+          Add signature shakes and upgraded menu options for bigger events and
+          repeat bookings.
+        </p>
 
-    <!-- YOUR CONTENT AREA -->
-    <h3>Standard Setup</h3>
-    <p>
-      <!-- KEEP YOUR ORIGINAL TEXT HERE -->
-      Your existing pop-up setup description goes here.
-    </p>
+        <h2>Festivals & Events</h2>
+        <p>
+          Flava Base is available for festivals, markets and community events
+          looking for bold Punjabi street food served from a clean, branded van
+          setup.
+        </p>
+      </div>
+    </section>
 
-    <h3>Enhanced Package</h3>
-    <p>
-      <!-- KEEP YOUR ORIGINAL ENHANCED PACKAGE TEXT -->
-      Your enhanced offering, upgrades, extras etc go here.
-    </p>
-
-    <p><strong>Packages tailored to your event — pricing available on enquiry.</strong></p>
-
-    <div class="cta-row">
-      <a href="mailto:popups@flavabase.co.uk?subject=Pop-Up Booking Enquiry" class="btn btn-primary">
-        Enquire About Pop-Ups
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FESTIVALS -->
-<section id="festivals" class="section">
-  <div class="booking-block">
-    <h2>Festivals & Events</h2>
-    <p>
-      Flava Base is available for festivals, markets and community events looking for bold Punjabi street food
-      served from a clean, branded van setup.
-    </p>
-
-    <p><strong>Packages tailored to your event — pricing available on enquiry.</strong></p>
-
-    <div class="cta-row">
-      <a href="mailto:info@flavabase.co.uk?subject=Festival Booking Enquiry" class="btn btn-primary">
-        Enquire About Festivals
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ENQUIRY SECTION -->
-<section id="enquire" class="section">
-  <div class="enquiry-box">
-    <h2>Ready to book Flava Base?</h2>
-    <p>
-      Send us a quick message with your event details and we’ll get back to you.
-    </p>
-
-    <div class="cta-row" style="justify-content:center;">
-      <a href="mailto:bookings@flavabase.co.uk?subject=Flava Base Booking Enquiry" class="btn btn-primary">
-        Email Flava Base
-      </a>
-    </div>
-
-    <div class="checklist">
-      <h3>What to include in your enquiry</h3>
-      <ul class="bullets">
-        <li>Event type</li>
-        <li>Date of event</li>
-        <li>Location</li>
-        <li>Guest numbers</li>
-        <li>Service style</li>
-        <li>Dietary requirements</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-</footer>
+    <section class="section alt">
+      <div class="container narrow center">
+        <h2>Ready to book Flava Base?</h2>
+        <p>Send us a quick message with your event details and we’ll get back to you.</p>
+        <p><strong>Email:</strong> events@flavabase.co.uk</p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
