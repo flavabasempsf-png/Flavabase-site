@@ -266,82 +266,171 @@ textarea{min-height:120px;resize:vertical}
 
 
 
-<main class="container section">
-  <div class="grid-2">
-    <div class="card pattern-bg">
-      <div class="kicker">Book Flava Base</div>
-      <h2>Event enquiries</h2>
-      <ul class="list">
-        <li>Pub Pop-Ups & venue nights</li>
-        <li>Weddings</li>
-        <li>Private parties</li>
-        <li>Corporate events</li>
-        <li>Festivals</li>
-      </ul>
-    </div>
-    <div class="card pattern-bg">
-      <div class="kicker">Contact</div>
-      <h2>Contact Details</h2>
-      <p><strong>Event bookings</strong><br><a href="mailto:events@flavabase.co.uk">events@flavabase.co.uk</a></p>
 <section class="hero">
-  <div class="container">
-    <div class="hero-shell">
-      <h1>Bookings</h1>
-      <div class="sub"><strong>Northamptonshire and surrounding areas</strong></div>
-    </div>
+  <div class="hero-inner">
+    <h1>Book Flava Base</h1>
+    <p>
+      From weddings and private parties to pub pop-ups and corporate events,
+      choose your booking type below and send us an enquiry.
+    </p>
   </div>
 </section>
-      <p><strong>Pub pop-ups & venue enquiries</strong><br><a href="mailto:popups@flavabase.co.uk">popups@flavabase.co.uk</a></p>
-      <p><strong>General enquiries</strong><br><a href="mailto:info@flavabase.co.uk">info@flavabase.co.uk</a></p>
-      <p class="small">Event catering is aimed at bookings from 50 guests.</p>
-      <p class="small"><strong>Custom Event Display available:</strong> our serving hatch TV can show company logos, pub names and celebration messages.</p>
-      <p>Instagram: @flavabaseuk</p>
-      <p>TikTok: @flavabaseuk</p>
-    </div>
-  </div>
 
-  <section class="section section-alt">
-    <div class="card form-box">
-      <div class="kicker">Check Availability for Your Event</div>
-      <h2>Quick event enquiry</h2>
-      <p>Planning a corporate event, wedding or private celebration? Send a quick enquiry and we will get back to you.</p>
-      <form action="mailto:events@flavabase.co.uk" method="post" enctype="text/plain">
-        <div class="form-grid">
-          <div><label for="event-type">Event Type</label><select id="event-type" name="Event Type"><option>Corporate Event</option><option>Wedding</option><option>Private Party</option><option>Festival</option></select></div>
-          <div><label for="guest-numbers">Guest Numbers</label><input id="guest-numbers" name="Guest Numbers" type="text" placeholder="50+"></div>
-          <div><label for="event-date">Event Date</label><input id="event-date" name="Event Date" type="date"></div>
-          <div><label for="event-location">Event Location</label><input id="event-location" name="Event Location" type="text" placeholder="Town / venue"></div>
-          <div class="full"><label for="event-message">Event Details</label><textarea id="event-message" name="Event Details" placeholder="Tell us about your event"></textarea></div>
-        </div>
-        <div class="actions" style="justify-content:flex-start; margin-top:16px;">
-          <button class="btn btn-primary" type="submit">Check Availability</button>
-          <a class="btn btn-secondary" href="mailto:events@flavabase.co.uk">events@flavabase.co.uk</a>
-        </div>
-        <div class="helper">Events catered for from 50 guests.</div>
-      </form>
-    </div>
-  </section>
-
-</main>
-
-
-
-
-<div class="popup-wrap" id="bookingPopup" style="display:none;">
-  <div class="popup">
-    <button class="popup-close" id="popupClose" aria-label="Close popup" title="Close popup">×</button>
-    <div class="kicker">Bookings</div>
-    <h3 style="margin-right:46px;">Planning an event?</h3>
-    <p style="margin:0 0 10px;">Corporate events, weddings, private parties and pub pop-ups from 50 guests.</p>
-    <p style="margin:0 0 14px;"><a href="mailto:events@flavabase.co.uk">events@flavabase.co.uk</a><br><span class="small">Pub pop-ups: <a href="mailto:popups@flavabase.co.uk">popups@flavabase.co.uk</a></span></p>
-    <a class="btn btn-primary" href="/bookings.html">Check Availability</a>
+<div class="jump-nav-wrap">
+  <div class="jump-nav">
+    <a href="#weddings">Weddings</a>
+    <a href="#corporate">Corporate</a>
+    <a href="#private">Private Parties</a>
+    <a href="#popups">Pub Pop-Ups</a>
+    <a href="#festivals">Festivals</a>
+    <a href="#enquire">Enquire</a>
   </div>
 </div>
 
-<footer class="footer">
-  <div><strong>Punjabi Street Food Catering for Events</strong></div>
-  <div class="small">Corporate Events • Weddings • Private Parties • Festivals • Events from 50 guests</div>
-  <div class="small" style="margin-top:8px;">General enquiries: <a href="mailto:info@flavabase.co.uk" style="color:#fff;">info@flavabase.co.uk</a> • Event bookings: <a href="mailto:events@flavabase.co.uk" style="color:#fff;">events@flavabase.co.uk</a> • Pub pop-ups: <a href="mailto:popups@flavabase.co.uk" style="color:#fff;">popups@flavabase.co.uk</a></div>
+<section class="section">
+  <h2 class="section-title">Choose your booking type</h2>
+  <p class="section-subtitle">
+    Packages tailored to your event — pricing available on enquiry.
+  </p>
+</section>
+
+<!-- WEDDINGS -->
+<section id="weddings" class="section">
+  <div class="booking-block">
+    <h2>Weddings</h2>
+    <p>
+      Flava Base brings bold Punjabi street food to wedding evenings, receptions and special celebrations.
+      A standout food van, fresh service and proper flavour for guests to remember.
+    </p>
+
+    <p><strong>Packages tailored to your event — pricing available on enquiry.</strong></p>
+
+    <div class="cta-row">
+      <a href="mailto:bookings@flavabase.co.uk?subject=Wedding Booking Enquiry" class="btn btn-primary">
+        Enquire About Weddings
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORATE -->
+<section id="corporate" class="section">
+  <div class="booking-block">
+    <h2>Corporate Events</h2>
+    <p>
+      Freshly cooked Punjabi street food for office events, launches, team celebrations and business functions.
+      Perfect for companies looking for something more memorable than standard catering.
+    </p>
+
+    <p><strong>Packages tailored to your event — pricing available on enquiry.</strong></p>
+
+    <div class="cta-row">
+      <a href="mailto:bookings@flavabase.co.uk?subject=Corporate Event Enquiry" class="btn btn-primary">
+        Enquire About Corporate Events
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVATE -->
+<section id="private" class="section">
+  <div class="booking-block">
+    <h2>Private Parties</h2>
+    <p>
+      Birthdays, family celebrations and private gatherings made better with proper Punjabi street food.
+      Flava Base brings flavour, atmosphere and a setup that feels part of the event.
+    </p>
+
+    <p><strong>Packages tailored to your event — pricing available on enquiry.</strong></p>
+
+    <div class="cta-row">
+      <a href="mailto:bookings@flavabase.co.uk?subject=Private Party Enquiry" class="btn btn-primary">
+        Enquire About Private Parties
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- POP UPS (YOUR MAIN SECTION) -->
+<section id="popups" class="section">
+  <div class="booking-block">
+    <h2>Pub Pop-Ups</h2>
+
+    <p>
+      Flava Base is available for pub pop-ups, venue partnerships and regular food residencies.
+      A strong fit for pubs looking to bring in quality street food and increase footfall.
+    </p>
+
+    <!-- YOUR CONTENT AREA -->
+    <h3>Standard Setup</h3>
+    <p>
+      <!-- KEEP YOUR ORIGINAL TEXT HERE -->
+      Your existing pop-up setup description goes here.
+    </p>
+
+    <h3>Enhanced Package</h3>
+    <p>
+      <!-- KEEP YOUR ORIGINAL ENHANCED PACKAGE TEXT -->
+      Your enhanced offering, upgrades, extras etc go here.
+    </p>
+
+    <p><strong>Packages tailored to your event — pricing available on enquiry.</strong></p>
+
+    <div class="cta-row">
+      <a href="mailto:popups@flavabase.co.uk?subject=Pop-Up Booking Enquiry" class="btn btn-primary">
+        Enquire About Pop-Ups
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FESTIVALS -->
+<section id="festivals" class="section">
+  <div class="booking-block">
+    <h2>Festivals & Events</h2>
+    <p>
+      Flava Base is available for festivals, markets and community events looking for bold Punjabi street food
+      served from a clean, branded van setup.
+    </p>
+
+    <p><strong>Packages tailored to your event — pricing available on enquiry.</strong></p>
+
+    <div class="cta-row">
+      <a href="mailto:info@flavabase.co.uk?subject=Festival Booking Enquiry" class="btn btn-primary">
+        Enquire About Festivals
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY SECTION -->
+<section id="enquire" class="section">
+  <div class="enquiry-box">
+    <h2>Ready to book Flava Base?</h2>
+    <p>
+      Send us a quick message with your event details and we’ll get back to you.
+    </p>
+
+    <div class="cta-row" style="justify-content:center;">
+      <a href="mailto:bookings@flavabase.co.uk?subject=Flava Base Booking Enquiry" class="btn btn-primary">
+        Email Flava Base
+      </a>
+    </div>
+
+    <div class="checklist">
+      <h3>What to include in your enquiry</h3>
+      <ul class="bullets">
+        <li>Event type</li>
+        <li>Date of event</li>
+        <li>Location</li>
+        <li>Guest numbers</li>
+        <li>Service style</li>
+        <li>Dietary requirements</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 </footer>
 </body>
 </html>
