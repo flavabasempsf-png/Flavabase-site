@@ -1,150 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="assets/assets/styles.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flava Base – Modern Punjabi Street Food Catering</title>
-  <meta name="description" content="Punjabi street food catering for corporate events, parties and pop-ups across the UK.">
+  <meta name="description" content="Punjabi street food catering for corporate events, weddings, private parties and pop-ups across the UK.">
+  <style>
+    :root{
+      --green:#1F3D2B;
+      --orange:#f39a2e;
+      --cream:#fff8ef;
+      --white:#fffdf9;
+      --text:#2d2a26;
+      --muted:#6f6a63;
+      --line:#eadcca;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#fffaf4 0%, var(--cream) 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .tricolour-bar{width:100%}
+    .tricolour-bar span{display:block;height:4px}
+    .tricolour-bar .saffron{background:#FF9933}
+    .tricolour-bar .white{background:#FFFFFF}
+    .tricolour-bar .green{background:#138808}
+    .saffron-line{height:3px;background:#F59E0B}
+    .top-logo-bar{
+      background:#fffdf9;
+      border-bottom:1px solid var(--line);
+      text-align:center;
+      padding:18px 16px;
+    }
+    .top-logo-bar img{
+      max-width:180px;
+      width:100%;
+      height:auto;
+      display:inline-block;
+    }
+    .container{width:min(1120px,92%);margin:0 auto}
+    nav{
+      background:rgba(255,255,255,.95);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      width:min(1120px,92%);
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:14px 0;
+    }
+    .brand{
+      text-decoration:none;
+      color:var(--green);
+      font-weight:800;
+      letter-spacing:.08em;
+    }
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      align-items:center;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color:var(--text);
+      font-weight:700;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      border-radius:999px;
+      padding:10px 16px;
+      font-weight:800;
+      border:1px solid var(--green);
+    }
+    .btn-primary{
+      background:var(--green);
+      color:#fff !important;
+    }
+    .btn-secondary{
+      background:#fff;
+      color:var(--green) !important;
+    }
+    .hero{
+      padding:70px 20px 50px;
+    }
+    .hero-shell{
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    h1{
+      color:var(--green);
+      font-size:clamp(2rem,4vw,3.25rem);
+      margin:0 0 12px;
+    }
+    .section-subtitle{
+      max-width:700px;
+      font-size:1.05rem;
+      color:var(--muted);
+      margin:0 auto 22px;
+    }
+    .actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .section{
+      padding:26px 0;
+    }
+    .card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 10px 24px rgba(90,67,35,.06);
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    h2{
+      color:var(--green);
+      margin:0 0 10px;
+    }
+    .kicker{
+      color:#b56d17;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.82rem;
+      margin-bottom:8px;
+    }
+    .list{margin:0;padding-left:18px}
+    .footer{
+      margin-top:36px;
+      padding:26px 16px 40px;
+      background:var(--green);
+      color:#fff;
+      text-align:center;
+    }
+    .footer .small{color:#e7efe7;font-size:.95rem}
+    @media (max-width:900px){
+      .grid-2{grid-template-columns:1fr}
+      .nav-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
 </head>
 <body>
+  <div class="tricolour-bar"><span class="saffron"></span><span class="white"></span><span class="green"></span></div>
+  <div class="saffron-line"></div>
 
-<div class="tricolour-bar"><span class="saffron"></span><span class="white"></span><span class="green"></span></div>
-<div class="saffron-line"></div>
+  <div class="top-logo-bar">
+    <img src="assets/flava_base_logo_12000px.jpeg" alt="Flava Base logo">
+  </div>
 
-<div class="top-logo-bar">
-  <img src="assets/flava_base_logo_12000px.jpeg" alt="Flava Base logo">
-</div>
-
-<div class="temple-header"></div>
-<nav>
-  <div class="nav-inner">
-    <a class="brand" href="/index.html">FLAVA BASE</a>
-    <div class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="/menu.html">Event Menu</a>
-            <a href="/story.html">Our Story</a>
-      <a href="/bookings.html">Bookings</a>
-      <a class="btn btn-primary" style="padding:8px 14px;" href="/bookings.html">Check Availability</a>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="/index.html">FLAVA BASE</a>
+      <div class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/menu.html">Event Menu</a>
+        <a href="/story.html">Our Story</a>
+        <a href="/bookings.html">Bookings</a>
+        <a class="btn btn-primary" href="/bookings.html">Check Availability</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-
-<section class="section">
-  <div class="banner">
-    <div class="kicker">What is Flava Base?</div>
-    <h2>Bringing the Taste of Punjab to Your Event</h2>
-    <p>Flava Base is a modern Punjabi street food catering brand serving wraps, curry boxes, loaded fries, noodles and Punjabi street food starters for weddings, corporate events, private celebrations and pop-ups.</p>
-    <ul style="margin:14px 0 0 18px; line-height:1.9;">
-      <li>Punjabi street food catering for events from 50 guests</li>
-      <li>Wraps, curry boxes, loaded fries, noodles and starters</li>
-      <li>Corporate events, weddings and private celebrations</li>
-      <li>Optional event add-ons available on event pages</li>
-    </ul>
-  </div>
-</section>
-
-<main class="container">
-
-
-
-
-
-
+  <section class="hero">
+    <div class="container">
+      <div class="hero-shell">
+        <h1>FLAVA BASE</h1>
+        <p class="section-subtitle">
+          Bringing the Flava of Punjab to events, parties and pop-ups across the UK.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/bookings.html">Check Availability</a>
+          <a class="btn btn-secondary" href="/menu.html">View Menu</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="grid-2">
-      <div class="card pattern-bg">
-        
-<section class="section section-alt">
-  <div class="banner">
-    <div class="kicker">Punjabi Street Food Experience</div>
-    <h2>The Flava Base Experience</h2>
-    <p>From our signature Flava Box to wraps, loaded fries and event add-ons, we bring together flavour, atmosphere and service for memorable events.</p>
-  </div>
-</section>
-
-  <div class="kicker">Areas We Serve</div>
-        <h2>Punjabi street food catering across the Midlands</h2>
-        <p>Northamptonshire, Milton Keynes, Bedfordshire, Buckinghamshire, Oxfordshire, Warwickshire and Leicestershire.</p>
-        <p class="small">Events from 50 guests.</p>
+  <main class="container">
+    <section class="section">
+      <div class="grid-2">
+        <div class="card">
+          <div class="kicker">What is Flava Base?</div>
+          <h2>Punjabi street food for memorable events</h2>
+          <p>
+            Flava Base is a modern Punjabi street food catering brand serving wraps, curry boxes,
+            loaded fries, noodles and Punjabi street food starters for weddings, corporate events,
+            private celebrations and pop-ups.
+          </p>
+          <ul class="list">
+            <li>Punjabi street food catering for events from 50 guests</li>
+            <li>Wraps, curry boxes, loaded fries, noodles and starters</li>
+            <li>Corporate events, weddings and private celebrations</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="kicker">Areas We Serve</div>
+          <h2>Across the Midlands</h2>
+          <p>
+            Northamptonshire, Milton Keynes, Bedfordshire, Buckinghamshire, Oxfordshire,
+            Warwickshire and Leicestershire.
+          </p>
+          <p><strong>Events from 50 guests.</strong></p>
+        </div>
       </div>
-      <div class="card pattern-bg">
+    </section>
+
+    <section class="section">
+      <div class="card">
         <div class="kicker">Enquiry Shortcuts</div>
         <h2>Contact the right Flava Base team</h2>
-        <div class="contact-split"><div class="card"><h3>Event Bookings</h3><p>Corporate events, weddings and private celebrations.</p><p><a href="mailto:events@flavabase.co.uk">events@flavabase.co.uk</a></p>
-<section class="hero">
-  <div class="container">
-    <div class="hero-shell">
-      <div class="logo-box">
-        <img class="logo-placeholder" src="assets/flava-base-logo.jpeg" alt="Flava Base">
+        <div class="grid-2">
+          <div>
+            <h3>Event Bookings</h3>
+            <p>Corporate events, weddings and private celebrations.</p>
+            <p><a href="mailto:events@flavabase.co.uk">events@flavabase.co.uk</a></p>
+          </div>
+          <div>
+            <h3>Pub Pop-Ups</h3>
+            <p>Pubs and venue enquiries.</p>
+            <p><a href="mailto:popups@flavabase.co.uk">popups@flavabase.co.uk</a></p>
+          </div>
+        </div>
+        <p style="margin-top:16px;"><strong>General enquiries:</strong> <a href="mailto:info@flavabase.co.uk">info@flavabase.co.uk</a></p>
       </div>
-      <h1>FLAVA BASE</h1>
+    </section>
+  </main>
 
-<p class="section-subtitle">
-  Bringing the Flava of Punjab to events, parties and pop-ups across the UK.
-</p>
-
-<div class="actions">
-  <a class="btn btn-primary" href="/bookings.html">Check Availability</a>
-  <a class="btn btn-secondary" href="/menu.html">View Menu</a>
-</div>
-    
-    </div>
-  </section>
-
-
-<section class="section">
-  <div class="banner">
-    <div class="kicker">Gallery</div>
-    <h2>Flava Base In Action</h2>
-    <p>Photos from our van, food and events will appear here soon.</p>
-  </div>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px">
-    <div style="background:#fffdf9;border:1px solid #eadcca;border-radius:16px;height:180px;display:flex;align-items:center;justify-content:center;color:#6f6a63">
-      Van Photo
-    </div>
-    <div style="background:#fffdf9;border:1px solid #eadcca;border-radius:16px;height:180px;display:flex;align-items:center;justify-content:center;color:#6f6a63">
-      Food Photo
-    </div>
-    <div style="background:#fffdf9;border:1px solid #eadcca;border-radius:16px;height:180px;display:flex;align-items:center;justify-content:center;color:#6f6a63">
-      Event Photo
-    </div>
-    <div style="background:#fffdf9;border:1px solid #eadcca;border-radius:16px;height:180px;display:flex;align-items:center;justify-content:center;color:#6f6a63">
-      Catering Setup
-    </div>
-  </div>
-</section>
-</main>
-
-      <h1>FLAVA BASE</h1>
-      <div class="sub"><strong>Modern Punjabi Street Food Catering</strong><br>For corporate events, weddings, private parties and festivals</div>
-      <div class="small" style="margin-top:10px;">Events from 50 guests • Three-Course Punjabi Street Food Experience available</div>
-      <div class="actions">
-        <a class="btn btn-primary" href="/bookings.html">Check Availability</a>
-        <a class="btn btn-secondary" href="/corporate.html">Corporate Events</a>
-        <a class="btn btn-secondary" href="/weddings.html">Weddings & Parties</a>
-        <a class="btn btn-secondary" href="/menu.html">Event Menu</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-    <a class="btn btn-primary" href="/bookings.html">Check Availability</a>
-  </div>
-</div>
-
-<footer class="footer">
-  <div><strong>Modern Punjabi Street Food Catering</strong></div>
-  <div class="small">Corporate Events • Weddings • Private Celebrations • Events from 50 guests</div>
-  <div class="small" style="margin-top:8px;">General enquiries: <a href="mailto:info@flavabase.co.uk" style="color:#fff;">info@flavabase.co.uk</a> • Event bookings: <a href="mailto:events@flavabase.co.uk" style="color:#fff;">events@flavabase.co.uk</a> • Pub pop-ups: <a href="mailto:popups@flavabase.co.uk" style="color:#fff;">popups@flavabase.co.uk</a></div>
-</footer>
+  <footer class="footer">
+    <div><strong>Punjabi Street Food Catering for Events</strong></div>
+    <div class="small">Corporate Events • Weddings • Private Celebrations • Events from 50 guests</div>
+    <div class="small" style="margin-top:8px;">General enquiries: info@flavabase.co.uk • Event bookings: events@flavabase.co.uk • Pub pop-ups: popups@flavabase.co.uk</div>
+  </footer>
 </body>
 </html>
