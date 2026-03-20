@@ -33,3 +33,10 @@ h1 {
 
 .hero {
   padding: 80px 20px;
+.hero{
+  margin-bottom: 10px;
+}
+
+.section{
+  padding-top: 10px;
+}
