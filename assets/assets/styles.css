@@ -40,7 +40,10 @@
 .step-card h3 {
   margin-bottom: 8px;
 }
-
+.brand img {
+  max-height: 70px;
+  width: auto;
+}
 .step-card p {
   font-size: 0.95rem;
   color: var(--muted);
