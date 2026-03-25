@@ -1,18 +1,650 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flava Base – Modern Punjabi Street Kitchen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/assets/styles.css" />
+  <style>
+    :root {
+      --cream: #f5ead6;
+      --gold: #c8902a;
+      --gold-light: #e8b84b;
+      --brown-dark: #3d1f08;
+      --brown-mid: #7a3e12;
+      --brown-light: #b5651d;
+      --orange: #d4531a;
+      --green-accent: #2d5a27;
+      --text-dark: #2a1505;
+    }
+
+```
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(200,144,42,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(212,83,26,0.06) 0%, transparent 50%);
+  color: var(--text-dark);
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 18px;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.site-header {
+  background: var(--brown-dark);
+  border-bottom: 3px solid var(--gold);
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-logo { height: 52px; width: auto; }
+
+.site-nav { display: flex; gap: 1.5rem; }
+.site-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+.site-nav a:hover { color: var(--gold-light); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--brown-dark);
+  background-image:
+    radial-gradient(ellipse at 50% 120%, rgba(200,144,42,0.3) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 10%, rgba(212,83,26,0.1) 0%, transparent 40%);
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 60px,
+    rgba(200,144,42,0.025) 60px,
+    rgba(200,144,42,0.025) 61px
+  );
+}
+
+/* Decorative corner ornaments */
+.hero::after {
+  content: '✦';
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 1.2rem;
+  opacity: 0.5;
+  letter-spacing: 1.5rem;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Arch frame around logo */
+.arch-wrap {
+  display: inline-block;
+  position: relative;
+  padding: 1.5rem 2.5rem 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.arch-wrap::before,
+.arch-wrap::after {
+  content: '';
+  position: absolute;
+  border: 1.5px solid var(--gold);
+  border-bottom: none;
+  border-radius: 50% 50% 0 0 / 25% 25% 0 0;
+}
+
+.arch-wrap::before { inset: 0 0 -1px; }
+.arch-wrap::after {
+  inset: 10px 10px -1px;
+  border-color: rgba(200,144,42,0.35);
+}
+
+.hero-logo {
+  height: 110px;
+  width: auto;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
+}
+
+.hero-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.hero-sub {
+  color: rgba(245,234,214,0.75);
+  font-style: italic;
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-gold {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--brown-dark);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  padding: 0.85rem 2.2rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200,144,42,0.45);
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 1.5px solid var(--gold);
+  color: var(--gold-light);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  padding: 0.85rem 2.2rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: rgba(200,144,42,0.12);
+  transform: translateY(-2px);
+}
+
+/* ── GOLD DIVIDER ── */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.gold-divider-diamond {
+  width: 8px; height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ── STORY SECTION ── */
+.story-section {
+  padding: 5rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .story-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.story-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.story-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: var(--brown-dark);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.story-title span { color: var(--orange); }
+
+.story-body p {
+  color: #5a3015;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.story-body p:last-child { margin-bottom: 0; }
+
+/* Decorative quote block */
+.story-quote {
+  background: var(--brown-dark);
+  border-left: 4px solid var(--gold);
+  padding: 2rem 2rem 2rem 2.5rem;
+  position: relative;
+}
+
+.story-quote::before {
+  content: '"';
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: var(--gold);
+  opacity: 0.3;
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  line-height: 1;
+}
+
+.story-quote p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--cream);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+.story-quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-style: normal;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+/* ── WHAT WE SERVE ── */
+.serves-section {
+  background: var(--brown-dark);
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(200,144,42,0.18) 0%, transparent 60%);
+  padding: 4rem 1.5rem;
+  position: relative;
+}
+
+.serves-section::before,
+.serves-section::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.serves-section::before { top: 0; }
+.serves-section::after { bottom: 0; }
+
+.serves-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.serves-inner .section-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--orange);
+  margin-bottom: 0.5rem;
+}
+
+.serves-inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--gold-light);
+  margin-bottom: 2.5rem;
+}
+
+.serves-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: rgba(200,144,42,0.25);
+  border: 1px solid rgba(200,144,42,0.25);
+}
+
+@media (max-width: 700px) {
+  .serves-grid { grid-template-columns: repeat(3, 1fr); }
+  .serves-grid .serve-card:nth-child(4),
+  .serves-grid .serve-card:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+.serve-card {
+  background: rgba(61,31,8,0.85);
+  padding: 2rem 1rem;
+  transition: background 0.2s;
+}
+
+.serve-card:hover { background: rgba(200,144,42,0.12); }
+
+.serve-emoji { font-size: 2.2rem; display: block; margin-bottom: 0.6rem; }
+
+.serve-name {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.08em;
+  color: var(--cream);
+  font-size: 1rem;
+}
+
+/* ── EXPERIENCE ── */
+.experience-section {
+  padding: 5rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 700px) {
+  .experience-grid { grid-template-columns: 1fr; }
+}
+
+.exp-card {
+  border: 1px solid rgba(200,144,42,0.35);
+  padding: 2rem 1.5rem;
+  position: relative;
+  background: rgba(255,255,255,0.5);
+}
+
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--orange));
+}
+
+.exp-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+
+.exp-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--brown-dark);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.exp-card p {
+  color: #7a4020;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* ── WHERE WE OPERATE ── */
+.locations-section {
+  background: var(--brown-dark);
+  padding: 4rem 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.locations-section::before,
+.locations-section::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.locations-section::before { top: 0; }
+.locations-section::after { bottom: 0; }
+
+.locations-inner { max-width: 700px; margin: 0 auto; }
+
+.locations-inner .section-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--orange);
+  margin-bottom: 0.5rem;
+}
+
+.locations-inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--gold-light);
+  margin-bottom: 1.5rem;
+}
+
+.locations-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.loc-tag {
+  border: 1px solid rgba(200,144,42,0.4);
+  color: var(--cream);
+  padding: 0.4rem 1rem;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+  background: rgba(200,144,42,0.08);
+}
+
+/* ── SOCIAL / FOLLOW ── */
+.social-section {
+  padding: 5rem 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.social-section .section-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.social-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--brown-dark);
+  margin-bottom: 0.8rem;
+}
+
+.social-section p {
+  color: #7a4020;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(200,144,42,0.4);
+  padding: 0.9rem 2rem;
+  text-decoration: none;
+  color: var(--brown-dark);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.12em;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 320px;
+  transition: all 0.2s;
+  background: rgba(255,255,255,0.6);
+  position: relative;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold);
+}
+
+.social-link:hover {
+  background: var(--brown-dark);
+  color: var(--gold-light);
+  transform: translateX(4px);
+}
+
+/* ── BOOKING CTA ── */
+.booking-cta {
+  background: var(--brown-dark);
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(200,144,42,0.2) 0%, transparent 70%);
+  text-align: center;
+  padding: 5rem 1.5rem;
+  position: relative;
+}
+
+.booking-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.cta-ornament {
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.6;
+}
+
+.booking-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: var(--gold-light);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.booking-cta p {
+  color: rgba(245,234,214,0.75);
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ── FOOTER ── */
+.footer-strip {
+  background: #1a0a02;
+  border-top: 1px solid rgba(200,144,42,0.2);
+  text-align: center;
+  padding: 1.5rem;
+  color: rgba(245,234,214,0.4);
+  font-size: 0.8rem;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.15em;
+}
+```
+
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand">
-        <img src="assets/flava_base_logo_12000px.jpeg" alt="Flava Base logo" class="site-logo" />
-      </a>
 
+  <!-- HEADER -->
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base logo" class="site-logo" />
+      </a>
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
@@ -22,28 +654,35 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero section">
-      <div class="container hero-shell">
-        <img src="assets/flava_base_logo_12000px.jpeg" alt="Flava Base logo" class="hero-logo" />
-        <p class="tagline">Modern Punjabi Street Kitchen 🇮🇳</p>
-        <h1>Bold Punjabi Flavours. Built Fresh. Served Street Style.</h1>
-        <p class="section-subtitle">
-          Wraps, Flava Boxes, loaded fries, rice boxes and signature shakes —
-          perfect for events, pop-ups and private bookings.
-        </p>
-        <div class="actions">
-          <a href="menu.html" class="btn btn-primary">View Menu</a>
-          <a href="bookings.html" class="btn">Book Flava Base</a>
-        </div>
-      </div>
-    </section>
+  <!-- HERO -->
 
-    <section class="section">
-      <div class="container narrow">
-        <h2>From Mum’s Kitchen to the Streets</h2>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="arch-wrap">
+        <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base logo" class="hero-logo" />
+      </div>
+      <p class="hero-label">Modern Punjabi Street Kitchen 🇮🇳</p>
+      <h1>Bold Punjabi Flavours.<br><em>Built Fresh. Served Street Style.</em></h1>
+      <p class="hero-sub">
+        Wraps, Flava Boxes, loaded fries, rice boxes and signature shakes —
+        perfect for events, pop-ups and private bookings.
+      </p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-gold">View Menu</a>
+        <a href="bookings.html" class="btn-outline">Book Flava Base</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+
+  <section class="story-section">
+    <div class="story-grid">
+      <div class="story-body">
+        <p class="story-label">Our Story</p>
+        <h2 class="story-title">From Mum's Kitchen<br>to the <span>Streets</span></h2>
         <p>
-          Flava Base is inspired by recipes from my mum’s kitchen, brought to life
+          Flava Base is inspired by recipes from my mum's kitchen, brought to life
           with a modern Punjabi street food twist.
         </p>
         <p>
@@ -56,69 +695,130 @@
           memory of my mum — keeping those flavours and that feeling alive.
         </p>
       </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container narrow">
-        <h2>What is Flava Base?</h2>
+      <div class="story-quote">
         <p>
-          Flava Base is a Modern Punjabi Street Kitchen bringing bold, authentic
-          Punjabi flavours to events, pop-ups and private bookings.
+          Food has always been my connection to home. Flava Base is built in memory of my mum — keeping those flavours and that feeling alive.
         </p>
-        <p>
-          From our signature Flava Box to wraps, rice boxes, loaded fries and thick
-          Punjabi-style shakes, everything is built fresh and served street style.
-        </p>
+        <cite>— Founder, Flava Base</cite>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container">
-        <h2>What We Serve</h2>
-        <div class="cards">
-          <div class="card">🌯 Wraps</div>
-          <div class="card">🔥 Flava Box</div>
-          <div class="card">🍛 Rice Boxes</div>
-          <div class="card">🍟 Loaded Fries</div>
-          <div class="card">🧋 Signature Shakes</div>
+  <!-- WHAT WE SERVE -->
+
+  <section class="serves-section">
+    <div class="serves-inner">
+      <p class="section-label">On The Menu</p>
+      <h2>What We Serve</h2>
+      <div class="serves-grid">
+        <div class="serve-card">
+          <span class="serve-emoji">🌯</span>
+          <div class="serve-name">Wraps</div>
+        </div>
+        <div class="serve-card">
+          <span class="serve-emoji">🔥</span>
+          <div class="serve-name">Flava Box</div>
+        </div>
+        <div class="serve-card">
+          <span class="serve-emoji">🍛</span>
+          <div class="serve-name">Rice Boxes</div>
+        </div>
+        <div class="serve-card">
+          <span class="serve-emoji">🍟</span>
+          <div class="serve-name">Loaded Fries</div>
+        </div>
+        <div class="serve-card">
+          <span class="serve-emoji">🧋</span>
+          <div class="serve-name">Signature Shakes</div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section alt">
-      <div class="container narrow">
-        <h2>The Flava Base Experience</h2>
-        <p>
-          Freshly prepared Punjabi street food, a clean branded setup and a menu
-          designed for fast service.
-        </p>
-        <p>
-          Perfect for weddings, corporate events, private parties and pop-ups.
-        </p>
-      </div>
-    </section>
+  <!-- EXPERIENCE -->
 
-    <section class="section">
-      <div class="container narrow">
-        <h2>Where We Operate</h2>
-        <p>
-          Northamptonshire, Milton Keynes, Bedfordshire, Buckinghamshire,
-          Oxfordshire, Warwickshire and Leicestershire.
-        </p>
+  <section class="experience-section">
+    <div style="text-align:center; margin-bottom: 0.5rem;">
+      <p style="font-family:'Bebas Neue',sans-serif; font-size:0.85rem; letter-spacing:0.3em; color:var(--gold);">WHY FLAVA BASE</p>
+      <h2 style="font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(1.8rem,4vw,2.6rem); color:var(--brown-dark);">The Flava Base <span style="color:var(--orange)">Experience</span></h2>
+    </div>
+    <div class="experience-grid">
+      <div class="exp-card">
+        <span class="exp-icon">🍽️</span>
+        <h3>Freshly Prepared</h3>
+        <p>Every dish built fresh to order using bold Punjabi spices and locally sourced ingredients wherever possible.</p>
       </div>
-    </section>
+      <div class="exp-card">
+        <span class="exp-icon">🚐</span>
+        <h3>Fully Branded Setup</h3>
+        <p>A clean, professional setup that looks the part at any event — from street pop-ups to corporate functions.</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">⚡</span>
+        <h3>Fast Service</h3>
+        <p>A focused menu designed for speed without compromising on quality. Perfect for hungry crowds.</p>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:2rem; font-style:italic; color:#7a4020;">
+      Perfect for weddings, corporate events, private parties and pop-ups.
+    </p>
+  </section>
 
-    <section class="section alt">
-      <div class="container narrow">
-        <h2>Follow the Build 🔥</h2>
-        <p>See the van build, menu testing and behind the scenes.</p>
-        <ul class="social-list">
-          <li><a href="https://www.tiktok.com/@flavabaseuk" target="_blank" rel="noopener">TikTok — @flavabaseuk</a></li>
-          <li><a href="https://www.instagram.com/flavabaseuk" target="_blank" rel="noopener">Instagram — @flavabaseuk</a></li>
-          <li><a href="https://www.youtube.com/@Buildingflavabase" target="_blank" rel="noopener">YouTube — @Buildingflavabase</a></li>
-        </ul>
+  <!-- LOCATIONS -->
+
+  <section class="locations-section">
+    <div class="locations-inner">
+      <p class="section-label">Coverage Area</p>
+      <h2>Where We Operate</h2>
+      <div class="gold-divider" style="margin: 1rem auto;">
+        <div class="gold-divider-diamond"></div>
       </div>
-    </section>
-  </main>
+      <div class="locations-tags">
+        <span class="loc-tag">Northamptonshire</span>
+        <span class="loc-tag">Milton Keynes</span>
+        <span class="loc-tag">Bedfordshire</span>
+        <span class="loc-tag">Buckinghamshire</span>
+        <span class="loc-tag">Oxfordshire</span>
+        <span class="loc-tag">Warwickshire</span>
+        <span class="loc-tag">Leicestershire</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+
+  <section class="social-section">
+    <p class="section-label">Behind The Scenes</p>
+    <h2>Follow the Build 🔥</h2>
+    <p>See the van conversion, menu testing and behind the scenes of building Flava Base from scratch.</p>
+    <div class="social-links">
+      <a href="https://www.tiktok.com/@flavabaseuk" target="_blank" rel="noopener" class="social-link">
+        <span>📱</span> TikTok — @flavabaseuk
+      </a>
+      <a href="https://www.instagram.com/flavabaseuk" target="_blank" rel="noopener" class="social-link">
+        <span>📸</span> Instagram — @flavabaseuk
+      </a>
+      <a href="https://www.youtube.com/@Buildingflavabase" target="_blank" rel="noopener" class="social-link">
+        <span>🎥</span> YouTube — @Buildingflavabase
+      </a>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+
+  <section class="booking-cta">
+    <div class="cta-ornament">✦ ✦ ✦</div>
+    <h2>Ready to Book Flava Base?</h2>
+    <p>
+      Bring bold Punjabi street food to your next event. A fully branded setup,
+      fast fresh service and food people will talk about.
+    </p>
+    <a href="bookings.html" class="btn-gold">Make a Booking</a>
+  </section>
+
+  <div class="footer-strip">
+    © 2025 Flava Base · Modern Punjabi Street Kitchen · Northamptonshire & Beyond
+  </div>
+
 </body>
 </html>
