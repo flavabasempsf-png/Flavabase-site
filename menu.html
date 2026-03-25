@@ -1,18 +1,668 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flava Base – Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/assets/styles.css" />
+  <style>
+    :root {
+      --cream: #f5ead6;
+      --gold: #c8902a;
+      --gold-light: #e8b84b;
+      --brown-dark: #3d1f08;
+      --brown-mid: #7a3e12;
+      --brown-light: #b5651d;
+      --orange: #d4531a;
+      --green-accent: #2d5a27;
+      --text-dark: #2a1505;
+      --border-gold: #c8902a;
+    }
+
+```
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(200,144,42,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(212,83,26,0.06) 0%, transparent 50%);
+  color: var(--text-dark);
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 18px;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.site-header {
+  background: var(--brown-dark);
+  border-bottom: 3px solid var(--gold);
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-logo { height: 52px; width: auto; }
+
+.site-nav { display: flex; gap: 1.5rem; }
+.site-nav a {
+  color: var(--cream);
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+.site-nav a:hover { color: var(--gold-light); }
+
+/* ── HERO BANNER ── */
+.menu-hero {
+  background: var(--brown-dark);
+  background-image:
+    radial-gradient(ellipse at 50% 100%, rgba(200,144,42,0.25) 0%, transparent 60%);
+  text-align: center;
+  padding: 3rem 1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(200,144,42,0.03) 40px,
+    rgba(200,144,42,0.03) 41px
+  );
+}
+
+/* Arch decorative frame */
+.arch-frame {
+  display: inline-block;
+  position: relative;
+  padding: 2rem 3rem;
+  margin-bottom: 1rem;
+}
+
+.arch-frame::before,
+.arch-frame::after {
+  content: '';
+  position: absolute;
+  border: 2px solid var(--gold);
+}
+
+.arch-frame::before {
+  inset: 0;
+  border-radius: 60% 60% 0 0 / 30% 30% 0 0;
+}
+
+.arch-frame::after {
+  inset: 8px;
+  border-radius: 60% 60% 0 0 / 30% 30% 0 0;
+  border-color: rgba(200,144,42,0.4);
+}
+
+.hero-drum {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  color: var(--gold-light);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title span { color: var(--orange); }
+
+.hero-subtitle {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  color: var(--cream);
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem auto;
+  max-width: 400px;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.gold-divider-dot {
+  width: 8px; height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+.hero-tagline {
+  color: var(--cream);
+  font-size: 1rem;
+  opacity: 0.85;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.notice-bar {
+  background: rgba(200,144,42,0.15);
+  border-top: 1px solid rgba(200,144,42,0.3);
+  border-bottom: 1px solid rgba(200,144,42,0.3);
+  color: var(--gold-light);
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ── SECTION STYLES ── */
+.menu-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--brown-dark);
+  font-weight: 900;
+}
+
+.section-title .highlight { color: var(--orange); }
+
+/* ── SIGNATURE FAVOURITES ── */
+.favourites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.fav-card {
+  background: var(--brown-dark);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fav-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(200,144,42,0.25);
+}
+
+.fav-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+}
+
+.fav-emoji { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+
+.fav-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold-light);
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.fav-desc {
+  color: rgba(245,234,214,0.75);
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+/* ── BUILD YOUR FLAVA ── */
+.build-section {
+  background: var(--brown-dark);
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(200,144,42,0.15) 0%, transparent 60%);
+  padding: 3rem 1.5rem;
+  position: relative;
+}
+
+.build-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.build-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.build-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.build-section .section-title { color: var(--gold-light); }
+.build-section .section-label { color: var(--orange); }
+
+.build-note {
+  text-align: center;
+  color: rgba(245,234,214,0.7);
+  font-style: italic;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  background: rgba(200,144,42,0.3);
+  border: 1px solid rgba(200,144,42,0.3);
+}
+
+.step-card {
+  background: rgba(61,31,8,0.8);
+  padding: 2rem 1.2rem;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: rgba(200,144,42,0.2);
+  line-height: 1;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.8rem;
+}
+
+.step-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.step-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+
+.step-card p {
+  color: rgba(245,234,214,0.8);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* ── SHAKES ── */
+.shakes-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.shakes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .shakes-grid { grid-template-columns: 1fr; }
+}
+
+.shake-tier {
+  border: 1px solid var(--gold);
+  position: relative;
+  background: white;
+  background-image: linear-gradient(135deg, #fffdf7 0%, #f5ead6 100%);
+}
+
+.shake-tier-header {
+  padding: 1rem 1.5rem 0.8rem;
+  text-align: center;
+  border-bottom: 1px solid var(--gold);
+}
+
+.tier-label {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.15em;
+  font-size: 1.1rem;
+}
+
+.tier-price {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin-top: 0.2rem;
+}
+
+.tier-signature .shake-tier-header { background: var(--brown-dark); }
+.tier-signature .tier-label { color: var(--gold-light); }
+.tier-signature .tier-price { color: var(--orange); }
+
+.tier-premium .shake-tier-header { background: var(--green-accent); }
+.tier-premium .tier-label { color: white; }
+.tier-premium .tier-price { color: #a8d5a0; }
+
+.tier-classic .shake-tier-header { background: var(--brown-mid); }
+.tier-classic .tier-label { color: var(--cream); }
+.tier-classic .tier-price { color: var(--gold-light); }
+
+.tier-full {
+  grid-column: 1 / -1;
+}
+
+.shake-list {
+  list-style: none;
+  padding: 1rem 1.5rem;
+}
+
+.shake-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed rgba(200,144,42,0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.shake-list li:last-child { border-bottom: none; }
+
+.shake-list li::before {
+  content: '🧋';
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.tier-signature .shake-list { background: rgba(61,31,8,0.03); }
+.tier-signature .shake-list li { color: var(--text-dark); }
+
+.freakshake-badge {
+  background: var(--orange);
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  margin-left: auto;
+}
+
+.maharaja-crown { margin-left: auto; font-size: 0.9rem; }
+
+/* ── BOOKING CTA ── */
+.booking-cta {
+  background: var(--brown-dark);
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(200,144,42,0.2) 0%, transparent 70%);
+  text-align: center;
+  padding: 4rem 1.5rem;
+  position: relative;
+}
+
+.booking-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.cta-ornament {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.booking-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--gold-light);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.booking-cta p {
+  color: rgba(245,234,214,0.8);
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  font-style: italic;
+}
+
+.btn-gold {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--brown-dark);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  padding: 0.9rem 2.5rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 1px solid var(--gold);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200,144,42,0.4);
+}
+
+.btn-gold:hover::before { opacity: 1; }
+
+/* ── MENU ITEMS WITH PRICES ── */
+.menu-items { margin-top: 0; }
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.2rem 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px dashed rgba(200,144,42,0.25);
+  align-items: start;
+}
+.menu-item:last-child { border-bottom: none; }
+
+.item-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--brown-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.item-desc {
+  font-size: 0.9rem;
+  color: #7a4020;
+  font-style: italic;
+  line-height: 1.5;
+  grid-column: 1;
+}
+
+.item-extra {
+  font-size: 0.82rem;
+  color: var(--brown-mid);
+  grid-column: 1;
+}
+
+.item-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  color: var(--orange);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.veg-badge {
+  background: var(--green-accent);
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+}
+
+.extras-bar {
+  background: var(--brown-dark);
+  border: 1px solid rgba(200,144,42,0.3);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+.extras-bar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.extras-label {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+.extras-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.extra-pill {
+  border: 1px solid rgba(200,144,42,0.4);
+  color: var(--cream);
+  font-size: 0.85rem;
+  padding: 0.25rem 0.8rem;
+}
+
+.drinks-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px dashed rgba(200,144,42,0.25);
+  font-size: 0.95rem;
+}
+.drinks-row:last-child { border-bottom: none; }
+.drinks-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  color: var(--orange);
+}
+
+/* ── FOOTER STRIP ── */
+.footer-strip {
+  background: #1a0a02;
+  border-top: 1px solid rgba(200,144,42,0.2);
+  text-align: center;
+  padding: 1.5rem;
+  color: rgba(245,234,214,0.4);
+  font-size: 0.8rem;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.15em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .arch-frame { padding: 1.5rem 1.5rem; }
+  .favourites-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .site-nav a { font-size: 0.9rem; }
+}
+
+@media (max-width: 400px) {
+  .favourites-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+}
+```
+
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand">
-        <img src="assets/flava_base_logo_12000px.jpeg" alt="Flava Base logo" class="site-logo" />
-      </a>
 
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base logo" class="site-logo" />
+      </a>
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
@@ -22,102 +672,209 @@
     </div>
   </header>
 
-  <main>
-    <section class="section">
-      <div class="container narrow center">
-        <h1>Menu</h1>
-        <p class="tagline">Modern Punjabi Street Kitchen 🇮🇳</p>
-        <p class="section-subtitle">
-          Wraps, Flava Boxes, loaded fries, rice boxes and signature shakes —
-          built fresh and served street style.
-        </p>
-        <p class="notice">
-          Food allergies or intolerances? Please speak to our staff before ordering.
-        </p>
+  <!-- HERO -->
+
+  <section class="menu-hero">
+    <div class="arch-frame">
+      <span class="hero-drum">🥁</span>
+      <h1 class="hero-title">FLAVA <span>BASE</span></h1>
+      <p class="hero-subtitle">Modern Punjabi Street Kitchen 🇮🇳</p>
+    </div>
+    <div class="gold-divider"><div class="gold-divider-dot"></div></div>
+    <p class="hero-tagline">Bold Punjabi flavours. Built fresh. Served street style.</p>
+  </section>
+
+  <div class="notice-bar">
+    🌿 Food allergies or intolerances? Please speak to our staff before ordering.
+  </div>
+
+  <!-- MAIN FOOD -->
+
+  <section class="menu-section">
+    <div class="section-header">
+      <p class="section-label">Main Food</p>
+      <h2 class="section-title">Signature <span class="highlight">Favourites</span></h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="item-name">🔥 Flava Box – Curry of the Day</div>
+        <div class="item-price">£8</div>
+        <div class="item-desc">Punjabi curry of the day served with basmati rice, fresh salad and house sauces. Ask our staff about today's curry.</div>
+        <div class="item-extra">+ Add Naan or Roti £2</div>
       </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container narrow">
-        <h2>Signature Favourites</h2>
-        <ul class="menu-list">
-          <li><strong>Flava Box 🔥</strong> — Our signature loaded box packed with bold Punjabi flavour</li>
-          <li><strong>Build Your Own Wrap 🌯</strong> — Roti or naan, your filling, your way</li>
-          <li><strong>Rice Box 🍛</strong> — Punjabi fillings served over basmati rice</li>
-          <li><strong>Loaded Fries 🍟</strong> — Topped with your choice of filling and sauces</li>
-        </ul>
+      <div class="menu-item">
+        <div class="item-name">🌯 Chicken Tikka Wrap</div>
+        <div class="item-price">£8</div>
+        <div class="item-desc">Marinated chicken tikka, fresh salad & mint yoghurt sauce.</div>
       </div>
-    </section>
-
-   <section class="build-feature">
-  <div class="container">
-
-    <h2>Build Your Flava Wrap 🌯</h2>
-    <p class="section-subtitle">
-      Fresh Punjabi street food, built your way. Prefer rice? Swap your wrap for a rice box.
-    </p>
-
-    <div class="build-steps">
-
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <h3>Pick Your Base</h3>
-        <p>Soft roti, buttery naan or rice box</p>
+      <div class="menu-item">
+        <div class="item-name">🌯 Lamb Kebab Wrap</div>
+        <div class="item-price">£8</div>
+        <div class="item-desc">Spiced lamb kebab with salad & house sauces.</div>
       </div>
-
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <h3>Pick Your Filling</h3>
-        <p>Chicken tikka, tandoori chicken, keema, paneer or chickpea</p>
+      <div class="menu-item">
+        <div class="item-name">🌯 Tandoori Chicken Wrap</div>
+        <div class="item-price">£8</div>
+        <div class="item-desc">Tandoori chicken, fresh salad & mint yoghurt sauce.</div>
       </div>
-
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <h3>Add Your Crunch</h3>
-        <p>Fresh salad, pickled slaw, onions & herbs</p>
+      <div class="menu-item">
+        <div class="item-name">🌯 Keema Wrap</div>
+        <div class="item-price">£8</div>
+        <div class="item-desc">Spiced Punjabi keema mince with fresh salad & chutneys.</div>
       </div>
-
-      <div class="step-card">
-        <div class="step-number">4</div>
-        <h3>Pick Your Sauce</h3>
-        <p>Flava sauce, chilli mayo, mint yogurt, tamarind or garlic</p>
+      <div class="menu-item">
+        <div class="item-name">🍜 Flava Masala Noodles <span class="veg-badge">V</span></div>
+        <div class="item-price">£7</div>
+        <div class="item-extra">+ Add Chicken Tikka or Tandoori Chicken £2</div>
       </div>
+    </div>
+  </section>
 
+  <!-- FRIES & STARTERS -->
 
-    <section class="section alt">
-      <div class="container narrow">
-        <h2>Punjabi Style Shakes</h2>
-        <ul class="menu-list">
-          <li>Mango Lassi Madness</li>
-          <li>Punjab Mango Magic</li>
-          <li>Chocolate Chandigarh</li>
-          <li>Punjabi Choco Storm</li>
-          <li>Pista Power Shake</li>
-          <li>Amritsar Pistachio Bliss</li>
-          <li>Strawberry Pataka</li>
-          <li>Pink Punjab Shake</li>
-        </ul>
-
-        <h2>Signature Shakes 👑</h2>
-        <ul class="menu-list">
-          <li>The Maharaja Shake</li>
-          <li>The Flava Freakshake 🔥</li>
-        </ul>
-
-        <p><strong>Try the Freakshake</strong></p>
+  <section class="menu-section" style="background: #fffdf7;">
+    <div class="section-header">
+      <p class="section-label">Sides & Starters</p>
+      <h2 class="section-title">Fries & <span class="highlight">Starters</span></h2>
+    </div>
+    <div class="menu-items">
+      <div class="menu-item">
+        <div class="item-name">🍟 Masala Fries <span class="veg-badge">V</span></div>
+        <div class="item-price">£5</div>
+        <div class="item-desc">Spiced masala fries.</div>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container narrow center">
-        <h2>Book Flava Base for Your Event</h2>
-        <p>
-          Bring bold Punjabi street food to your event with a fully branded setup
-          and fast, fresh service.
-        </p>
-        <a href="bookings.html" class="btn btn-primary">Make a Booking</a>
+      <div class="menu-item">
+        <div class="item-name">🧀 Cheesy Fries</div>
+        <div class="item-price">£6</div>
       </div>
-    </section>
-  </main>
+      <div class="menu-item">
+        <div class="item-name">🔥 Loaded Fries</div>
+        <div class="item-price">£7</div>
+        <div class="item-desc">Choose from Loaded Keema Fries, Loaded Chicken Tikka Fries or Loaded Tandoori Chicken Fries. Served with mint chutney & tamarind chutney.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">🥟 Veg Samosa <span class="veg-badge">V</span></div>
+        <div class="item-price">£3.50</div>
+        <div class="item-desc">Served with mint chutney & tamarind chutney.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">🥟 Meat Samosa</div>
+        <div class="item-price">£4</div>
+        <div class="item-desc">Served with mint chutney & tamarind chutney.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">🥟 Bread Samosas <span class="veg-badge">V</span></div>
+        <div class="item-price">£3.50</div>
+        <div class="item-desc">Per portion. Served with mint chutney & tamarind chutney.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">🍢 Punjabi Kebab Starter</div>
+        <div class="item-price">£4</div>
+        <div class="item-desc">Spiced Punjabi kebabs served with mint yoghurt.</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-name">🥘 Samosa Chaat <span class="veg-badge">V</span></div>
+        <div class="item-price">£5</div>
+      </div>
+    </div>
+
+```
+<!-- Extras -->
+<div style="margin-top:1.5rem; border:1px solid rgba(200,144,42,0.3); padding:1.2rem 1.5rem; background:rgba(200,144,42,0.06);">
+  <div style="font-family:'Bebas Neue',sans-serif; letter-spacing:0.2em; color:var(--brown-dark); font-size:0.85rem; margin-bottom:0.6rem;">➕ ADD EXTRAS</div>
+  <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+    <span style="border:1px solid rgba(200,144,42,0.5); color:var(--brown-dark); font-size:0.85rem; padding:0.25rem 0.8rem;">Chicken +£2</span>
+    <span style="border:1px solid rgba(200,144,42,0.5); color:var(--brown-dark); font-size:0.85rem; padding:0.25rem 0.8rem;">Cheese +£1</span>
+    <span style="border:1px solid rgba(200,144,42,0.5); color:var(--brown-dark); font-size:0.85rem; padding:0.25rem 0.8rem;">Can +£1.50</span>
+    <span style="border:1px solid rgba(200,144,42,0.5); color:var(--brown-dark); font-size:0.85rem; padding:0.25rem 0.8rem;">Milkshake +£3</span>
+    <span style="border:1px solid rgba(200,144,42,0.5); color:var(--brown-dark); font-size:0.85rem; padding:0.25rem 0.8rem;">Upgrade to Freakshake +£5</span>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- SHAKES -->
+
+  <section class="shakes-section">
+    <div class="section-header">
+      <p class="section-label">Signature Drinks</p>
+      <h2 class="section-title">Shakes & <span class="highlight">Drinks</span> 🧋</h2>
+    </div>
+
+```
+<div class="shakes-grid">
+  <div class="shake-tier tier-signature">
+    <div class="shake-tier-header">
+      <div class="tier-label">👑 Freakshakes</div>
+      <div class="tier-price">£7.50</div>
+    </div>
+    <ul class="shake-list">
+      <li>Lotus Biscoff Freakshake <span class="freakshake-badge">🔥 TRY THIS</span></li>
+      <li>Oreo Madness Freakshake <span class="freakshake-badge">🔥 TRY THIS</span></li>
+      <li>The Maharaja Shake <span class="maharaja-crown">👑</span></li>
+      <li>The Flava Freakshake <span class="freakshake-badge">🔥 TRY THIS</span></li>
+    </ul>
+  </div>
+
+  <div class="shake-tier tier-premium">
+    <div class="shake-tier-header">
+      <div class="tier-label">⭐ Premium Shakes</div>
+      <div class="tier-price">£6.00</div>
+    </div>
+    <ul class="shake-list">
+      <li>Nutella Milkshake</li>
+      <li>Punjabi Choco Storm</li>
+      <li>Pista Power Shake</li>
+      <li>Pink Punjab Shake</li>
+      <li>Amritsar Pistachio Bliss</li>
+    </ul>
+  </div>
+
+  <div class="shake-tier tier-classic tier-full">
+    <div class="shake-tier-header">
+      <div class="tier-label">Classic Shakes & Lassi</div>
+      <div class="tier-price">£5 – £5.50</div>
+    </div>
+    <ul class="shake-list" style="display:grid;grid-template-columns:1fr 1fr;gap:0 1rem;">
+      <li>Oreo Milkshake — £5.50</li>
+      <li>Strawberry Milkshake — £5.50</li>
+      <li>Banana Milkshake — £5.50</li>
+      <li>Mango Lassi — £5</li>
+      <li>Mango Lassi Madness</li>
+      <li>Punjab Mango Magic</li>
+      <li>Chocolate Chandigarh</li>
+      <li>Strawberry Pataka</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Cold Drinks -->
+<div style="margin-top: 2rem; border: 1px solid rgba(200,144,42,0.3); background: rgba(255,255,255,0.5);">
+  <div style="background: var(--brown-mid); padding: 0.8rem 1.5rem; font-family:'Bebas Neue',sans-serif; letter-spacing:0.15em; color:var(--cream); font-size:1rem;">
+    🥤 Cold Drinks
+  </div>
+  <div style="padding: 0 1.5rem;">
+    <div class="drinks-row"><span>Cans</span><span class="drinks-price">£2</span></div>
+    <div class="drinks-row"><span>Water</span><span class="drinks-price">£1</span></div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- BOOKING CTA -->
+
+  <section class="booking-cta">
+    <div class="cta-ornament">✦ ✦ ✦</div>
+    <h2>Book Flava Base for Your Event</h2>
+    <p>Bring bold Punjabi street food to your event with a fully branded setup and fast, fresh service.</p>
+    <a href="bookings.html" class="btn-gold">Make a Booking</a>
+  </section>
+
+  <div class="footer-strip">
+    © 2025 Flava Base · Modern Punjabi Street Kitchen · Northamptonshire & Beyond
+  </div>
+
 </body>
 </html>
