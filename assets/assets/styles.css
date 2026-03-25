@@ -58,3 +58,7 @@
   font-weight: 600;
   color: var(--green);
 }
+.site-header img {
+  max-width: 180px;
+  height: auto;
+}
