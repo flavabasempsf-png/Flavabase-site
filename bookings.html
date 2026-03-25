@@ -1,120 +1,152 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flava Base – Bookings</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="index.html" class="brand">
-        <img src="assets/flava_base_logo_12000px.jpeg" alt="Flava Base logo" class="site-logo" />
-      </a>
-
+    <div class="nav-wrap">
+      <a href="index.html"><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base logo" class="site-logo" /></a>
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="story.html">Our Story</a>
-        <a href="bookings.html">Bookings</a>
+        <a href="bookings.html" class="active">Bookings</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="section">
-      <div class="container narrow center">
-        <h1>Book Flava Base</h1>
-        <p class="tagline">Modern Punjabi Street Kitchen 🇮🇳</p>
-        <p class="section-subtitle">
-          Bring bold Punjabi street food to your event with a fully branded setup
-          and fast, fresh service.
-        </p>
-      </div>
-    </section>
+  <section class="page-hero">
+    <div class="arch-frame">
+      <span class="hero-drum">📅</span>
+      <h1 class="hero-title">BOOK <span>FLAVA BASE</span></h1>
+      <p class="hero-subtitle">Modern Punjabi Street Kitchen 🇮🇳</p>
+    </div>
+    <div class="gold-divider"><div class="gold-dot"></div></div>
+    <p class="hero-tagline">Bold Punjabi street food for your event, pop-up or private booking</p>
+  </section>
 
-    <section class="section alt">
-      <div class="container narrow">
-        <h2>We Cater For</h2>
-        <ul class="menu-list">
-          <li>Weddings</li>
-          <li>Corporate events</li>
-          <li>Private parties</li>
-          <li>Festivals</li>
-          <li>Pub pop-ups</li>
-        </ul>
-      </div>
-    </section>
+  <!-- What we cater for -->
 
-    <section class="section">
-      <div class="container narrow">
-        <h2>Weddings</h2>
-        <p>
-          Flava Base brings bold Punjabi street food to wedding evenings,
-          receptions and special celebrations — a standout food van, fresh service
-          and proper flavour for guests to remember.
-        </p>
-
-        <h2>Corporate Events</h2>
-        <p>
-          Freshly cooked Punjabi street food for office events, launches, team
-          celebrations and business functions.
-        </p>
-
-        <h2>Private Parties</h2>
-        <p>
-          Birthdays, family celebrations and private gatherings made better with
-          proper Punjabi street food.
-        </p>
-
-        <h2>Pub Pop-Ups</h2>
-        <p>
-          Flava Base is available for pub pop-ups and venue partnerships. We bring
-          a full Punjabi street food setup designed to attract customers, increase
-          footfall and keep people coming back.
-        </p>
-
-        <div class="package-card">
-          <h3>Standard Setup</h3>
-          <p>
-            A clean, professional Flava Base pop-up setup serving bold Punjabi
-            street food for pubs, venues and regular food residencies.
-          </p>
+  <div class="band light">
+    <div class="band-inner wide">
+      <p class="section-label">What We Cater For</p>
+      <h2 class="section-title">Every <span>Occasion</span></h2>
+      <div class="cards-grid">
+        <div class="info-card">
+          <span class="card-icon">💍</span>
+          <h3>Weddings</h3>
+          <p>Bold Punjabi street food for wedding evenings, receptions and celebrations guests will talk about.</p>
         </div>
-
-        <div class="package-card">
-          <h3>Enhanced Package</h3>
-          <p>
-            Everything in the Standard Setup, plus upgraded event presentation with
-            ambient lighting and extra visual setup for a stronger evening
-            atmosphere. Ideal for venues wanting a more premium experience and
-            increased customer appeal.
-          </p>
-          <p>
-            <strong>
-              Perfect for evening events, premium pub nights and standout venue
-              pop-ups.
-            </strong>
-          </p>
+        <div class="info-card">
+          <span class="card-icon">🏢</span>
+          <h3>Corporate Events</h3>
+          <p>Freshly cooked Punjabi street food for office events, launches, team celebrations and business functions.</p>
         </div>
-
-        <h2>Festivals & Events</h2>
-        <p>
-          Flava Base is available for festivals, markets and community events
-          looking for bold Punjabi street food served from a clean, branded van
-          setup.
-        </p>
+        <div class="info-card">
+          <span class="card-icon">🎉</span>
+          <h3>Private Parties</h3>
+          <p>Birthdays, family celebrations and private gatherings made better with proper Punjabi street food.</p>
+        </div>
+        <div class="info-card">
+          <span class="card-icon">🍺</span>
+          <h3>Pub Pop-Ups</h3>
+          <p>A full Punjabi street food setup designed to attract customers, increase footfall and keep people coming back.</p>
+        </div>
+        <div class="info-card">
+          <span class="card-icon">🎪</span>
+          <h3>Festivals & Markets</h3>
+          <p>Clean branded setup, fast service and bold flavours — perfect for festivals, markets and community events.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <section class="section alt">
-      <div class="container narrow center">
-        <h2>Ready to book Flava Base?</h2>
-        <p>Send us a quick message with your event details and we’ll get back to you.</p>
-        <p><strong>Email:</strong> events@flavabase.co.uk</p>
+  <!-- Packages -->
+
+  <div class="band dark">
+    <div class="band-inner">
+      <p class="section-label">How We Work</p>
+      <h2 class="section-title">Our <span>Packages</span></h2>
+
+```
+  <div class="package-card">
+    <h3>Standard Setup</h3>
+    <p>A clean, professional Flava Base setup serving bold Punjabi street food — wraps, Flava Boxes, rice boxes and loaded fries. Perfect for pubs, venues and regular food residencies.</p>
+  </div>
+
+  <div class="package-card">
+    <h3>Enhanced Package</h3>
+    <p>Everything in the Standard Setup, plus signature shakes, upgraded event presentation with ambient lighting and a stronger visual setup for a premium evening atmosphere.</p>
+    <p><strong style="color: var(--gold-light);">Perfect for wedding evenings, premium pub nights and standout venue pop-ups.</strong></p>
+  </div>
+
+  <div class="package-card">
+    <h3>Three-Course Punjabi Street Food Experience</h3>
+    <p>A full Punjabi street food experience for weddings, corporate events and private parties — starters, mains and dessert shakes. Minimum 50 guests. Enquire for details.</p>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- Weddings detail -->
+
+  <div class="band off-white">
+    <div class="band-inner">
+      <p class="section-label">Weddings & Celebrations</p>
+      <h2 class="section-title">Food Your Guests <span>Won't Forget</span></h2>
+      <p class="body-text">Flava Base brings bold Punjabi flavours, a clean branded setup and fresh service to wedding evenings and private celebrations. From signature Flava Boxes and wraps to loaded fries and Punjabi-style shakes, our menu is designed to keep guests happy and service moving.</p>
+      <ul class="icon-list" style="margin-top:1rem;">
+        <li>Wedding evening food & receptions</li>
+        <li>Private family celebrations</li>
+        <li>Birthday & engagement parties</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Pub popups detail -->
+
+  <div class="band light">
+    <div class="band-inner">
+      <p class="section-label">Pub Pop-Ups</p>
+      <h2 class="section-title">Bring Customers <span>Back</span></h2>
+      <p class="body-text">Flava Base is available for pub pop-ups, venue partnerships and repeat food residencies. We bring bold Punjabi street food, strong branding and a reliable setup that helps drive footfall and gives customers something different.</p>
+      <ul class="icon-list">
+        <li>Bold Punjabi flavour that stands out</li>
+        <li>Clean branded setup</li>
+        <li>Fast, reliable service</li>
+        <li>Flexible menu options</li>
+        <li>Ideal for repeat nights and special events</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Festivals -->
+
+  <div class="band off-white">
+    <div class="band-inner">
+      <p class="section-label">Festivals & Events</p>
+      <h2 class="section-title">Out in <span>The Wild</span></h2>
+      <p class="body-text">Flava Base is available for festivals, markets and community events looking for bold Punjabi street food served from a clean, branded van setup. Fast service, proper flavour.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+
+  <section class="cta-section">
+    <div class="cta-ornament">✦ ✦ ✦</div>
+    <h2>Ready to Book Flava Base?</h2>
+    <p>Send us your event details and we'll get back to you.</p>
+    <div class="contact-grid" style="max-width:600px; margin: 1.5rem auto;">
+      <div class="contact-item">
+        <div class="contact-label">Event Bookings</div>
+        <a href="/cdn-cgi/l/email-protection#c2a7b4a7acb6b182a4aea3b4a3a0a3b1a7eca1adecb7a9"><span class="__cf_email__" data-cfemail="137665767d676053757f726572717260763d707c3d6678">[email&#160;protected]</span></a>
       </div>
-    </section>
-  </main>
-</body>
-</html>
+      <div class="contact-item">
+        <div class="contact-label">Pub Pop-Ups</div>
+        <a href="/cdn-cgi/l/email-protection#32425d4247424172545e534453505341571c515d1c4759"><span class="__cf_email__" data-cfemail="94e4fbe4e1e4e7d4f2f8f5e2f5f6f5e7f1baf7fbbae1ff">[
