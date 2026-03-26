@@ -4,257 +4,146 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flava Base – Bookings</title>
-  
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap');
-  :root {
-    --green-dark: #1a4a1a; --green-mid: #2d7a2d; --green-light: #4a9e4a; --green-pale: #f4fbf4;
-    --gold: #c8902a; --gold-light: #e8b84b; --orange: #d4531a;
-    --cream: #fdf6e8; --cream-alt: #fffdf5;
-    --text-dark: #0f2e0f; --text-mid: #1a4a1a; --text-light: #2d5a2d;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--cream); color: var(--text-dark); font-family: 'Crimson Text', Georgia, serif; font-size: 18px; line-height: 1.7; }
-  .site-header { background: var(--green-dark); border-bottom: 3px solid var(--gold); padding: 0.75rem 1.5rem; position: sticky; top: 0; z-index: 100; }
-  .nav-wrap { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; gap: 0.5rem; }
-  .site-logo { height: 52px; width: auto; }
-  .site-nav { display: flex; gap: 1.2rem; flex-wrap: wrap; }
-  .site-nav a { color: var(--cream); text-decoration: none; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.08em; transition: color 0.2s; }
-  .site-nav a:hover, .site-nav a.active { color: var(--gold-light); }
-  .flag-strip { height: 4px; background: linear-gradient(90deg, var(--orange), var(--gold-light), white, var(--green-mid), var(--green-dark)); }
-  .page-hero { background: var(--green-dark); background-image: radial-gradient(ellipse at 50% 100%, rgba(200,144,42,0.2) 0%, transparent 60%); text-align: center; padding: 3rem 1.5rem 2.5rem; position: relative; overflow: hidden; }
-  .page-hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(74,158,74,0.04) 40px, rgba(74,158,74,0.04) 41px); }
-  .arch-frame { display: inline-block; position: relative; padding: 1.5rem 3rem 0.5rem; margin-bottom: 0.8rem; }
-  .arch-frame::before, .arch-frame::after { content: ''; position: absolute; border: 1.5px solid var(--gold); border-bottom: none; border-radius: 50% 50% 0 0 / 25% 25% 0 0; }
-  .arch-frame::before { inset: 0 0 -1px; }
-  .arch-frame::after { inset: 8px 8px -1px; border-color: rgba(200,144,42,0.35); }
-  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem,6vw,3.8rem); color: var(--gold-light); letter-spacing: 0.12em; line-height: 1; position: relative; z-index: 1; }
-  .hero-title span { color: var(--orange); }
-  .hero-subtitle { font-style: italic; color: rgba(245,234,214,0.85); font-size: 1rem; margin-top: 0.4rem; position: relative; z-index: 1; }
-  .gold-divider { display: flex; align-items: center; gap: 1rem; justify-content: center; margin: 1rem auto; max-width: 400px; }
-  .gold-divider::before, .gold-divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-  .gold-dot { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
-  .hero-tagline { color: rgba(245,234,214,0.75); font-style: italic; font-size: 1rem; }
-  .logo-hero { background: var(--cream); border-bottom: 3px solid rgba(200,144,42,0.3); text-align: center; padding: 2rem 1.5rem; }
-  .logo-hero img { height: clamp(130px,20vw,210px); width: auto; display: block; margin: 0 auto 0.8rem; }
-  .notice-bar { background: rgba(45,122,45,0.08); border-bottom: 1px solid rgba(45,122,45,0.2); color: var(--text-mid); text-align: center; padding: 0.6rem 1rem; font-size: 0.9rem; font-style: italic; }
-  .band { padding: 3.5rem 1.5rem; }
-  .band-inner { max-width: 800px; margin: 0 auto; }
-  .band-inner.wide { max-width: 1000px; }
-  .band.light { background: var(--cream); }
-  .band.off-white { background: var(--cream-alt); }
-  .band.pale-green { background: var(--green-pale); }
-  .band.dark { background: var(--green-dark); background-image: radial-gradient(ellipse at 50% 0%, rgba(74,158,74,0.15) 0%, transparent 60%); position: relative; }
-  .band.dark::before, .band.dark::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-  .band.dark::before { top: 0; } .band.dark::after { bottom: 0; }
-  .section-label { font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem; letter-spacing: 0.3em; color: var(--green-mid); margin-bottom: 0.4rem; }
-  .band.dark .section-label { color: var(--gold-light); }
-  .section-title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.6rem,3.5vw,2.4rem); color: var(--text-dark); margin-bottom: 1.2rem; line-height: 1.2; border-bottom: 2px solid rgba(45,122,45,0.2); padding-bottom: 0.5rem; }
-  .section-title span { color: var(--orange); }
-  .band.dark .section-title { color: var(--gold-light); border-color: rgba(200,144,42,0.2); }
-  .body-text { color: var(--text-mid); margin-bottom: 1rem; font-size: 1rem; }
-  .band.dark .body-text { color: rgba(240,250,240,0.85); }
-  .menu-item { display: grid; grid-template-columns: 1fr auto; gap: 0.15rem 1rem; padding: 0.9rem 0; border-bottom: 1px dashed rgba(45,122,45,0.25); align-items: start; }
-  .menu-item:last-child { border-bottom: none; }
-  .item-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--text-dark); display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
-  .item-desc { font-size: 0.88rem; color: var(--text-light); font-style: italic; line-height: 1.4; grid-column: 1; }
-  .item-extra { font-size: 0.8rem; color: var(--green-mid); grid-column: 1; }
-  .item-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--orange); white-space: nowrap; grid-row: 1; grid-column: 2; }
-  .veg-badge { background: var(--green-mid); color: white; font-family: 'Bebas Neue', sans-serif; font-size: 0.6rem; padding: 0.1rem 0.35rem; border-radius: 2px; }
-  .build-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(45,122,45,0.2); border: 1px solid rgba(45,122,45,0.2); }
-  .build-step { background: white; padding: 1.3rem 1.2rem; position: relative; }
-  .build-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green-mid), var(--orange)); }
-  .step-num-bg { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: rgba(45,122,45,0.08); line-height: 1; position: absolute; top: 0.2rem; right: 0.7rem; }
-  .step-icon { font-size: 1.6rem; margin-bottom: 0.4rem; display: block; }
-  .step-heading { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.08em; font-size: 0.95rem; color: var(--green-dark); margin-bottom: 0.7rem; }
-  .step-options { list-style: none; }
-  .step-options li { padding: 0.3rem 0; border-bottom: 1px dashed rgba(45,122,45,0.2); font-size: 0.9rem; color: var(--text-mid); display: flex; align-items: center; gap: 0.5rem; }
-  .step-options li:last-child { border-bottom: none; }
-  .step-options li::before { content: '—'; color: var(--green-mid); font-size: 0.7em; flex-shrink: 0; }
-  .icon-list { list-style: none; margin-top: 0.8rem; }
-  .icon-list li { padding: 0.6rem 0; border-bottom: 1px dashed rgba(45,122,45,0.2); display: flex; align-items: center; gap: 0.8rem; color: var(--text-mid); font-size: 1rem; }
-  .icon-list li:last-child { border-bottom: none; }
-  .icon-list li::before { content: '✦'; color: var(--green-mid); font-size: 0.6rem; flex-shrink: 0; }
-  .band.dark .icon-list li { color: rgba(240,250,240,0.85); border-color: rgba(74,158,74,0.2); }
-  .band.dark .icon-list li::before { color: var(--gold-light); }
-  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1rem; margin-top: 1.5rem; }
-  .info-card { border: 1px solid rgba(45,122,45,0.3); padding: 1.5rem; background: rgba(255,255,255,0.8); position: relative; }
-  .info-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green-mid), var(--gold)); }
-  .info-card .card-icon { font-size: 1.8rem; margin-bottom: 0.6rem; display: block; }
-  .info-card h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--green-dark); font-size: 1.05rem; margin-bottom: 0.4rem; }
-  .info-card p { color: var(--text-light); font-size: 0.92rem; line-height: 1.6; }
-  .band.dark .info-card { background: rgba(26,74,26,0.5); border-color: rgba(74,158,74,0.3); }
-  .band.dark .info-card h3 { color: var(--gold-light); }
-  .band.dark .info-card p { color: rgba(240,250,240,0.8); }
-  .package-card { border: 1px solid rgba(45,122,45,0.3); padding: 1.5rem; margin: 1.2rem 0; background: rgba(255,255,255,0.7); position: relative; }
-  .package-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, var(--green-mid), var(--gold)); }
-  .package-card h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--green-dark); font-size: 1.1rem; margin-bottom: 0.5rem; }
-  .package-card p { color: var(--text-mid); font-size: 0.95rem; margin-bottom: 0.5rem; }
-  .band.dark .package-card { background: rgba(26,74,26,0.5); border-color: rgba(74,158,74,0.3); }
-  .band.dark .package-card h3 { color: var(--gold-light); }
-  .band.dark .package-card p { color: rgba(240,250,240,0.8); }
-  .extras-box { margin-top: 1.2rem; padding: 1rem 1.2rem; background: rgba(45,122,45,0.06); border: 1px solid rgba(45,122,45,0.2); border-left: 4px solid var(--green-mid); }
-  .extras-box-label { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.2em; font-size: 0.78rem; color: var(--green-mid); margin-bottom: 0.5rem; }
-  .extras-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .extra-pill { border: 1px solid rgba(45,122,45,0.3); color: var(--text-mid); font-size: 0.82rem; padding: 0.2rem 0.75rem; background: white; }
-  .shakes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
-  .shake-tier { border: 1px solid rgba(45,122,45,0.25); background: white; overflow: hidden; }
-  .shake-tier-head { padding: 0.8rem 1.2rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(45,122,45,0.2); }
-  .shake-tier-head.dark { background: var(--green-dark); }
-  .shake-tier-head.mid { background: var(--green-mid); }
-  .shake-tier-head.warm { background: var(--gold); }
-  .tier-name { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.12em; font-size: 0.95rem; }
-  .shake-tier-head.dark .tier-name, .shake-tier-head.mid .tier-name { color: var(--cream); }
-  .shake-tier-head.warm .tier-name { color: var(--green-dark); }
-  .tier-price { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.3rem; color: var(--orange); }
-  .shake-tier-head.dark .tier-price, .shake-tier-head.mid .tier-price { color: var(--gold-light); }
-  .shake-tier-head.warm .tier-price { color: var(--green-dark); }
-  .shake-list { list-style: none; padding: 0.5rem 1.2rem; }
-  .shake-list li { padding: 0.5rem 0; border-bottom: 1px dashed rgba(45,122,45,0.2); font-size: 0.92rem; color: var(--text-dark); display: flex; align-items: center; gap: 0.5rem; }
-  .shake-list li:last-child { border-bottom: none; }
-  .shake-list li::before { content: '🧋'; font-size: 0.75rem; flex-shrink: 0; }
-  .ftag { background: var(--orange); color: white; font-family: 'Bebas Neue', sans-serif; font-size: 0.6rem; padding: 0.1rem 0.4rem; margin-left: auto; }
-  .full-width { grid-column: 1 / -1; }
-  .story-quote { border-left: 4px solid var(--green-mid); padding: 1.5rem 1.5rem 1.5rem 2rem; margin: 2rem 0; background: rgba(45,122,45,0.06); position: relative; }
-  .story-quote::before { content: '"'; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--green-mid); opacity: 0.2; position: absolute; top: -0.5rem; left: 0.8rem; line-height: 1; }
-  .story-quote p { font-style: italic; color: var(--text-mid); font-size: 1.05rem; margin: 0; }
-  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(190px,1fr)); gap: 0.8rem; margin: 1.5rem 0; }
-  .contact-item { border: 1px solid rgba(45,122,45,0.3); padding: 1rem 1.2rem; background: rgba(255,255,255,0.7); position: relative; }
-  .contact-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--green-mid); }
-  .contact-label { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.15em; font-size: 0.72rem; color: var(--green-mid); margin-bottom: 0.3rem; }
-  .contact-item a { color: var(--text-dark); text-decoration: none; font-size: 0.92rem; }
-  .contact-item a:hover { color: var(--green-mid); }
-  .cta-section { background: var(--green-dark); background-image: radial-gradient(ellipse at 50% 50%, rgba(74,158,74,0.2) 0%, transparent 70%); text-align: center; padding: 4rem 1.5rem; position: relative; }
-  .cta-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-  .cta-ornament { color: var(--gold); font-size: 1rem; letter-spacing: 1rem; margin-bottom: 1.2rem; opacity: 0.6; }
-  .cta-section h2 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(1.6rem,3.5vw,2.4rem); color: var(--gold-light); margin-bottom: 0.8rem; }
-  .cta-section p { color: rgba(240,250,240,0.75); font-style: italic; max-width: 500px; margin: 0 auto 0.5rem; }
-  .email-link { display: block; margin: 0.8rem auto; color: var(--gold-light); font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.1em; font-size: 1.1rem; text-decoration: none; }
-  .email-link:hover { color: white; }
-  .btn-gold { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--green-dark); font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.2em; padding: 0.85rem 2.2rem; text-decoration: none; transition: all 0.2s; margin-top: 1rem; }
-  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,144,42,0.4); }
-  .btn-outline { display: inline-block; border: 1.5px solid var(--green-mid); color: var(--green-dark); font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.2em; padding: 0.85rem 2.2rem; text-decoration: none; transition: all 0.2s; background: transparent; }
-  .btn-outline:hover { background: rgba(45,122,45,0.1); transform: translateY(-2px); }
-  .social-links { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
-  .social-link { display: flex; align-items: center; gap: 1rem; border: 1px solid rgba(45,122,45,0.35); padding: 0.9rem 2rem; text-decoration: none; color: var(--text-dark); font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.12em; font-size: 1rem; width: 100%; max-width: 320px; transition: all 0.2s; background: rgba(255,255,255,0.7); position: relative; }
-  .social-link::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--green-mid); }
-  .social-link:hover { background: var(--green-dark); color: var(--gold-light); transform: translateX(4px); }
-  .locations-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin-top: 1.5rem; }
-  .loc-tag { border: 1px solid rgba(74,158,74,0.4); color: var(--cream); padding: 0.4rem 1rem; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.1em; font-size: 0.9rem; background: rgba(74,158,74,0.1); }
-  .zero-emission-bar { background: var(--green-dark); border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); padding: 1.2rem 1.5rem; text-align: center; }
-  .zero-emission-bar p { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1rem,2.5vw,1.6rem); letter-spacing: 0.2em; color: var(--cream); }
-  .footer-strip { background: var(--green-dark); border-top: 3px solid var(--gold); text-align: center; padding: 1.5rem; color: rgba(240,250,240,0.5); font-size: 0.8rem; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.15em; }
-  .drinks-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px dashed rgba(45,122,45,0.2); font-size: 0.92rem; color: var(--text-dark); }
-  .drinks-row:last-child { border-bottom: none; }
-  .drinks-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--orange); }
-  @media (max-width: 650px) { .build-steps { grid-template-columns: 1fr 1fr; } .shakes-grid { grid-template-columns: 1fr; } .cards-grid { grid-template-columns: 1fr; } }
-  @media (max-width: 600px) { .site-nav a { font-size: 0.85rem; } .band { padding: 2.5rem 1.2rem; } }
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root { --green-dark:#1a4a1a;--green-mid:#2d7a2d;--green-light:#4a9e4a;--gold:#c8902a;--gold-light:#e8b84b;--orange:#d4531a;--cream:#fdf6e8;--cream-alt:#fffdf5;--text-dark:#0f2e0f;--text-mid:#1a4a1a;--text-light:#2d5a2d; }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--cream);color:var(--text-dark);font-family:'Crimson Text',Georgia,serif;font-size:18px;line-height:1.7;}
+    .site-header{background:var(--green-dark);border-bottom:3px solid var(--gold);padding:0.75rem 1.5rem;position:sticky;top:0;z-index:100;}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;flex-wrap:wrap;gap:0.5rem;}
+    .site-logo{height:52px;width:auto;filter:brightness(0) invert(1) sepia(1) saturate(0.3) brightness(1.8);}
+    .site-nav{display:flex;gap:1.2rem;flex-wrap:wrap;}
+    .site-nav a{color:var(--cream);text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.08em;transition:color 0.2s;}
+    .site-nav a:hover,.site-nav a.active{color:var(--gold-light);}
+    .flag-strip{height:4px;background:linear-gradient(90deg,var(--orange),var(--gold-light),white,var(--green-mid),var(--green-dark));}
+    .logo-hero{background:var(--cream);border-bottom:3px solid rgba(200,144,42,0.3);text-align:center;padding:2.5rem 1.5rem;}
+    .logo-hero img{height:clamp(120px,18vw,190px);width:auto;display:block;margin:0 auto 0.8rem;}
+    .gold-divider{display:flex;align-items:center;gap:1rem;justify-content:center;margin:0.8rem auto;max-width:400px;}
+    .gold-divider::before,.gold-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+    .gold-dot{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);}
+    .hero-tagline{color:var(--text-mid);font-style:italic;font-size:1rem;}
+    .phulkari{background-color:var(--cream);background-image:repeating-linear-gradient(45deg,rgba(200,144,42,0.06) 0px,rgba(200,144,42,0.06) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(-45deg,rgba(200,144,42,0.06) 0px,rgba(200,144,42,0.06) 1px,transparent 1px,transparent 20px),radial-gradient(circle at 10px 10px,rgba(212,83,26,0.05) 1.5px,transparent 1.5px),radial-gradient(circle at 30px 30px,rgba(212,83,26,0.05) 1.5px,transparent 1.5px);background-size:40px 40px;}
+    .phulkari-alt{background-color:var(--cream-alt);background-image:repeating-linear-gradient(45deg,rgba(200,144,42,0.05) 0px,rgba(200,144,42,0.05) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(-45deg,rgba(200,144,42,0.05) 0px,rgba(200,144,42,0.05) 1px,transparent 1px,transparent 20px);background-size:40px 40px;}
+    .band{padding:3.5rem 1.5rem;}
+    .band-inner{max-width:800px;margin:0 auto;}
+    .band-inner.wide{max-width:1000px;}
+    .band.dark{background:var(--green-dark);background-image:radial-gradient(ellipse at 50% 0%,rgba(74,158,74,0.15) 0%,transparent 60%);position:relative;}
+    .band.dark::before,.band.dark::after{content:'';position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+    .band.dark::before{top:0;}.band.dark::after{bottom:0;}
+    .section-label{font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:0.3em;color:var(--green-mid);margin-bottom:0.4rem;}
+    .band.dark .section-label{color:var(--gold-light);}
+    .section-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--text-dark);margin-bottom:1.2rem;line-height:1.2;border-bottom:2px solid rgba(45,122,45,0.2);padding-bottom:0.5rem;}
+    .section-title span{color:var(--orange);}
+    .band.dark .section-title{color:var(--gold-light);border-color:rgba(200,144,42,0.2);}
+    .body-text{color:var(--text-mid);margin-bottom:1rem;font-size:1rem;font-weight:500;}
+    .band.dark .body-text{color:rgba(240,250,240,0.9);}
+    .icon-list{list-style:none;margin-top:0.8rem;}
+    .icon-list li{padding:0.6rem 0;border-bottom:1px dashed rgba(45,122,45,0.2);display:flex;align-items:center;gap:0.8rem;color:var(--text-mid);font-size:1rem;font-weight:500;}
+    .icon-list li:last-child{border-bottom:none;}
+    .icon-list li::before{content:"✦";color:var(--green-mid);font-size:0.6rem;flex-shrink:0;}
+    .band.dark .icon-list li{color:rgba(240,250,240,0.9);border-color:rgba(74,158,74,0.2);}
+    .band.dark .icon-list li::before{color:var(--gold-light);}
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.5rem;}
+    .info-card{border:1px solid rgba(45,122,45,0.3);padding:1.5rem;background:white;position:relative;}
+    .info-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green-mid),var(--gold));}
+    .info-card .card-icon{font-size:1.8rem;margin-bottom:0.6rem;display:block;}
+    .info-card h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green-dark);font-size:1.05rem;margin-bottom:0.4rem;}
+    .info-card p{color:var(--text-mid);font-size:0.95rem;line-height:1.6;font-weight:500;}
+    .band.dark .info-card{background:rgba(26,74,26,0.6);border-color:rgba(74,158,74,0.3);}
+    .band.dark .info-card h3{color:var(--gold-light);}
+    .band.dark .info-card p{color:rgba(240,250,240,0.9);}
+    .package-card{border:1px solid rgba(45,122,45,0.3);padding:1.5rem;margin:1.2rem 0;background:white;position:relative;}
+    .package-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--green-mid),var(--gold));}
+    .package-card h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green-dark);font-size:1.1rem;margin-bottom:0.5rem;}
+    .package-card p{color:var(--text-mid);font-size:0.95rem;margin-bottom:0.5rem;font-weight:500;}
+    .band.dark .package-card{background:rgba(26,74,26,0.6);border-color:rgba(74,158,74,0.3);}
+    .band.dark .package-card h3{color:var(--gold-light);}
+    .band.dark .package-card p{color:rgba(240,250,240,0.9);}
+    .story-quote{border-left:4px solid var(--green-mid);padding:1.5rem 1.5rem 1.5rem 2rem;margin:2rem 0;background:rgba(45,122,45,0.06);position:relative;}
+    .story-quote::before{content:'"';font-family:'Playfair Display',serif;font-size:4rem;color:var(--green-mid);opacity:0.2;position:absolute;top:-0.5rem;left:0.8rem;line-height:1;}
+    .story-quote p{font-style:italic;color:var(--text-mid);font-size:1.05rem;margin:0;font-weight:500;}
+    .contact-section{padding:3rem 1.5rem;}
+    .contact-inner{max-width:800px;margin:0 auto;text-align:center;}
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0.8rem;margin:1.5rem 0;}
+    .contact-item{border:1px solid rgba(45,122,45,0.3);padding:1rem 1.2rem;background:white;position:relative;}
+    .contact-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green-mid);}
+    .contact-label{font-family:'Bebas Neue',sans-serif;letter-spacing:0.15em;font-size:0.72rem;color:var(--green-mid);margin-bottom:0.3rem;}
+    .contact-item a{color:var(--text-dark);text-decoration:none;font-size:0.95rem;font-weight:600;}
+    .contact-item a:hover{color:var(--green-mid);}
+    .cta-section{background:var(--green-dark);background-image:radial-gradient(ellipse at 50% 50%,rgba(74,158,74,0.2) 0%,transparent 70%);text-align:center;padding:4rem 1.5rem;position:relative;}
+    .cta-section::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+    .cta-ornament{color:var(--gold);font-size:1rem;letter-spacing:1rem;margin-bottom:1.2rem;opacity:0.6;}
+    .cta-section h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--gold-light);margin-bottom:0.8rem;}
+    .cta-section p{color:rgba(240,250,240,0.85);font-style:italic;max-width:500px;margin:0 auto 0.5rem;}
+    .btn-gold{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--green-dark);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.2em;padding:0.85rem 2.2rem;text-decoration:none;transition:all 0.2s;margin-top:1rem;font-weight:bold;}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,144,42,0.4);}
+    .zero-bar{background:var(--green-dark);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:1.2rem 1.5rem;text-align:center;}
+    .zero-bar p{font-family:'Bebas Neue',sans-serif;font-size:clamp(1rem,2.5vw,1.6rem);letter-spacing:0.2em;color:var(--cream);}
+    .footer-strip{background:var(--green-dark);border-top:3px solid var(--gold);text-align:center;padding:1.5rem;color:rgba(240,250,240,0.5);font-size:0.8rem;font-family:'Bebas Neue',sans-serif;letter-spacing:0.15em;}
+    @media(max-width:650px){.cards-grid{grid-template-columns:1fr;}.band{padding:2.5rem 1.2rem;}.site-nav a{font-size:0.85rem;}}
 
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="nav-wrap">
-      <a href="index.html"><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base logo" class="site-logo" /></a>
+      <a href="index.html"><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
         <a href="story.html">Our Story</a>
-        <a href="bookings.html" class="active">Bookings</a>
+        <a href="bookings.html">Bookings</a>
       </nav>
     </div>
   </header>
   <div class="flag-strip"></div>
 
-  <section class="page-hero">
-    <div class="arch-frame">
-      <span class="hero-drum">📅</span>
-      <h1 class="hero-title">BOOK <span>FLAVA BASE</span></h1>
-      <p class="hero-subtitle">Modern Punjabi Street Kitchen 🇮🇳</p>
-    </div>
+  <section class="logo-hero phulkari">
+    <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" />
     <div class="gold-divider"><div class="gold-dot"></div></div>
     <p class="hero-tagline">Bold Punjabi street food for your event, pop-up or private booking</p>
   </section>
-
-  <!-- What we cater for -->
-  <div class="band light">
+  <div class="band phulkari">
     <div class="band-inner wide">
       <p class="section-label">What We Cater For</p>
       <h2 class="section-title">Every <span>Occasion</span></h2>
       <div class="cards-grid">
-        <div class="info-card">
-          <span class="card-icon">💍</span>
-          <h3>Weddings</h3>
-          <p>Bold Punjabi street food for wedding evenings, receptions and celebrations guests will talk about.</p>
-        </div>
-        <div class="info-card">
-          <span class="card-icon">🏢</span>
-          <h3>Corporate Events</h3>
-          <p>Freshly cooked Punjabi street food for office events, launches, team celebrations and business functions.</p>
-        </div>
-        <div class="info-card">
-          <span class="card-icon">🎉</span>
-          <h3>Private Parties</h3>
-          <p>Birthdays, family celebrations and private gatherings made better with proper Punjabi street food.</p>
-        </div>
-        <div class="info-card">
-          <span class="card-icon">🍺</span>
-          <h3>Pub Pop-Ups</h3>
-          <p>A full Punjabi street food setup designed to attract customers, increase footfall and keep people coming back.</p>
-        </div>
-        <div class="info-card">
-          <span class="card-icon">🎪</span>
-          <h3>Festivals & Markets</h3>
-          <p>Clean branded setup, fast service and bold flavours — perfect for festivals, markets and community events.</p>
-        </div>
+        <div class="info-card"><span class="card-icon">💍</span><h3>Weddings</h3><p>Bold Punjabi street food for wedding evenings, receptions and celebrations guests will talk about.</p></div>
+        <div class="info-card"><span class="card-icon">🏢</span><h3>Corporate Events</h3><p>Freshly cooked Punjabi street food for office events, launches, team celebrations and business functions.</p></div>
+        <div class="info-card"><span class="card-icon">🎉</span><h3>Private Parties</h3><p>Birthdays, family celebrations and private gatherings made better with proper Punjabi street food.</p></div>
+        <div class="info-card"><span class="card-icon">🍺</span><h3>Pub Pop-Ups</h3><p>A full Punjabi street food setup designed to attract customers, increase footfall and keep people coming back.</p></div>
+        <div class="info-card"><span class="card-icon">🎪</span><h3>Festivals & Markets</h3><p>Clean branded setup, fast service and bold flavours — perfect for festivals, markets and community events.</p></div>
       </div>
     </div>
   </div>
-
-  <!-- Packages -->
   <div class="band dark">
     <div class="band-inner">
       <p class="section-label">How We Work</p>
       <h2 class="section-title">Our <span>Packages</span></h2>
-
-      <div class="package-card">
-        <h3>Standard Setup</h3>
-        <p>A clean, professional Flava Base setup serving bold Punjabi street food — wraps, Flava Boxes, rice boxes and loaded fries. Perfect for pubs, venues and regular food residencies.</p>
-      </div>
-
-      <div class="package-card">
-        <h3>Enhanced Package</h3>
-        <p>Everything in the Standard Setup, plus signature shakes, upgraded event presentation with ambient lighting and a stronger visual setup for a premium evening atmosphere.</p>
-        <p><strong style="color: var(--gold-light);">Perfect for wedding evenings, premium pub nights and standout venue pop-ups.</strong></p>
-      </div>
-
-      <div class="package-card">
-        <h3>Three-Course Punjabi Street Food Experience</h3>
-        <p>A full Punjabi street food experience for weddings, corporate events and private parties — starters, mains and dessert shakes. Minimum 50 guests. Enquire for details.</p>
-      </div>
+      <div class="package-card"><h3>Standard Setup</h3><p>A clean, professional Flava Base setup serving bold Punjabi street food — wraps, Flava Boxes, rice boxes and loaded fries. Perfect for pubs, venues and regular food residencies.</p></div>
+      <div class="package-card"><h3>Enhanced Package</h3><p>Everything in the Standard Setup, plus signature shakes, upgraded event presentation with ambient lighting and a stronger visual setup for a premium evening atmosphere.</p><p><strong style="color:var(--gold-light);">Perfect for wedding evenings, premium pub nights and standout venue pop-ups.</strong></p></div>
+      <div class="package-card"><h3>Three-Course Punjabi Street Food Experience</h3><p>A full Punjabi street food experience for weddings, corporate events and private parties — starters, mains and dessert shakes. Minimum 50 guests. Enquire for details.</p></div>
     </div>
   </div>
-
-  <!-- Weddings detail -->
-  <div class="band off-white">
+  <div class="band phulkari-alt">
     <div class="band-inner">
       <p class="section-label">Weddings & Celebrations</p>
       <h2 class="section-title">Food Your Guests <span>Won't Forget</span></h2>
-      <p class="body-text">Flava Base brings bold Punjabi flavours, a clean branded setup and fresh service to wedding evenings and private celebrations. From signature Flava Boxes and wraps to loaded fries and Punjabi-style shakes, our menu is designed to keep guests happy and service moving.</p>
-      <ul class="icon-list" style="margin-top:1rem;">
+      <p class="body-text">Flava Base brings bold Punjabi flavours, a clean branded setup and fresh service to wedding evenings and private celebrations.</p>
+      <ul class="icon-list">
         <li>Wedding evening food & receptions</li>
         <li>Private family celebrations</li>
         <li>Birthday & engagement parties</li>
       </ul>
     </div>
   </div>
-
-  <!-- Pub popups detail -->
-  <div class="band light">
+  <div class="band phulkari">
     <div class="band-inner">
       <p class="section-label">Pub Pop-Ups</p>
       <h2 class="section-title">Bring Customers <span>Back</span></h2>
-      <p class="body-text">Flava Base is available for pub pop-ups, venue partnerships and repeat food residencies. We bring bold Punjabi street food, strong branding and a reliable setup that helps drive footfall and gives customers something different.</p>
+      <p class="body-text">Flava Base is available for pub pop-ups, venue partnerships and repeat food residencies. We bring bold Punjabi street food, strong branding and a reliable setup that drives footfall.</p>
       <ul class="icon-list">
         <li>Bold Punjabi flavour that stands out</li>
         <li>Clean branded setup</li>
@@ -265,25 +154,24 @@
     </div>
   </div>
 
-  <!-- Festivals -->
-  <div class="band off-white">
-    <div class="band-inner">
-      <p class="section-label">Festivals & Events</p>
-      <h2 class="section-title">Out in <span>The Wild</span></h2>
-      <p class="body-text">Flava Base is available for festivals, markets and community events looking for bold Punjabi street food served from a clean, branded van setup. Fast service, proper flavour.</p>
+  <section class="contact-section phulkari-alt">
+    <div class="contact-inner">
+      <p class="section-label">Get In Touch</p>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--green-dark);margin-bottom:1rem;">Contact <span style="color:var(--orange)">Flava Base</span></h2>
+      <div class="contact-grid">
+        <div class="contact-item"><div class="contact-label">General Enquiries</div><a href="mailto:info&#64;flavabase.co.uk">info&#64;flavabase.co.uk</a></div>
+        <div class="contact-item"><div class="contact-label">Event Bookings</div><a href="mailto:events&#64;flavabase.co.uk">events&#64;flavabase.co.uk</a></div>
+        <div class="contact-item"><div class="contact-label">Pub Pop-Ups</div><a href="mailto:popups&#64;flavabase.co.uk">popups&#64;flavabase.co.uk</a></div>
+      </div>
     </div>
-  </div>
-
-  <!-- CTA -->
+  </section>
   <section class="cta-section">
     <div class="cta-ornament">✦ ✦ ✦</div>
-    <h2>Ready to Book Flava Base?</h2>
-    <p>Send us your event details and we'll get back to you.</p>
-    <div class="contact-grid" style="max-width:600px; margin: 1.5rem auto;">
-      <div class="contact-item">
-        <div class="contact-label">Event Bookings</div>
-        <a href="/cdn-cgi/l/email-protection#c2a7b4a7acb6b182a4aea3b4a3a0a3b1a7eca1adecb7a9"><span class="__cf_email__" data-cfemail="137665767d676053757f726572717260763d707c3d6678">[email&#160;protected]</span></a>
-      </div>
-      <div class="contact-item">
-        <div class="contact-label">Pub Pop-Ups</div>
-        <a href="/cdn-cgi/l/email-protection#32425d4247424172545e534453505341571c515d1c4759"><span class="__cf_email__" data-cfemail="94e4fbe4e1e4e7d4f2f8f5e2f5f6f5e7f1baf7fbbae1ff">[
+    <h2>Book Flava Base for Your Event</h2>
+    <p>Bring bold Punjabi street food to your event with a fully branded setup and fast, fresh service.</p>
+    <a href="bookings.html" class="btn-gold">Make a Booking</a>
+  </section>
+  <div class="zero-bar"><p>⚡ ZERO EMISSION FLAVA &nbsp;·&nbsp; 100% ELECTRIC VAN &nbsp;·&nbsp; BOLD FLAVOUR. ZERO GUILT.</p></div>
+  <div class="footer-strip">⚡ Zero Emission Flava · © 2025 Flava Base · Modern Punjabi Street Kitchen · Northamptonshire & Beyond</div>
+</body>
+</html>
