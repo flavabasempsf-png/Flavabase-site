@@ -86,7 +86,7 @@
     .footer-strip{background:var(--green-dark);border-top:3px solid var(--gold);text-align:center;padding:1.5rem;color:rgba(240,250,240,0.5);font-size:0.8rem;font-family:'Bebas Neue',sans-serif;letter-spacing:0.15em;}
     @media(max-width:650px){.cards-grid{grid-template-columns:1fr;}.band{padding:2.5rem 1.2rem;}.site-nav a{font-size:0.85rem;}}
 
-      .punjabi-label { font-family: 'Dancing Script', cursive; font-size: 0.85rem; color: var(--gold-light); letter-spacing: 0.05em; display: block; text-align: center; line-height: 1; margin-bottom: 2px; opacity: 0.9; transform: rotate(-8deg) translateX(-8px); transform-origin: left center; }
+      .punjabi-label { font-family: 'Dancing Script', cursive; font-size: 0.85rem; color: var(--gold-light); letter-spacing: 0.05em; display: block; text-align: center; line-height: 1; margin-bottom: -8px; opacity: 0.9; transform: rotate(-8deg) translateX(-6px); transform-origin: left center; position: relative; z-index: 2; }
     .logo-wrap { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
   </style>
 </head>
@@ -139,14 +139,17 @@
           </div>
         </div>
         <div class="info-card">
-          <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&q=80" alt="Punjabi Chai Station" class="card-photo" />
+          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80" alt="Punjabi Chai Station" class="card-photo" />
           <div class="card-body">
             <h3>Punjabi Chai Station</h3>
             <p>A proper chai station serving Punjabi Chai, Masala Chai and Chai Latte — brewed fresh, served warm. The perfect complement to the jalebi and the perfect way to end a meal.</p>
           </div>
         </div>
         <div class="info-card">
-          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" alt="Branded Tent Setup" class="card-photo" />
+          <div style="height:150px;background:var(--green-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
+            <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" style="height:80px;width:auto;" />
+            <span style="font-family:'Bebas Neue',sans-serif;letter-spacing:0.2em;font-size:0.65rem;color:rgba(200,144,42,0.7);">Fully Branded Setup</span>
+          </div>
           <div class="card-body">
             <h3>Fully Branded Tent Setup</h3>
             <p>We supply and set up a fully branded Flava Base tent. Clean, professional and eye-catching — a proper destination within your event that draws people in.</p>
