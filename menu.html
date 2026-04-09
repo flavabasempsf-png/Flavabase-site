@@ -6,7 +6,7 @@
   <title>Flava Base – Menu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     :root {
       --green-dark: #1a4a1a; --green-mid: #2d7a2d; --green-light: #4a9e4a;
@@ -34,7 +34,7 @@
     body { background: var(--cream); color: var(--text-dark); font-family: 'Crimson Text', Georgia, serif; font-size: 18px; line-height: 1.7; }
 
     /* Cream logo on dark green header */
-    .site-header .site-logo { filter: brightness(0) invert(1) sepia(1) saturate(0.3) brightness(1.8); }
+    .site-header .site-logo { }
 
     /* HEADER */
     .site-header { background: var(--green-dark); border-bottom: 3px solid var(--gold); padding: 0.75rem 1.5rem; position: sticky; top: 0; z-index: 100; }
@@ -151,6 +151,8 @@
       .build-steps { grid-template-columns: 1fr; }
       .site-nav a { font-size: 0.82rem; gap: 0.8rem; }
     }
+      .punjabi-label { font-family: 'Dancing Script', cursive; font-size: 0.85rem; color: var(--gold-light); letter-spacing: 0.05em; display: block; text-align: center; line-height: 1; margin-bottom: 2px; opacity: 0.9; transform: rotate(-8deg) translateX(-8px); transform-origin: left center; }
+    .logo-wrap { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
   </style>
 </head>
 <body>
@@ -158,13 +160,14 @@
   <header class="site-header">
     <div class="nav-wrap">
       <a href="index.html">
-        <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base logo" class="site-logo" />
+        <a href="index.html" class="logo-wrap"><span class="punjabi-label">Punjabi</span><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
       </a>
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="menu.html" class="active">Menu</a>
         <a href="story.html">Our Story</a>
         <a href="bookings.html">Bookings</a>
+        <a href="outdoor-experience.html">Outdoor</a>
       </nav>
     </div>
   </header>

@@ -6,7 +6,7 @@
   <title>Flava Base – Outdoor Live Cooking</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     :root { --green-dark:#1a4a1a;--green-mid:#2d7a2d;--green-light:#4a9e4a;--gold:#c8902a;--gold-light:#e8b84b;--orange:#d4531a;--cream:#fdf6e8;--cream-alt:#fffdf5;--text-dark:#0f2e0f;--text-mid:#1a4a1a;--text-light:#2d5a2d; }
     *{box-sizing:border-box;margin:0;padding:0;}
@@ -49,6 +49,8 @@
     .info-card{border:1px solid rgba(45,122,45,0.3);padding:1.5rem;background:white;position:relative;}
     .info-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green-mid),var(--gold));}
     .info-card .card-icon{font-size:1.8rem;margin-bottom:0.6rem;display:block;}
+    .info-card .card-photo{width:100%;height:160px;object-fit:cover;display:block;}
+    .info-card .card-body{padding:1.2rem 1.5rem 1.5rem;}
     .info-card h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green-dark);font-size:1.05rem;margin-bottom:0.4rem;}
     .info-card p{color:var(--text-mid);font-size:0.95rem;line-height:1.6;font-weight:500;}
     .band.dark .info-card{background:rgba(26,74,26,0.6);border-color:rgba(74,158,74,0.3);}
@@ -84,12 +86,14 @@
     .footer-strip{background:var(--green-dark);border-top:3px solid var(--gold);text-align:center;padding:1.5rem;color:rgba(240,250,240,0.5);font-size:0.8rem;font-family:'Bebas Neue',sans-serif;letter-spacing:0.15em;}
     @media(max-width:650px){.cards-grid{grid-template-columns:1fr;}.band{padding:2.5rem 1.2rem;}.site-nav a{font-size:0.85rem;}}
 
+      .punjabi-label { font-family: 'Dancing Script', cursive; font-size: 0.85rem; color: var(--gold-light); letter-spacing: 0.05em; display: block; text-align: center; line-height: 1; margin-bottom: 2px; opacity: 0.9; transform: rotate(-8deg) translateX(-8px); transform-origin: left center; }
+    .logo-wrap { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="nav-wrap">
-      <a href="index.html"><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
+      <a href="index.html" class="logo-wrap"><span class="punjabi-label">Punjabi</span><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
@@ -121,24 +125,32 @@
       <h2 class="section-title">The <span>Outdoor Experience</span></h2>
       <div class="cards-grid">
         <div class="info-card">
-          <span class="card-icon">🍯</span>
-          <h3>Fresh Jalebi — Cooked Live</h3>
-          <p>Crispy, syrup-soaked jalebi cooked fresh in front of your guests. The sizzle, the smell, the theatre — people will gather round and they will not stop talking about it.</p>
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80" alt="Fresh Jalebi" class="card-photo" />
+          <div class="card-body">
+            <h3>Fresh Jalebi — Cooked Live</h3>
+            <p>Crispy, syrup-soaked jalebi cooked fresh in front of your guests. The sizzle, the smell, the theatre — people will gather round and they will not stop talking about it.</p>
+          </div>
         </div>
         <div class="info-card">
-          <span class="card-icon">🌶️</span>
-          <h3>Savoury Live Cooking</h3>
-          <p>Fresh savoury Punjabi street food cooked live alongside the sweets — samosas, kebabs and more prepared in front of your guests. Sweet and savoury, all made fresh to order.</p>
+          <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80" alt="Savoury Live Cooking" class="card-photo" />
+          <div class="card-body">
+            <h3>Savoury Live Cooking</h3>
+            <p>Fresh savoury Punjabi street food cooked live alongside the sweets — samosas, kebabs and more prepared in front of your guests. Sweet and savoury, all made fresh to order.</p>
+          </div>
         </div>
         <div class="info-card">
-          <span class="card-icon">☕</span>
-          <h3>Punjabi Chai Station</h3>
-          <p>A proper chai station serving Punjabi Chai, Masala Chai and Chai Latte — brewed fresh, served warm. The perfect complement to the jalebi and the perfect way to end a meal.</p>
+          <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&q=80" alt="Punjabi Chai Station" class="card-photo" />
+          <div class="card-body">
+            <h3>Punjabi Chai Station</h3>
+            <p>A proper chai station serving Punjabi Chai, Masala Chai and Chai Latte — brewed fresh, served warm. The perfect complement to the jalebi and the perfect way to end a meal.</p>
+          </div>
         </div>
         <div class="info-card">
-          <span class="card-icon">⛺</span>
-          <h3>Fully Branded Tent Setup</h3>
-          <p>We supply and set up a fully branded Flava Base tent. Clean, professional and eye-catching — a proper destination within your event that draws people in.</p>
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" alt="Branded Tent Setup" class="card-photo" />
+          <div class="card-body">
+            <h3>Fully Branded Tent Setup</h3>
+            <p>We supply and set up a fully branded Flava Base tent. Clean, professional and eye-catching — a proper destination within your event that draws people in.</p>
+          </div>
         </div>
       </div>
     </div>

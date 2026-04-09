@@ -6,7 +6,7 @@
   <title>Flava Base – Pub Pop-Ups</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     :root { --green-dark:#1a4a1a;--green-mid:#2d7a2d;--green-light:#4a9e4a;--gold:#c8902a;--gold-light:#e8b84b;--orange:#d4531a;--cream:#fdf6e8;--cream-alt:#fffdf5;--text-dark:#0f2e0f;--text-mid:#1a4a1a;--text-light:#2d5a2d; }
     *{box-sizing:border-box;margin:0;padding:0;}
@@ -18,12 +18,12 @@
     .site-nav a{color:var(--cream);text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.08em;transition:color 0.2s;}
     .site-nav a:hover,.site-nav a.active{color:var(--gold-light);}
     .flag-strip{height:4px;background:linear-gradient(90deg,var(--orange),var(--gold-light),white,var(--green-mid),var(--green-dark));}
-    .logo-hero{background:var(--cream);border-bottom:3px solid rgba(200,144,42,0.3);text-align:center;padding:2.5rem 1.5rem;}
-    .logo-hero img{height:clamp(120px,18vw,190px);width:auto;display:block;margin:0 auto 0.8rem;}
-    .gold-divider{display:flex;align-items:center;gap:1rem;justify-content:center;margin:0.8rem auto;max-width:400px;}
-    .gold-divider::before,.gold-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-    .gold-dot{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);}
-    .hero-tagline{color:var(--text-mid);font-style:italic;font-size:1rem;}
+    .logo-hero{position:relative;overflow:hidden;min-height:320px;display:flex;align-items:center;justify-content:center;text-align:center;padding:2.5rem 1.5rem;border-bottom:3px solid rgba(200,144,42,0.3);}
+    .logo-hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+    .logo-hero .hero-overlay{position:absolute;inset:0;background:rgba(26,74,26,0.78);z-index:1;}
+    .logo-hero .hero-content{position:relative;z-index:2;}
+    .logo-hero .hero-logo{height:clamp(100px,15vw,160px);width:auto;display:block;margin:0 auto 0.8rem;}
+    .hero-tagline{font-family:'Playfair Display',serif;font-style:italic;color:rgba(253,248,240,0.9);font-size:clamp(1rem,2.5vw,1.3rem);max-width:600px;margin:0 auto;}
     .phulkari{background-color:var(--cream);background-image:repeating-linear-gradient(45deg,rgba(200,144,42,0.06) 0px,rgba(200,144,42,0.06) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(-45deg,rgba(200,144,42,0.06) 0px,rgba(200,144,42,0.06) 1px,transparent 1px,transparent 20px),radial-gradient(circle at 10px 10px,rgba(212,83,26,0.05) 1.5px,transparent 1.5px),radial-gradient(circle at 30px 30px,rgba(212,83,26,0.05) 1.5px,transparent 1.5px);background-size:40px 40px;}
     .phulkari-alt{background-color:var(--cream-alt);background-image:repeating-linear-gradient(45deg,rgba(200,144,42,0.05) 0px,rgba(200,144,42,0.05) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(-45deg,rgba(200,144,42,0.05) 0px,rgba(200,144,42,0.05) 1px,transparent 1px,transparent 20px);background-size:40px 40px;}
     .band{padding:3.5rem 1.5rem;}
@@ -46,7 +46,10 @@
     .band.dark .icon-list li{color:rgba(240,250,240,0.9);border-color:rgba(74,158,74,0.2);}
     .band.dark .icon-list li::before{color:var(--gold-light);}
     .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.5rem;}
-    .info-card{border:1px solid rgba(45,122,45,0.3);padding:1.5rem;background:white;position:relative;}
+    .info-card{border:1px solid rgba(45,122,45,0.3);background:white;position:relative;overflow:hidden;}
+    .info-card .card-photo{width:100%;height:150px;object-fit:cover;display:block;transition:transform 0.4s ease;}
+    .info-card:hover .card-photo{transform:scale(1.04);}
+    .info-card .card-body{padding:1.1rem 1.4rem 1.4rem;}
     .info-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green-mid),var(--gold));}
     .info-card .card-icon{font-size:1.8rem;margin-bottom:0.6rem;display:block;}
     .info-card h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green-dark);font-size:1.05rem;margin-bottom:0.4rem;}
@@ -84,12 +87,14 @@
     .footer-strip{background:var(--green-dark);border-top:3px solid var(--gold);text-align:center;padding:1.5rem;color:rgba(240,250,240,0.5);font-size:0.8rem;font-family:'Bebas Neue',sans-serif;letter-spacing:0.15em;}
     @media(max-width:650px){.cards-grid{grid-template-columns:1fr;}.band{padding:2.5rem 1.2rem;}.site-nav a{font-size:0.85rem;}}
 
+      .punjabi-label { font-family: 'Dancing Script', cursive; font-size: 0.85rem; color: var(--gold-light); letter-spacing: 0.05em; display: block; text-align: center; line-height: 1; margin-bottom: 2px; opacity: 0.9; transform: rotate(-8deg) translateX(-8px); transform-origin: left center; }
+    .logo-wrap { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="nav-wrap">
-      <a href="index.html"><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
+      <a href="index.html" class="logo-wrap"><span class="punjabi-label">Punjabi</span><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
@@ -101,9 +106,13 @@
   <div class="flag-strip"></div>
 
   <section class="logo-hero phulkari">
-    <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" />
-    <div class="gold-divider"><div class="gold-dot"></div></div>
-    <p class="hero-tagline">Punjabi street food pop-ups and venue partnerships that bring customers back</p>
+    <img src="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=1200&q=80" alt="Pub atmosphere" class="hero-bg" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="hero-logo" />
+      <div class="gold-divider"><div class="gold-dot"></div></div>
+      <p class="hero-tagline">Punjabi street food pop-ups and venue partnerships that bring customers back</p>
+    </div>
   </section>
   <div class="band phulkari">
     <div class="band-inner">
@@ -118,8 +127,8 @@
       <p class="section-label">Two Ways to Work With Us</p>
       <h2 class="section-title">Choose Your <span>Setup</span></h2>
       <div class="cards-grid">
-        <div class="info-card"><span class="card-icon">🚐</span><h3>Standard Setup</h3><p>Wraps, Flava Box, loaded fries, samosas, signature shakes and Punjabi chai from a clean branded van. Perfect for regular Friday or weekend nights.</p></div>
-        <div class="info-card"><span class="card-icon">✨</span><h3>Enhanced Setup</h3><p>Everything in the Standard Setup plus signature freakshakes, premium shakes and ambient lighting. Ideal for themed nights and special events.</p></div>
+        <div class="info-card"><img src="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=400&q=80" alt="Standard Setup" class="card-photo"/><div class="card-body"><h3>Standard Setup</h3><p>Wraps, Flava Box, loaded fries, samosas, signature shakes and Punjabi chai from a clean branded van. Perfect for regular Friday or weekend nights.</p></div></div>
+        <div class="info-card"><img src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?w=400&q=80" alt="Enhanced Setup" class="card-photo"/><div class="card-body"><h3>Enhanced Setup</h3><p>Everything in the Standard Setup plus signature freakshakes, premium shakes and ambient lighting. Ideal for themed nights and special events.</p></div></div>
       </div>
     </div>
   </div>

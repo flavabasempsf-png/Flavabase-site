@@ -6,7 +6,7 @@
   <title>Flava Base – Modern Punjabi Street Kitchen</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     :root {
       --green-dark: #1a4a1a; --green-mid: #2d7a2d; --green-light: #4a9e4a;
@@ -113,11 +113,24 @@
     .section-title span { color: var(--orange); }
     .exp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
     @media (max-width: 650px) { .exp-grid { grid-template-columns: 1fr; } }
-    .exp-card { border: 1px solid rgba(45,122,45,0.3); padding: 1.5rem; background: white; position: relative; }
-    .exp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green-mid), var(--gold)); }
+    .exp-card { border: 1px solid rgba(45,122,45,0.3); background: white; position: relative; overflow: hidden; }
+    .exp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--green-mid), var(--gold)); z-index: 1; }
+    .exp-card-photo { width: 100%; height: 160px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .exp-card:hover .exp-card-photo { transform: scale(1.04); }
+    .exp-card-body { padding: 1.2rem 1.5rem 1.5rem; }
     .exp-icon { font-size: 1.8rem; margin-bottom: 0.6rem; display: block; }
     .exp-card h3 { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--green-dark); font-size: 1.05rem; margin-bottom: 0.4rem; }
     .exp-card p { color: var(--text-light); font-size: 0.92rem; line-height: 1.6; }
+    .exp-logo-panel { height: 160px; background: var(--green-dark); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    .exp-logo-img { height: 90px; width: auto; }
+    .exp-logo-tag { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.15em; font-size: 0.7rem; color: rgba(200,144,42,0.8); text-transform: uppercase; }
+    .exp-badge-panel { height: 160px; background: var(--green-dark); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .exp-badge-panel::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(200,144,42,0.15) 0%, transparent 70%); }
+    .exp-badge { text-align: center; position: relative; z-index: 1; }
+    .exp-badge-bolt { font-size: 2rem; line-height: 1; margin-bottom: 0.3rem; }
+    .exp-badge-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.2em; color: var(--gold-light); line-height: 1.1; }
+    .exp-badge-sub { font-family: 'Montserrat', 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.25em; color: rgba(200,144,42,0.6); margin-top: 0.4rem; text-transform: uppercase; }
+    .exp-badge-ring { width: 110px; height: 110px; border: 2px solid rgba(200,144,42,0.3); border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
     /* LOCATIONS */
     .locations-section { background: var(--green-dark); padding: 3.5rem 1.5rem; text-align: center; position: relative; }
@@ -166,6 +179,8 @@
       .site-nav a { font-size: 0.85rem; }
       .hero { min-height: auto; padding: 3rem 1.2rem; }
     }
+      .punjabi-label { font-family: 'Dancing Script', cursive; font-size: 0.85rem; color: var(--gold-light); letter-spacing: 0.05em; display: block; text-align: center; line-height: 1; margin-bottom: 2px; opacity: 0.9; transform: rotate(-8deg) translateX(-8px); transform-origin: left center; }
+    .logo-wrap { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
   </style>
 </head>
 <body>
@@ -173,7 +188,7 @@
   <header class="site-header">
     <div class="nav-wrap">
       <a href="index.html">
-        <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base logo" class="site-logo" />
+        <a href="index.html" class="logo-wrap"><span class="punjabi-label">Punjabi</span><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
       </a>
       <nav class="site-nav">
         <a href="index.html" class="active">Home</a>
@@ -189,6 +204,7 @@
   <!-- HERO - cream background, logo shows clearly -->
   <section class="hero">
     <div class="hero-inner">
+      <span style="font-family:'Dancing Script',cursive;font-size:2.2rem;color:var(--gold);display:block;text-align:center;margin-bottom:-0.3rem;opacity:0.95;transform:rotate(-8deg) translateX(-12px);transform-origin:left center;">Punjabi</span>
       <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="hero-logo" />
       <p class="hero-label">Modern Punjabi Street Kitchen 🇮🇳</p>
       <h1>Bold Punjabi Flavours.<br><em>Built Fresh. Served Street Style.</em></h1>
@@ -224,7 +240,7 @@
       <h2>What We Serve</h2>
       <div class="serves-grid">
         <div class="serve-card">
-          <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&q=80" alt="Wraps" class="serve-img" />
+          <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80" alt="Wraps" class="serve-img" />
           <div class="serve-overlay">
             <div class="serve-name">Wraps</div>
             <div class="serve-tag">Fresh to order</div>
@@ -238,21 +254,21 @@
           </div>
         </div>
         <div class="serve-card">
-          <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=400&q=80" alt="Masala Noodles" class="serve-img" />
+          <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=400&q=80" alt="Masala Noodles" class="serve-img" />
           <div class="serve-overlay">
             <div class="serve-name">Masala Noodles</div>
             <div class="serve-tag">Spiced & bold</div>
           </div>
         </div>
         <div class="serve-card">
-          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&q=80" alt="Freakshakes" class="serve-img" />
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80" alt="Freakshakes" class="serve-img" />
           <div class="serve-overlay">
             <div class="serve-name">Freakshakes</div>
             <div class="serve-tag">From £5</div>
           </div>
         </div>
         <div class="serve-card">
-          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80" alt="Punjabi Chai" class="serve-img" />
+          <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&q=80" alt="Punjabi Chai" class="serve-img" />
           <div class="serve-overlay">
             <div class="serve-name">Punjabi Chai</div>
             <div class="serve-tag">Brewed fresh</div>
@@ -269,19 +285,36 @@
       <h2 class="section-title">The Flava Base <span>Experience</span></h2>
       <div class="exp-grid">
         <div class="exp-card">
-          <span class="exp-icon">🍽️</span>
-          <h3>Freshly Prepared</h3>
-          <p>Every dish built fresh to order using bold Punjabi spices and locally sourced ingredients.</p>
+          <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=400&q=80" alt="Freshly Prepared" class="exp-card-photo" />
+          <div class="exp-card-body">
+            <h3>Freshly Prepared</h3>
+            <p>Every dish built fresh to order using bold Punjabi spices and locally sourced ingredients.</p>
+          </div>
         </div>
         <div class="exp-card">
-          <span class="exp-icon">🚐</span>
-          <h3>Fully Branded Setup</h3>
-          <p>A clean, professional setup that looks the part at any event — from pop-ups to corporate functions.</p>
+          <div class="exp-logo-panel">
+            <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="exp-logo-img" />
+            <span class="exp-logo-tag">Fully Branded Van &amp; Setup</span>
+          </div>
+          <div class="exp-card-body">
+            <h3>Fully Branded Setup</h3>
+            <p>A clean, professional setup that looks the part at any event — from pop-ups to corporate functions.</p>
+          </div>
         </div>
         <div class="exp-card">
-          <span class="exp-icon">⚡</span>
-          <h3>Zero Emission</h3>
-          <p>100% electric van. Bold flavour with zero guilt — better for you and better for the planet.</p>
+          <div class="exp-badge-panel">
+            <div class="exp-badge">
+              <div class="exp-badge-bolt">⚡</div>
+              <div class="exp-badge-title">ZERO</div>
+              <div class="exp-badge-title">EMISSION</div>
+              <div class="exp-badge-sub">100% Electric Van</div>
+              <div class="exp-badge-ring"></div>
+            </div>
+          </div>
+          <div class="exp-card-body">
+            <h3>Zero Emission</h3>
+            <p>100% electric van. Bold flavour with zero guilt — better for you and better for the planet.</p>
+          </div>
         </div>
       </div>
       <p style="text-align:center; margin-top:1.5rem; font-style:italic; color:var(--text-mid);">Perfect for weddings, corporate events, private parties and pop-ups.</p>
