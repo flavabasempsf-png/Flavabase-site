@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flava Base Launch Party — 13 June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Dancing+Script:wght@700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-dark:#1a4a1a;--green-mid:#2d7a2d;--green-light:#4a9e4a;
+  --gold:#c8902a;--gold-light:#e8b84b;--gold-pale:#f5d98a;
+  --orange:#d4531a;--cream:#fdf6e8;--cream-alt:#fffdf5;
+  --text-dark:#0f2e0f;--text-mid:#1a4a1a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--cream);color:var(--text-dark);font-family:'Crimson Text',Georgia,serif;font-size:18px;line-height:1.7;overflow-x:hidden;}
+.phulkari{height:6px;background:repeating-linear-gradient(90deg,var(--green-dark) 0px,var(--green-dark) 16px,var(--gold) 16px,var(--gold) 32px,var(--orange) 32px,var(--orange) 48px,var(--gold) 48px,var(--gold) 64px,var(--green-dark) 64px,var(--green-dark) 80px,var(--gold-light) 80px,var(--gold-light) 96px);}
+.site-header{background:var(--green-dark);border-bottom:3px solid var(--gold);padding:0.75rem 1.5rem;position:sticky;top:0;z-index:100;}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;flex-wrap:wrap;gap:0.5rem;}
+.site-logo{height:52px;width:auto;}
+.site-nav{display:flex;gap:1.2rem;flex-wrap:wrap;}
+.site-nav a{color:var(--cream);text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.08em;transition:color 0.2s;}
+.site-nav a:hover,.site-nav a.active{color:var(--gold-light);}
+.punjabi-label{font-family:'Dancing Script',cursive;font-size:0.85rem;color:var(--gold-light);letter-spacing:0.05em;display:block;text-align:center;line-height:1;margin-bottom:-22px;opacity:0.95;transform:rotate(-8deg) translateX(-6px);transform-origin:left center;position:relative;z-index:2;}
+.logo-wrap{display:flex;flex-direction:column;align-items:center;text-decoration:none;}
+.hero{background:var(--green-dark);background-image:radial-gradient(ellipse at 50% 0%,rgba(200,144,42,0.18) 0%,transparent 65%);position:relative;overflow:hidden;}
+.hero-phulkari-top{height:8px;background:repeating-linear-gradient(90deg,var(--orange) 0px,var(--orange) 20px,var(--gold-light) 20px,var(--gold-light) 40px,white 40px,white 60px,var(--gold-light) 60px,var(--gold-light) 80px,var(--orange) 80px,var(--orange) 100px);}
+.hero-inner{max-width:900px;margin:0 auto;padding:3.5rem 1.5rem 3rem;text-align:center;position:relative;z-index:1;}
+.hero-badge{display:inline-block;background:var(--orange);color:white;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.25em;padding:0.5rem 1.5rem;margin-bottom:1.2rem;}
+.hero-badge::before,.hero-badge::after{content:'✦';margin:0 0.5rem;opacity:0.7;}
+.hero-punjabi-big{font-family:'Dancing Script',cursive;font-size:2.2rem;color:var(--gold-light);display:block;transform:rotate(-4deg);margin-bottom:-0.5rem;opacity:0.9;}
+.hero-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.2rem,6vw,4rem);color:var(--gold-light);line-height:1.05;margin-bottom:0.5rem;}
+.hero-title span{color:var(--orange);}
+.hero-subtitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.2rem,3vw,1.8rem);letter-spacing:0.3em;color:rgba(253,246,232,0.7);margin-bottom:1.8rem;}
+.hero-date-block{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.date-item{text-align:center;}
+.date-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--gold-light);line-height:1;}
+.date-label{font-family:'Bebas Neue',sans-serif;font-size:0.75rem;letter-spacing:0.2em;color:rgba(253,246,232,0.5);}
+.date-sep{color:var(--gold);font-size:2rem;align-self:center;opacity:0.4;}
+.hero-divider{display:flex;align-items:center;gap:1rem;justify-content:center;margin:0.8rem auto 1.5rem;max-width:400px;}
+.hero-divider::before,.hero-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.gold-dot{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);}
+.price-row{margin-bottom:1.5rem;}
+.price-tag{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:white;line-height:1;}
+.price-note{font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--orange);margin-top:0.4rem;}
+.btn-gold{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--green-dark);font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.25em;padding:1rem 2.8rem;text-decoration:none;transition:all 0.2s;font-weight:bold;cursor:pointer;border:none;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,144,42,0.5);}
+.btn-gold::before,.btn-gold::after{content:'✦';margin:0 0.6rem;font-size:0.7rem;}
+.tickets-left{margin-top:0.8rem;font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:0.2em;color:var(--orange);}
+.band{padding:3.5rem 1.5rem;}
+.band-inner{max-width:960px;margin:0 auto;}
+.band-inner.narrow{max-width:700px;}
+.band.dark{background:var(--green-dark);background-image:radial-gradient(ellipse at 50% 0%,rgba(74,158,74,0.12) 0%,transparent 60%);position:relative;}
+.band.dark::before,.band.dark::after{content:'';position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.band.dark::before{top:0;}.band.dark::after{bottom:0;}
+.section-label{font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:0.3em;color:var(--green-mid);margin-bottom:0.4rem;}
+.band.dark .section-label{color:var(--gold-light);}
+.section-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--text-dark);margin-bottom:1.2rem;line-height:1.2;border-bottom:2px solid rgba(45,122,45,0.2);padding-bottom:0.5rem;}
+.section-title span{color:var(--orange);}
+.band.dark .section-title{color:var(--gold-light);border-color:rgba(200,144,42,0.2);}
+.body-text{color:var(--text-mid);margin-bottom:1rem;font-size:1rem;font-weight:500;}
+.band.dark .body-text{color:rgba(240,250,240,0.85);}
+.includes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.2rem;}
+.include-card{background:white;border:1px solid rgba(45,122,45,0.25);padding:1.4rem;position:relative;}
+.include-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green-mid),var(--gold));}
+.include-icon{font-size:1.8rem;display:block;margin-bottom:0.5rem;}
+.include-card h3{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:var(--green-dark);margin-bottom:0.3rem;}
+.include-card p{font-size:0.88rem;color:var(--text-mid);line-height:1.5;font-weight:500;}
+.raffle-banner{background:linear-gradient(135deg,var(--green-dark),#1f5c1f);border:2px solid var(--gold);padding:1.5rem 2rem;margin-top:1.5rem;text-align:center;position:relative;}
+.raffle-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.raffle-banner::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.raffle-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:var(--gold-light);margin-bottom:0.5rem;}
+.raffle-prizes{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:0.8rem;}
+.raffle-prize{text-align:center;color:rgba(240,250,240,0.9);font-size:0.95rem;font-weight:500;}
+.raffle-prize span{display:block;font-size:1.8rem;margin-bottom:0.3rem;}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.2rem;}
+.menu-card{background:rgba(26,74,26,0.5);border:1px solid rgba(74,158,74,0.3);padding:1.5rem;}
+.menu-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.2em;color:var(--gold-light);margin-bottom:0.8rem;border-bottom:1px solid rgba(200,144,42,0.3);padding-bottom:0.5rem;}
+.menu-card ul{list-style:none;}
+.menu-card li{padding:0.5rem 0;border-bottom:1px dashed rgba(74,158,74,0.2);color:rgba(240,250,240,0.9);font-size:0.95rem;font-weight:500;display:flex;align-items:center;gap:0.6rem;}
+.menu-card li:last-child{border-bottom:none;}
+.menu-card li::before{content:"✦";color:var(--gold);font-size:0.5rem;flex-shrink:0;}
+.schedule-list{margin-top:1rem;}
+.schedule-item{display:flex;align-items:center;gap:1rem;padding:0.8rem 0;border-bottom:1px dashed rgba(200,144,42,0.2);}
+.schedule-item:last-child{border-bottom:none;}
+.schedule-time{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.1em;color:var(--gold-light);min-width:90px;}
+.schedule-desc{color:rgba(240,250,240,0.9);font-size:0.95rem;font-weight:500;}
+
+/* BOOKING FORM */
+.booking-section{padding:3.5rem 1.5rem;background:var(--cream-alt);}
+.booking-inner{max-width:700px;margin:0 auto;}
+.form-card{background:white;border:1px solid rgba(45,122,45,0.25);padding:2rem;position:relative;}
+.form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green-mid),var(--gold),var(--orange));}
+.form-step{margin-bottom:1.5rem;}
+.form-step-title{font-family:'Bebas Neue',sans-serif;font-size:0.9rem;letter-spacing:0.2em;color:var(--green-mid);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem;}
+.form-step-title::after{content:'';flex:1;height:1px;background:rgba(45,122,45,0.2);}
+.step-num{background:var(--green-dark);color:var(--gold-light);font-family:'Bebas Neue',sans-serif;font-size:0.8rem;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+.form-group{margin-bottom:1.2rem;}
+.form-group label{display:block;margin-bottom:0.4rem;font-size:0.88rem;font-weight:600;color:var(--text-mid);font-family:'Bebas Neue',sans-serif;letter-spacing:0.1em;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.75rem 1rem;border:1px solid rgba(45,122,45,0.3);background:var(--cream);font-family:'Crimson Text',Georgia,serif;font-size:1rem;color:var(--text-dark);transition:border-color 0.2s;border-radius:0;appearance:none;-webkit-appearance:none;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold);background:white;}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231a4a1a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem;background-color:var(--cream);}
+.form-group textarea{resize:vertical;min-height:80px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-note{font-size:0.82rem;color:var(--text-mid);font-style:italic;margin-top:0.3rem;}
+.raffle-note{background:rgba(200,144,42,0.08);border:1px solid rgba(200,144,42,0.3);padding:1rem 1.2rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.8rem;}
+.raffle-note-icon{font-size:1.5rem;flex-shrink:0;}
+.raffle-note-text{font-size:0.88rem;color:var(--text-mid);font-weight:500;}
+.raffle-note-text strong{color:var(--green-dark);}
+.submit-btn{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--green-dark);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.25em;padding:1rem 2rem;border:none;cursor:pointer;width:100%;transition:all 0.2s;margin-top:0.5rem;}
+.submit-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,144,42,0.4);}
+.submit-btn::before,.submit-btn::after{content:'✦';margin:0 0.6rem;font-size:0.65rem;}
+.form-footer-note{text-align:center;font-size:0.82rem;color:var(--text-mid);margin-top:1rem;font-style:italic;}
+.form-footer-note strong{color:var(--orange);}
+.success-msg{display:none;text-align:center;padding:2rem;}
+.success-icon{font-size:3rem;margin-bottom:1rem;}
+.success-msg h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--green-dark);margin-bottom:0.5rem;}
+.success-msg p{color:var(--text-mid);margin-bottom:1.5rem;font-size:0.95rem;}
+.pay-btn-large{display:inline-block;background:linear-gradient(135deg,var(--green-dark),var(--green-mid));color:var(--gold-light);font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.25em;padding:1.2rem 3rem;text-decoration:none;transition:all 0.2s;}
+.pay-btn-large:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,74,26,0.4);}
+.pay-btn-large::before,.pay-btn-large::after{content:'✦';margin:0 0.6rem;font-size:0.7rem;}
+
+/* QR */
+.qr-section{padding:3rem 1.5rem;background:var(--cream);text-align:center;}
+.qr-inner{max-width:800px;margin:0 auto;}
+.qr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.2rem;margin-top:1.5rem;}
+.qr-card{background:white;border:1px solid rgba(45,122,45,0.25);padding:1.2rem;position:relative;}
+.qr-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green-mid),var(--gold));}
+.qr-box{width:130px;height:130px;margin:0 auto 0.8rem;display:flex;align-items:center;justify-content:center;}
+.qr-label{font-family:'Bebas Neue',sans-serif;font-size:0.82rem;letter-spacing:0.15em;color:var(--green-dark);margin-bottom:0.2rem;}
+.qr-sub{font-size:0.75rem;color:var(--text-mid);font-style:italic;}
+
+.story-quote{border-left:4px solid var(--green-mid);padding:1.5rem 1.5rem 1.5rem 2rem;margin:1.5rem 0;background:rgba(45,122,45,0.06);position:relative;}
+.story-quote::before{content:'"';font-family:'Playfair Display',serif;font-size:4rem;color:var(--green-mid);opacity:0.2;position:absolute;top:-0.5rem;left:0.8rem;line-height:1;}
+.story-quote p{font-style:italic;color:var(--text-mid);font-size:1.05rem;margin:0;font-weight:500;}
+.cta-section{background:var(--green-dark);background-image:radial-gradient(ellipse at 50% 50%,rgba(74,158,74,0.2) 0%,transparent 70%);text-align:center;padding:4rem 1.5rem;position:relative;}
+.cta-section::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.cta-ornament{color:var(--gold);font-size:1rem;letter-spacing:1rem;margin-bottom:1.2rem;opacity:0.6;}
+.cta-section h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--gold-light);margin-bottom:0.8rem;}
+.cta-section p{color:rgba(240,250,240,0.85);font-style:italic;max-width:500px;margin:0 auto 0.5rem;}
+.zero-bar{background:var(--green-dark);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:1.2rem 1.5rem;text-align:center;}
+.zero-bar p{font-family:'Bebas Neue',sans-serif;font-size:clamp(1rem,2.5vw,1.6rem);letter-spacing:0.2em;color:var(--cream);}
+.footer-strip{background:var(--green-dark);border-top:3px solid var(--gold);text-align:center;padding:1.5rem;color:rgba(240,250,240,0.5);font-size:0.8rem;font-family:'Bebas Neue',sans-serif;letter-spacing:0.15em;}
+@media(max-width:650px){.menu-grid,.form-row{grid-template-columns:1fr;}.band{padding:2.5rem 1.2rem;}.raffle-prizes{gap:1rem;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo-wrap">
+      <span class="punjabi-label">Punjabi</span>
+      <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" />
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="story.html">Our Story</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="outdoor-experience.html">Outdoor</a>
+      <a href="flava-base-launch-party.html" class="active">Launch Party</a>
+    </nav>
+  </div>
+</header>
+<div class="phulkari"></div>
+
+<section class="hero">
+  <div class="hero-phulkari-top"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">🔥 Only 50 Tickets Available</div>
+    <span class="hero-punjabi-big">Punjabi</span>
+    <h1 class="hero-title">Flava Base<br><span>Launch Party</span></h1>
+    <p class="hero-subtitle">The Flava of Punjab</p>
+    <div class="hero-date-block">
+      <div class="date-item"><div class="date-num">13</div><div class="date-label">June</div></div>
+      <div class="date-sep">·</div>
+      <div class="date-item"><div class="date-num">2026</div><div class="date-label">Year</div></div>
+      <div class="date-sep">·</div>
+      <div class="date-item"><div class="date-num">7:30</div><div class="date-label">Doors Open</div></div>
+      <div class="date-sep">·</div>
+      <div class="date-item"><div class="date-num">9:30</div><div class="date-label">Ends</div></div>
+    </div>
+    <div class="hero-divider"><div class="gold-dot"></div></div>
+    <div class="price-row">
+      <div class="price-tag">£15 <span style="font-size:1.2rem;color:rgba(253,246,232,0.6)">per person</span></div>
+      <div class="price-note">⭐ Choose your food below · Pay securely via Square</div>
+    </div>
+    <a href="#book" class="btn-gold">Choose &amp; Book Now</a>
+    <div class="tickets-left">⚡ Limited to 50 tickets — don't miss out</div>
+  </div>
+  <div class="phulkari"></div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<div class="band" style="background:var(--cream);">
+  <div class="band-inner">
+    <p class="section-label">Every Ticket Includes</p>
+    <h2 class="section-title">What's <span>Included</span></h2>
+    <div class="includes-grid">
+      <div class="include-card"><span class="include-icon">🥟</span><h3>Starter</h3><p>Choice of Lamb Samosas or Veg Samosas with mint &amp; tamarind chutney.</p></div>
+      <div class="include-card"><span class="include-icon">🍛</span><h3>Main Course</h3><p>Choice of one main — Punjabi curry, wrap or rice dish. Freshly made to order.</p></div>
+      <div class="include-card"><span class="include-icon">🥭</span><h3>Drink</h3><p>Choice of Mango Lassi, Vanilla or Chocolate Milkshake included with your ticket.</p></div>
+      <div class="include-card"><span class="include-icon">🍮</span><h3>Dessert Taster</h3><p>Gulab Jamun dessert taster — a sweet finish to your meal.</p></div>
+      <div class="include-card"><span class="include-icon">🥁</span><h3>Punjabi Music</h3><p>Bhangra and Punjabi music throughout the night. Proper vibes.</p></div>
+      <div class="include-card"><span class="include-icon">🎟️</span><h3>Raffle Entry</h3><p>Every ticket includes automatic entry into the launch night raffle. No extra cost.</p></div>
+    </div>
+
+    <!-- RAFFLE BANNER -->
+    <div class="raffle-banner">
+      <div class="raffle-title">🎟️ Launch Night Raffle — Included Free With Every Ticket</div>
+      <p style="color:rgba(240,250,240,0.8);font-size:0.9rem;font-style:italic;">One lucky winner on the night takes home both prizes</p>
+      <div class="raffle-prizes">
+        <div class="raffle-prize"><span>🏆</span>£25 Flava Base Voucher</div>
+        <div class="raffle-prize"><span>🍾</span>Bottle of Fizz</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MENU PREVIEW -->
+<div class="band dark">
+  <div class="band-inner">
+    <p class="section-label">The Launch Menu</p>
+    <h2 class="section-title">Choose Your <span>Flava</span></h2>
+    <p class="body-text">Select your choices in the booking form below — everything is prepared fresh to order on the night.</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>🥟 Starter</h3>
+        <ul><li>Lamb Samosas</li><li>Veg Samosas</li></ul>
+      </div>
+      <div class="menu-card">
+        <h3>🍛 Main Course</h3>
+        <ul>
+          <li>Punjabi Chicken Curry &amp; Rice</li>
+          <li>Aloo Gobi &amp; Rice</li>
+          <li>Chicken Tikka Tandoori Wrap</li>
+          <li>Keema Wrap</li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <h3>🥭 Drink</h3>
+        <ul>
+          <li>Mango Lassi</li>
+          <li>Vanilla Milkshake</li>
+          <li>Chocolate Milkshake</li>
+          <li>Mango Milkshake</li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <h3>🎁 Everyone Gets</h3>
+        <ul>
+          <li>Gulab Jamun Dessert Taster</li>
+          <li>Bhangra &amp; Punjabi Music</li>
+          <li>🎟️ Raffle Entry — £25 voucher &amp; fizz</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<div class="band dark" style="background:#0f2e0f;">
+  <div class="band-inner narrow">
+    <p class="section-label">The Night</p>
+    <h2 class="section-title">Launch Night <span>Schedule</span></h2>
+    <div class="schedule-list">
+      <div class="schedule-item"><div class="schedule-time">7:30 PM</div><div class="schedule-desc">🚪 Doors Open — welcome &amp; music begins</div></div>
+      <div class="schedule-item"><div class="schedule-time">8:00 PM</div><div class="schedule-desc">🍛 Food Service Begins — starters first</div></div>
+      <div class="schedule-item"><div class="schedule-time">8:15 PM</div><div class="schedule-desc">🍽️ Mains Served — freshly made to order</div></div>
+      <div class="schedule-item"><div class="schedule-time">8:30 PM</div><div class="schedule-desc">🥁 Bhangra &amp; Punjabi Music</div></div>
+      <div class="schedule-item"><div class="schedule-time">9:00 PM</div><div class="schedule-desc">🍮 Gulab Jamun Dessert Taster served</div></div>
+      <div class="schedule-item"><div class="schedule-time">9:15 PM</div><div class="schedule-desc">🎟️ Raffle Draw — £25 voucher &amp; fizz</div></div>
+      <div class="schedule-item"><div class="schedule-time">9:30 PM</div><div class="schedule-desc">✅ Event Ends — thank you for coming!</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING FORM -->
+<section class="booking-section" id="book">
+  <div class="booking-inner">
+    <p class="section-label" style="text-align:center;">Step 1 of 2</p>
+    <h2 class="section-title" style="text-align:center;border:none;">Choose Your Food &amp; <span>Reserve Your Place</span></h2>
+    <p class="body-text" style="text-align:center;margin-bottom:1.5rem;">Fill in your details and food choices, then you'll be taken straight to Square to pay your £15 ticket.</p>
+
+    <div class="form-card">
+      <div class="raffle-note">
+        <div class="raffle-note-icon">🎟️</div>
+        <div class="raffle-note-text"><strong>Raffle entry included automatically</strong> — every booking gets a free entry into the launch night raffle. £25 Flava Base voucher &amp; bottle of fizz to be won!</div>
+      </div>
+
+      <form name="launch-party-menu" method="POST" data-netlify="true" id="booking-form">
+        <input type="hidden" name="form-name" value="launch-party-menu">
+        <input type="hidden" name="raffle_entry" value="Yes — automatic with booking">
+
+        <div class="form-step">
+          <div class="form-step-title"><span class="step-num">1</span> Your Details</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label>Mobile Number *</label>
+              <input type="tel" name="mobile" required placeholder="07...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" name="email" required placeholder="your@email.com">
+            <div class="form-note">Your booking confirmation will be sent here.</div>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <div class="form-step-title"><span class="step-num">2</span> Choose Your Starter</div>
+          <div class="form-group">
+            <label>Starter Choice *</label>
+            <select name="starter" required>
+              <option value="">— Select your starter —</option>
+              <option value="Lamb Samosas">🥟 Lamb Samosas</option>
+              <option value="Veg Samosas">🥟 Veg Samosas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <div class="form-step-title"><span class="step-num">3</span> Choose Your Main</div>
+          <div class="form-group">
+            <label>Main Course *</label>
+            <select name="main" required>
+              <option value="">— Select your main —</option>
+              <option value="Punjabi Chicken Curry & Rice">🍛 Punjabi Chicken Curry &amp; Rice</option>
+              <option value="Aloo Gobi & Rice">🥔 Aloo Gobi &amp; Rice (V)</option>
+              <option value="Chicken Tikka Tandoori Wrap">🌯 Chicken Tikka Tandoori Wrap</option>
+              <option value="Keema Wrap">🌯 Keema Wrap</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <div class="form-step-title"><span class="step-num">4</span> Choose Your Drink</div>
+          <div class="form-group">
+            <label>Drink Choice *</label>
+            <select name="drink" required>
+              <option value="">— Select your drink —</option>
+              <option value="Mango Lassi">🥭 Mango Lassi</option>
+              <option value="Vanilla Milkshake">🥤 Vanilla Milkshake</option>
+              <option value="Chocolate Milkshake">🍫 Chocolate Milkshake</option>
+              <option value="Mango Milkshake">🥭 Mango Milkshake</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-step">
+          <div class="form-step-title"><span class="step-num">5</span> Anything Else?</div>
+          <div class="form-group">
+            <label>Dietary Requirements / Allergies</label>
+            <textarea name="dietary" placeholder="Let us know about any allergies or dietary requirements..."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Save Choices &amp; Proceed to Payment</button>
+        <p class="form-footer-note">After submitting you'll be taken to <strong>Square to pay your £15 ticket securely.</strong></p>
+      </form>
+
+      <!-- SUCCESS — SQUARE PAY BUTTON -->
+      <div class="success-msg" id="success-msg">
+        <div class="success-icon">🎉</div>
+        <h3>Food Choices Saved!</h3>
+        <p>Your menu selections are confirmed. Now click below to pay your £15 ticket via Square and secure your place.</p>
+        <a href="https://square.link/u/nzOcxGlb?src=sheet" class="pay-btn-large" id="square-pay-btn">Pay £15 &amp; Confirm My Place</a>
+        <p style="margin-top:1.2rem;font-size:0.82rem;color:var(--text-mid);font-style:italic;">You'll receive a confirmation email once payment is complete. Your raffle entry is automatic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- STORY -->
+<div class="band" style="background:var(--cream);">
+  <div class="band-inner narrow">
+    <p class="section-label">The Story Behind the Flava</p>
+    <h2 class="section-title">More Than <span>Street Food</span></h2>
+    <div class="story-quote">
+      <p>This isn't just a launch party. It's the moment a dream built in memory of a mum who could cook like no one else finally hits the streets. Bold Punjabi flavours. Freshly made. With love.</p>
+    </div>
+    <p class="body-text">Flava Base is a 100% electric Punjabi street kitchen bringing bold home-cooked flavours to Northamptonshire, Milton Keynes and Bedfordshire. Every dish is freshly made to order — the way it should be.</p>
+  </div>
+</div>
+
+<section class="cta-section">
+  <div class="cta-ornament">✦ ✦ ✦</div>
+  <h2>Ready to Experience the Flava of Punjab?</h2>
+  <p>50 tickets only. Choose your food, then pay securely via Square.</p>
+  <a href="#book" class="btn-gold" style="margin-top:1.5rem;">Choose &amp; Book Now</a>
+  <div style="margin-top:1rem;font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:0.2em;color:var(--orange);">⚡ Limited tickets — 13 June 2026 · Ends 9:30pm</div>
+</section>
+
+<div class="zero-bar"><p>⚡ ZERO EMISSION FLAVA &nbsp;·&nbsp; 100% ELECTRIC VAN &nbsp;·&nbsp; BOLD FLAVOUR. ZERO GUILT.</p></div>
+<div class="footer-strip">© 2026 Flava Base · flavabase.co.uk · @flavabaseuk</div>
+
+<script>
+const SQUARE_URL = 'https://square.link/u/nzOcxGlb?src=sheet';
+
+document.getElementById('booking-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = this;
+  const data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    form.style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+    document.getElementById('square-pay-btn').href = SQUARE_URL;
+    setTimeout(() => { window.location.href = SQUARE_URL; }, 4000);
+  })
+  .catch(() => {
+    window.location.href = SQUARE_URL;
+  });
+});
+
+function makeQR(id, url) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const img = document.createElement('img');
+  img.src = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(url)}&bgcolor=ffffff&color=1a4a1a&margin=4`;
+  img.alt = 'QR Code'; img.width = 120; img.height = 120;
+  el.appendChild(img);
+}
+
+makeQR('qr-book', 'https://flavabase.co.uk/flava-base-launch-party');
+makeQR('qr-menu', 'https://flavabase.co.uk/menu');
+makeQR('qr-app', 'https://flavabase.co.uk/flavabase-app');
+makeQR('qr-social', 'https://www.instagram.com/flavabaseuk');
+</script>
+</body>
+</html>
