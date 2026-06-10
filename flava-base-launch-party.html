@@ -405,19 +405,23 @@ document.getElementById('booking-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const form = this;
   const data = new FormData(form);
-  fetch('/', {
+  fetch('/flava-base-launch-party.html', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(data).toString()
   })
-  .then(() => {
+  .then((response) => {
     form.style.display = 'none';
     document.getElementById('success-msg').style.display = 'block';
     document.getElementById('square-pay-btn').href = SQUARE_URL;
     setTimeout(() => { window.location.href = SQUARE_URL; }, 4000);
   })
   .catch(() => {
-    window.location.href = SQUARE_URL;
+    // Still show success and redirect even if fetch fails
+    form.style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+    document.getElementById('square-pay-btn').href = SQUARE_URL;
+    setTimeout(() => { window.location.href = SQUARE_URL; }, 4000);
   });
 });
 
