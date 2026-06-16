@@ -33,9 +33,6 @@
 
     body { background: var(--cream); color: var(--text-dark); font-family: 'Crimson Text', Georgia, serif; font-size: 18px; line-height: 1.7; }
 
-    /* Cream logo on dark green header */
-    .site-header .site-logo { }
-
     /* HEADER */
     .site-header { background: var(--green-dark); border-bottom: 3px solid var(--gold); padding: 0.75rem 1.5rem; position: sticky; top: 0; z-index: 100; }
     .nav-wrap { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; gap: 0.5rem; }
@@ -53,7 +50,10 @@
     .gold-dot { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
     .hero-tagline { color: var(--text-light); font-style: italic; font-size: 1rem; }
 
-    /* NOTICE */
+    /* POPULAR DRINKS STRIP */
+    .popular-drinks { background: var(--green-dark); border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); text-align: center; padding: 1rem 1.5rem; }
+    .popular-drinks h2 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.15em; font-size: clamp(1rem, 2.5vw, 1.3rem); color: var(--gold-light); margin-bottom: 0.4rem; }
+    .popular-drinks p { color: var(--cream); font-size: 0.95rem; font-weight: 600; font-style: normal; }
     .notice-bar { background: rgba(45,122,45,0.08); border-bottom: 1px solid rgba(45,122,45,0.2); color: var(--text-mid); text-align: center; padding: 0.6rem 1rem; font-size: 0.9rem; font-style: italic; }
 
     /* MENU SECTIONS */
@@ -95,24 +95,18 @@
 
     /* SHAKES */
     .shakes-section { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem; }
-    .shakes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    .shakes-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
     .shake-tier { border: 1px solid rgba(45,122,45,0.25); background: white; overflow: hidden; }
     .shake-tier-head { padding: 0.8rem 1.2rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(45,122,45,0.2); }
-    .shake-tier-head.s-dark { background: var(--green-dark); }
-    .shake-tier-head.s-mid { background: var(--green-mid); }
     .shake-tier-head.s-warm { background: var(--gold); }
     .tier-name { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.12em; font-size: 0.95rem; }
-    .s-dark .tier-name, .s-mid .tier-name { color: #fff8e8; font-size: 1rem; }
     .s-warm .tier-name { color: var(--green-dark); }
     .tier-price { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.3rem; color: var(--orange); }
-    .s-dark .tier-price, .s-mid .tier-price { color: #ffe8a0; }
     .s-warm .tier-price { color: var(--green-dark); }
     .shake-list { list-style: none; padding: 0.5rem 1.2rem; }
     .shake-list li { padding: 0.5rem 0; border-bottom: 1px dashed rgba(45,122,45,0.2); font-size: 0.95rem; color: #0a1f0a; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
     .shake-list li:last-child { border-bottom: none; }
     .shake-list li::before { content: '🧋'; font-size: 0.75rem; flex-shrink: 0; }
-    .ftag { background: var(--orange); color: white; font-family: 'Bebas Neue', sans-serif; font-size: 0.6rem; padding: 0.1rem 0.4rem; margin-left: auto; }
-    .full-width { grid-column: 1 / -1; }
     .drinks-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px dashed rgba(45,122,45,0.2); font-size: 0.92rem; }
     .drinks-row:last-child { border-bottom: none; }
     .drinks-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--orange); }
@@ -144,8 +138,6 @@
     /* RESPONSIVE */
     @media (max-width: 650px) {
       .build-steps { grid-template-columns: 1fr 1fr; }
-      .shakes-grid { grid-template-columns: 1fr; }
-      .full-width { grid-column: 1; }
     }
     @media (max-width: 500px) {
       .build-steps { grid-template-columns: 1fr; }
@@ -159,9 +151,7 @@
 
   <header class="site-header">
     <div class="nav-wrap">
-      <a href="index.html">
-        <a href="index.html" class="logo-wrap"><span class="punjabi-label">Punjabi</span><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
-      </a>
+      <a href="index.html" class="logo-wrap"><span class="punjabi-label">Punjabi</span><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a href="menu.html" class="active">Menu</a>
@@ -179,7 +169,7 @@
     <div class="gold-divider"><div class="gold-dot"></div></div>
     <p class="hero-tagline">Bold Punjabi flavours. Built fresh. Served street style.</p>
   </section>
-<section><h2>⭐ Popular Drinks</h2><p>Mango Lassi • Strawberry Lassi • Punjabi Chai • Karak Chai</p></section>
+  <section class="popular-drinks"><h2>⭐ Popular Drinks</h2><p>Mitha Mango Lassi • Bueno Bhangra Shake • Balle Balle Oreo Shake</p></section>
 
   <div class="notice-bar">
     🌿 Food allergies or intolerances? Please speak to our staff before ordering.
@@ -191,9 +181,8 @@
     <h2 class="section-title">Signature <span>Favourites</span></h2>
     <div class="menu-item">
       <div class="item-name">🔥 Flava Box – Curry of the Day</div>
-      <div class="item-price">£8</div>
-      <div class="item-desc">Punjabi curry of the day served with basmati rice, fresh salad and house sauces.</div>
-      <div class="item-extra">+ Add Naan or Roti £2</div>
+      <div class="item-price">£12</div>
+      <div class="item-desc">Punjabi curry of the day served with basmati rice, fresh salad, house sauces and your choice of naan or roti.</div>
     </div>
     <div class="menu-item">
       <div class="item-name">🌯 Chicken Tikka Wrap</div>
@@ -216,19 +205,14 @@
       <div class="item-desc">Spiced Punjabi keema mince with fresh salad & chutneys.</div>
     </div>
     <div class="menu-item">
-      <div class="item-name">🧀 Paneer Tikka Wrap <span class="veg-badge">V</span></div>
+      <div class="item-name">🥬 Gobi Wrap <span class="veg-badge">V</span></div>
       <div class="item-price">£8</div>
-      <div class="item-desc">Marinated paneer cubes grilled with onions and bell peppers.</div>
+      <div class="item-desc">Spiced cauliflower, grilled with onions and bell peppers, fresh salad & chutneys.</div>
     </div>
     <div class="menu-item">
       <div class="item-name">🍛 Chole Bhature <span class="veg-badge">V</span></div>
       <div class="item-price">£7</div>
-      <div class="item-desc">Fluffy fried bread served with spicy chickpea curry, onion rings and pickle.</div>
-    </div>
-    <div class="menu-item">
-      <div class="item-name">🫓 Amritsari Kulcha <span class="veg-badge">V</span></div>
-      <div class="item-price">£6</div>
-      <div class="item-desc">Crisp, flaky flatbread stuffed with potatoes, paneer or onions, loaded with butter. Served with chole.</div>
+      <div class="item-desc">Fluffy fried bread served with spicy chickpea curry, basmati rice, onion rings and pickle.</div>
     </div>
     <div class="menu-item">
       <div class="item-name">🍜 Flava Masala Noodles <span class="veg-badge">V</span></div>
@@ -268,7 +252,7 @@
             <li>Chicken Tikka</li>
             <li>Tandoori Chicken</li>
             <li>Lamb Keema</li>
-            <li>Paneer <span class="veg-badge">V</span></li>
+            <li>Gobi <span class="veg-badge">V</span></li>
             <li>Chickpea <span class="veg-badge">V</span></li>
           </ul>
         </div>
@@ -318,7 +302,7 @@
     </div>
     <div class="menu-item">
       <div class="item-name">🔥 Loaded Fries</div>
-      <div class="item-price">£7</div>
+      <div class="item-price">£8</div>
       <div class="item-desc">Loaded Keema, Chicken Tikka or Tandoori Chicken Fries. Served with mint & tamarind chutney.</div>
     </div>
     <div class="menu-item">
@@ -352,7 +336,6 @@
         <span class="extra-pill">Cheese +£1</span>
         <span class="extra-pill">Can +£1.50</span>
         <span class="extra-pill">Milkshake +£3</span>
-        <span class="extra-pill">Upgrade to Freakshake +£5</span>
       </div>
     </div>
   </section>
@@ -364,46 +347,14 @@
     <div class="shakes-grid">
 
       <div class="shake-tier">
-        <div class="shake-tier-head s-dark">
-          <span class="tier-name">👑 Freakshakes</span>
-          <span class="tier-price">£7.50</span>
-        </div>
-        <ul class="shake-list">
-          <li>Lotus Biscoff Freakshake <span class="ftag">🔥 TRY</span></li>
-          <li>Oreo Madness Freakshake <span class="ftag">🔥 TRY</span></li>
-          <li>The Maharaja Shake 👑</li>
-          <li>The Flava Freakshake <span class="ftag">🔥 TRY</span></li>
-        </ul>
-      </div>
-
-      <div class="shake-tier">
-        <div class="shake-tier-head s-mid">
-          <span class="tier-name">⭐ Premium Shakes</span>
-          <span class="tier-price">£6.00</span>
-        </div>
-        <ul class="shake-list">
-          <li>Nutella Milkshake</li>
-          <li>Punjabi Choco Storm</li>
-          <li>Pista Power Shake</li>
-          <li>Pink Punjab Shake</li>
-          <li>Amritsar Pistachio Bliss</li>
-        </ul>
-      </div>
-
-      <div class="shake-tier full-width">
         <div class="shake-tier-head s-warm">
-          <span class="tier-name">Classic Shakes & Lassi</span>
+          <span class="tier-name">Shakes & Lassi</span>
           <span class="tier-price">£5 – £5.50</span>
         </div>
-        <ul class="shake-list" style="display:grid; grid-template-columns:1fr 1fr; gap:0 1rem; padding:0.5rem 1.2rem;">
-          <li>Oreo Milkshake — £5.50</li>
-          <li>Strawberry Milkshake — £5.50</li>
-          <li>Banana Milkshake — £5.50</li>
-          <li>Mango Lassi — £5</li>
-          <li>Mango Lassi Madness</li>
-          <li>Punjab Mango Magic</li>
-          <li>Chocolate Chandigarh</li>
-          <li>Strawberry Pataka</li>
+        <ul class="shake-list">
+          <li>Mitha Mango Lassi — £5</li>
+          <li>Bueno Bhangra Shake — £5.50</li>
+          <li>Balle Balle Oreo Shake — £5.50</li>
         </ul>
       </div>
 
@@ -435,15 +386,15 @@
     <div class="contact-grid" style="max-width:700px; margin:1.5rem auto;">
       <div class="contact-item">
         <div class="contact-label">General Enquiries</div>
-        <a href="/cdn-cgi/l/email-protection#761f181019505540424d101a1700171417051358151958031d">info&#64;flavabase.co.uk</a>
+        <a href="mailto:info@flavabase.co.uk">info&#64;flavabase.co.uk</a>
       </div>
       <div class="contact-item">
         <div class="contact-label">Event Bookings</div>
-        <a href="/cdn-cgi/l/email-protection#c3a6b5a6adb7b0e5e0f5f7f8a5afa2b5a2a1a2b0a6eda0acedb6a8">events&#64;flavabase.co.uk</a>
+        <a href="mailto:events@flavabase.co.uk">events&#64;flavabase.co.uk</a>
       </div>
       <div class="contact-item">
         <div class="contact-label">Pub Pop-Ups</div>
-        <a href="/cdn-cgi/l/email-protection#9feff0efeaefecb9bca9aba4f9f3fee9fefdfeecfab1fcf0b1eaf4">popups&#64;flavabase.co.uk</a>
+        <a href="mailto:popups@flavabase.co.uk">popups&#64;flavabase.co.uk</a>
       </div>
     </div>
     <a href="bookings.html" class="btn-gold">Make a Booking</a>
@@ -453,4 +404,7 @@
     <p>⚡ ZERO EMISSION FLAVA &nbsp;·&nbsp; 100% ELECTRIC VAN &nbsp;·&nbsp; BOLD FLAVOUR. ZERO GUILT.</p>
   </div>
 
-  <div class="footer-s
+  <div class="footer-strip">© 2026 Flava Base · flavabase.co.uk · @flavabaseuk</div>
+
+</body>
+</html>
