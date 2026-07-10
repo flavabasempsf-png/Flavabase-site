@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order Online | Flava Base</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Libre+Baskerville:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:#ffffff;
+font-family:'Libre Baskerville',serif;
+color:#222;
+line-height:1.5;
+
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+.container{
+
+width:95%;
+max-width:1300px;
+margin:auto;
+
+}
+
+/* ----------------------- */
+/* Masthead */
+/* ----------------------- */
+
+header{
+
+border-bottom:4px double #000;
+padding:30px 0 15px;
+
+}
+
+.logo{
+
+text-align:center;
+
+}
+
+.logo img{
+
+max-width:220px;
+margin:auto;
+
+}
+
+.logo h1{
+
+font-family:'Cinzel',serif;
+font-size:52px;
+letter-spacing:2px;
+margin-top:10px;
+
+}
+
+.tagline{
+
+font-family:'Special Elite',cursive;
+font-size:18px;
+margin-top:10px;
+
+}
+
+.subline{
+
+font-size:15px;
+margin-top:10px;
+
+}
+
+/* ----------------------- */
+
+.hero{
+
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:30px;
+margin-top:40px;
+align-items:center;
+
+}
+
+.hero-image{
+
+border:8px solid #222;
+padding:10px;
+background:white;
+box-shadow:8px 8px 0px rgba(0,0,0,.15);
+
+}
+
+.hero-image img{
+
+width:100%;
+
+}
+
+.hero-right{
+
+border:2px solid #1b4d2a;
+padding:25px;
+
+}
+
+.hero-right h2{
+
+font-family:'Cinzel',serif;
+font-size:28px;
+color:#1b4d2a;
+
+}
+
+.special{
+
+font-size:32px;
+font-weight:bold;
+margin:20px 0;
+color:#c97812;
+
+}
+
+.button{
+
+display:inline-block;
+background:#1b4d2a;
+color:white;
+padding:14px 28px;
+border-radius:5px;
+margin-top:20px;
+font-weight:bold;
+transition:.3s;
+
+}
+
+.button:hover{
+
+background:#c97812;
+
+}
+
+/* ----------------------- */
+
+.section-title{
+
+font-family:'Cinzel',serif;
+font-size:38px;
+text-align:center;
+margin:60px 0 30px;
+border-top:2px solid #000;
+border-bottom:2px solid #000;
+padding:15px;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+}
+
+.logo h1{
+
+font-size:38px;
+
+}
+
+.section-title{
+
+font-size:28px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+
+<!-- Replace with your own logo -->
+<img src="images/flava-logo.png" alt="Flava Base">
+
+<h1>THE FLAVA GAZETTE</h1>
+
+<div class="tagline">
+Serving the Finest Punjabi Street Food Since 2026
+</div>
+
+<div class="subline">
+Modern Punjabi Street Kitchen • The Flava of Punjab
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<section class="hero">
+
+<div class="hero-image">
+
+<!-- Replace with your Flava Box photo -->
+<img src="images/flava-box.jpg" alt="Flava Box">
+
+</div>
+
+<div class="hero-right">
+
+<h2>Today's Special</h2>
+
+<div class="special">
+🍛 FLAVA BOX
+</div>
+
+<p>
+Today's curry served with fluffy basmati rice,
+fresh salad, pickle & house sauces.
+</p>
+
+<h2 style="margin-top:25px;">£13</h2>
+
+<p>Add Fresh Naan +£2</p>
+
+<a class="button" href="#menu">
+START ORDER →
+</a>
+
+</div>
+
+</section>
+
+<h2 class="section-title" id="menu">
+Order Your Flava
+</h2>
+<h2 class="section-title" id="menu">
+Order Your Flava
+</h2>
+<section class="menu-grid">
+
+<style>
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+margin-bottom:80px;
+}
+
+.card{
+
+background:#fff;
+border:2px solid #ddd;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:15px;
+
+}
+
+.card h3{
+
+font-family:'Cinzel',serif;
+font-size:30px;
+color:#1b4d2a;
+
+}
+
+.price{
+
+font-size:34px;
+font-weight:bold;
+color:#c97812;
+margin:10px 0;
+
+}
+
+.description{
+
+margin-bottom:20px;
+
+}
+
+.qty{
+
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:15px;
+
+}
+
+.qty button{
+
+width:40px;
+height:40px;
+font-size:24px;
+border:none;
+background:#1b4d2a;
+color:white;
+border-radius:50%;
+cursor:pointer;
+
+}
+
+.qty span{
+
+font-size:22px;
+font-weight:bold;
+width:30px;
+text-align:center;
+
+}
+
+.add{
+
+margin-top:20px;
+width:100%;
+padding:14px;
+background:#c97812;
+color:white;
+font-size:18px;
+font-weight:bold;
+border:none;
+cursor:pointer;
+border-radius:8px;
+
+}
+
+.add:hover{
+
+background:#1b4d2a;
+
+}
+
+</style>
+
+<!-- FLAVA BOX -->
+
+<div class="card">
+
+<img src="images/flava-box.jpg">
+
+<h3>🍛 Flava Box</h3>
+
+<div class="price">£13</div>
+
+<p class="description">
+
+Today's curry with basmati rice,
+salad, pickle & house sauces.
+
+</p>
+
+<label>
+
+<input type="checkbox">
+
+Add Fresh Naan (+£2)
+
+</label>
+
+<div class="qty">
+
+<button>-</button>
+
+<span>1</span>
+
+<button>+</button>
+
+</div>
+
+<button class="add">
+
+Add To Basket
+
+</button>
+
+</div>
+
+<!-- WRAPS -->
+
+<div class="card">
+
+<img src="images/wrap.jpg">
+
+<h3>🌯 Wraps</h3>
+
+<div class="price">£10</div>
+
+<p class="description">
+
+Choose:
+
+Tandoori Chicken
+
+Keema
+
+Punjabi Kebab
+
+Served in fresh Roti or Naan.
+
+</p>
+
+<select style="width:100%;padding:12px;margin-bottom:12px;">
+
+<option>Tandoori Chicken</option>
+
+<option>Keema</option>
+
+<option>Punjabi Kebab</option>
+
+</select>
+
+<select style="width:100%;padding:12px;">
+
+<option>Roti</option>
+
+<option>Naan</option>
+
+</select>
+
+<div class="qty">
+
+<button>-</button>
+
+<span>1</span>
+
+<button>+</button>
+
+</div>
+
+<button class="add">
+
+Add To Basket
+
+</button>
+
+</div>
+
+<!-- KEEMA FRIES -->
+
+<div class="card">
+
+<img src="images/fries.jpg">
+
+<h3>🍟 Loaded Keema Fries</h3>
+
+<div class="price">£8</div>
+
+<p class="description">
+
+Loaded with keema,
+cheese sauce,
+chilli sauce
+& spring onions.
+
+</p>
+
+<div class="qty">
+
+<button>-</button>
+
+<span>1</span>
+
+<button>+</button>
+
+</div>
+
+<button class="add">
+
+Add To Basket
+
+</button>
+
+</div>
+
+<!-- SAMOSAS -->
+
+<div class="card">
+
+<img src="images/samosa.jpg">
+
+<h3>🥟 Samosas</h3>
+
+<div class="price">
+
+Veg £3.50
+
+<br>
+
+Meat £4
+
+</div>
+
+<p class="description">
+
+Served with mint &
+tamarind chutney.
+
+</p>
+
+<select style="width:100%;padding:12px;">
+
+<option>Veg (2)</option>
+
+<option>Meat (2)</option>
+
+</select>
+
+<div class="qty">
+
+<button>-</button>
+
+<span>1</span>
+
+<button>+</button>
+
+</div>
+
+<button class="add">
+
+Add To Basket
+
+</button>
+
+</div>
+
+<!-- SHAKES -->
+
+<div class="card">
+
+<img src="images/shakes.jpg">
+
+<h3>🥤 Shakes & Lassi</h3>
+
+<select style="width:100%;padding:12px;">
+
+<option>Mitha Mango Lassi £5</option>
+
+<option>Bueno Bhangra Shake £5.50</option>
+
+<option>Balle Balle Oreo £5.50</option>
+
+</select>
+
+<div class="qty">
+
+<button>-</button>
+
+<span>1</span>
+
+<button>+</button>
+
+</div>
+
+<button class="add">
+
+Add To Basket
+
+</button>
+
+</div>
+
+<!-- CHAI -->
+
+<div class="card">
+
+<img src="images/chai.jpg">
+
+<h3>☕ Punjabi Chai</h3>
+
+<select style="width:100%;padding:12px;">
+
+<option>Punjabi Chai £2.50</option>
+
+<option>Masala Chai £2.50</option>
+
+<option>Chai Latte £3</option>
+
+</select>
+
+<div class="qty">
+
+<button>-</button>
+
+<span>1</span>
+
+<button>+</button>
+
+</div>
+
+<button class="add">
+
+Add To Basket
+
+</button>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- FLOATING BASKET -->
+<!-- ========================= -->
+
+<style>
+
+#basketBar{
+
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#1b4d2a;
+color:white;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 -4px 15px rgba(0,0,0,.25);
+z-index:999;
+
+}
+
+#basketBar h2{
+
+font-size:22px;
+margin:0;
+
+}
+
+#basketBar button{
+
+background:#d28b1d;
+color:white;
+border:none;
+padding:14px 30px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+border-radius:8px;
+
+}
+
+#basketPanel{
+
+position:fixed;
+top:0;
+right:-100%;
+width:420px;
+height:100%;
+background:white;
+box-shadow:-8px 0 30px rgba(0,0,0,.25);
+transition:.35s;
+z-index:1000;
+overflow:auto;
+
+}
+
+#basketPanel.open{
+
+right:0;
+
+}
+
+.basketHeader{
+
+padding:25px;
+border-bottom:2px solid #ddd;
+
+}
+
+.basketHeader h2{
+
+font-family:'Cinzel',serif;
+margin-bottom:10px;
+
+}
+
+.basketItems{
+
+padding:25px;
+
+}
+
+.basketItem{
+
+display:flex;
+justify-content:space-between;
+padding:15px 0;
+border-bottom:1px dashed #ccc;
+
+}
+
+.total{
+
+font-size:32px;
+font-weight:bold;
+color:#c97812;
+padding:25px;
+
+}
+
+.checkout{
+
+width:100%;
+padding:18px;
+background:#1b4d2a;
+color:white;
+font-size:22px;
+border:none;
+cursor:pointer;
+
+}
+
+.close{
+
+position:absolute;
+right:20px;
+top:20px;
+font-size:30px;
+cursor:pointer;
+
+}
+
+</style>
+
+<div id="basketBar">
+
+<h2>
+
+🛒 Basket
+
+<span id="basketCount">
+
+0
+
+</span>
+
+Items
+
+</h2>
+
+<button onclick="openBasket()">
+
+View Basket
+
+</button>
+
+</div>
+
+<div id="basketPanel">
+
+<div class="basketHeader">
+
+<div class="close" onclick="closeBasket()">
+
+✕
+
+</div>
+
+<h2>
+
+THE FLAVA GAZETTE
+
+</h2>
+
+<p>
+
+Your Order
+
+</p>
+
+</div>
+
+<div class="basketItems" id="basketItems">
+
+<p>
+
+Your basket is empty.
+
+</p>
+
+</div>
+
+<div class="total">
+
+£<span id="basketTotal">
+
+0.00
+
+</span>
+
+</div>
+
+<button class="checkout">
+
+Continue →
+
+</button>
+
+</div>
+
+<script>
+
+let basket=[];
+
+function addItem(name,price){
+
+basket.push({
+
+name:name,
+
+price:price
+
+});
+
+updateBasket();
+
+}
+
+function updateBasket(){
+
+let html="";
+
+let total=0;
+
+basket.forEach(item=>{
+
+total+=item.price;
+
+html+=`
+
+<div class="basketItem">
+
+<div>
+
+${item.name}
+
+</div>
+
+<div>
+
+£${item.price.toFixed(2)}
+
+</div>
+
+</div>
+
+`;
+
+});
+
+if(basket.length===0){
+
+html="<p>Your basket is empty.</p>";
+
+}
+
+document.getElementById("basketItems").innerHTML=html;
+
+document.getElementById("basketCount").innerHTML=basket.length;
+
+document.getElementById("basketTotal").innerHTML=total.toFixed(2);
+
+}
+
+function openBasket(){
+
+document.getElementById("basketPanel").classList.add("open");
+
+}
+
+function closeBasket(){
+
+document.getElementById("basketPanel").classList.remove("open");
+
+}
+
+document.querySelectorAll(".add").forEach(button=>{
+
+button.addEventListener("click",function(){
+
+const card=this.closest(".card");
+
+const name=card.querySelector("h3").innerText;
+
+const price=parseFloat(
+
+card.querySelector(".price").innerText.replace(/[^0-9.]/g,'')
+
+);
+
+addItem(name,price);
+
+});
+
+});
+
+</script>
+<!-- ========================= -->
+<!-- CHECKOUT PANEL -->
+<!-- ========================= -->
+
+<style>
+
+.checkoutSection{
+
+padding:25px;
+border-top:2px solid #ddd;
+margin-top:20px;
+
+}
+
+.checkoutSection h3{
+
+font-family:'Cinzel',serif;
+margin-bottom:15px;
+color:#1b4d2a;
+
+}
+
+.checkoutSection label{
+
+display:block;
+margin:12px 0;
+font-weight:bold;
+
+}
+
+.checkoutSection input,
+.checkoutSection textarea,
+.checkoutSection select{
+
+width:100%;
+padding:12px;
+border:2px solid #ddd;
+border-radius:8px;
+font-size:16px;
+margin-top:5px;
+margin-bottom:15px;
+
+}
+
+textarea{
+
+min-height:90px;
+resize:vertical;
+
+}
+
+.radioOption{
+
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+
+}
+
+#tableFields{
+
+display:none;
+
+}
+
+.squareButton{
+
+width:100%;
+padding:18px;
+background:#006AFF;
+color:white;
+font-size:22px;
+font-weight:bold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:20px;
+
+}
+
+.squareButton:hover{
+
+background:#0054cc;
+
+}
+
+.notice{
+
+font-size:14px;
+color:#666;
+text-align:center;
+margin-top:15px;
+
+}
+
+</style>
+
+<div class="checkoutSection">
+
+<h3>How would you like your food?</h3>
+
+<div class="radioOption">
+
+<input
+type="radio"
+name="collection"
+value="table"
+onclick="showTable()">
+
+<label>🍽 Bring to my table</label>
+
+</div>
+
+<div class="radioOption">
+
+<input
+type="radio"
+name="collection"
+value="van"
+onclick="hideTable()">
+
+<label>🚚 I'll collect from the van</label>
+
+</div>
+
+<div id="tableFields">
+
+<label>
+
+Table Number
+
+<input
+type="text"
+placeholder="Example: Table 7">
+
+</label>
+
+</div>
+
+<label>
+
+Your Name
+
+<input
+type="text"
+placeholder="Name">
+
+</label>
+
+<label>
+
+Mobile Number (optional)
+
+<input
+type="tel"
+placeholder="07...">
+
+</label>
+
+<label>
+
+Special Requests
+
+<textarea
+placeholder="Any allergies, no onions, extra sauce etc."></textarea>
+
+</label>
+
+<button
+class="squareButton"
+onclick="payNow()">
+
+💳 Pay Securely with Square
+
+</button>
+
+<div class="notice">
+
+Payments are securely processed by Square.
+
+</div>
+
+</div>
+
+<script>
+
+function showTable(){
+
+document.getElementById("tableFields").style.display="block";
+
+}
+
+function hideTable(){
+
+document.getElementById("tableFields").style.display="none";
+
+}
+
+function payNow(){
+
+// REPLACE THIS WITH YOUR SQUARE CHECKOUT LINK
+
+window.location.href="https://square.link/u/YOUR-LINK-HERE";
+
+}
+
+</script>
+</body>
+</html>
+<!-- ========================= -->
+<!-- ORDER CONFIRMATION MODAL -->
+<!-- ========================= -->
+
+<style>
+
+#successModal{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+
+}
+
+.successCard{
+
+background:#fff;
+width:90%;
+max-width:600px;
+padding:50px;
+text-align:center;
+border:8px double #1b4d2a;
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+}
+
+.successCard h1{
+
+font-family:'Cinzel',serif;
+font-size:42px;
+margin-bottom:20px;
+color:#1b4d2a;
+
+}
+
+.successCard h2{
+
+font-size:22px;
+margin-bottom:25px;
+
+}
+
+.orderNumber{
+
+font-size:46px;
+color:#c97812;
+font-weight:bold;
+margin:20px 0;
+
+}
+
+.waitTime{
+
+font-size:22px;
+margin:25px 0;
+
+}
+
+.successCard button{
+
+background:#1b4d2a;
+color:white;
+padding:16px 40px;
+border:none;
+font-size:20px;
+cursor:pointer;
+border-radius:8px;
+
+}
+
+.successCard button:hover{
+
+background:#c97812;
+
+}
+
+.footerMessage{
+
+margin-top:30px;
+font-style:italic;
+color:#666;
+
+}
+
+</style>
+
+<div id="successModal">
+
+<div class="successCard">
+
+<h1>
+
+THE FLAVA GAZETTE
+
+</h1>
+
+<h2>
+
+Thank You For Your Order!
+
+</h2>
+
+<div class="orderNumber" id="orderID">
+
+#107
+
+</div>
+
+<div class="waitTime">
+
+⏱ Estimated Wait
+
+<strong>
+
+15–20 Minutes
+
+</strong>
+
+</div>
+
+<p id="collectionMessage">
+
+Thank you for ordering.
+
+</p>
+
+<button onclick="closeSuccess()">
+
+Close
+
+</button>
+
+<div class="footerMessage">
+
+Serving the Finest Punjabi Street Food Since 2026
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function generateOrderNumber(){
+
+return Math.floor(100+Math.random()*900);
+
+}
+
+function showSuccess(){
+
+document.getElementById("orderID").innerHTML=
+
+"#"+generateOrderNumber();
+
+let option=document.querySelector(
+
+'input[name="collection"]:checked'
+
+);
+
+if(option){
+
+if(option.value=="table"){
+
+document.getElementById("collectionMessage").innerHTML=
+
+"🍽 We'll bring your order to your table.";
+
+}else{
+
+document.getElementById("collectionMessage").innerHTML=
+
+"🚚 Please collect your order from the Flava Base van.";
+
+}
+
+}
+
+document.getElementById("successModal").style.display="flex";
+
+}
+
+function closeSuccess(){
+
+document.getElementById("successModal").style.display="none";
+
+}
+
+/* Replace the old payNow() function with this */
+
+function payNow(){
+
+/*
+REPLACE THIS LINK
+WITH YOUR SQUARE PAYMENT LINK
+*/
+
+window.open(
+
+"https://square.link/u/YOUR-LINK-HERE",
+
+"_blank"
+
+);
+
+/* Demo confirmation */
+
+setTimeout(function(){
+
+showSuccess();
+
+},1000);
+
+}
+
+</script>
+
+</body>
+
+</html>
