@@ -262,8 +262,11 @@ body{background:var(--cream);color:var(--text-dark);font-family:'Crimson Text',G
         <div class="card-price">from £5</div>
         <select class="card-select shake-choice">
           <option value="Mitha Mango Lassi" data-price="5">Mitha Mango Lassi — £5</option>
-          <option value="Bueno Bhangra Shake" data-price="5.50">Bueno Bhangra Shake — £5.50</option>
+          <option value="Mango Milkshake" data-price="5.50">Mango Milkshake — £5.50</option>
           <option value="Balle Balle Oreo Shake" data-price="5.50">Balle Balle Oreo Shake — £5.50</option>
+          <option value="Bombay Biscoff Shake" data-price="5.50">Bombay Biscoff Shake — £5.50</option>
+          <option value="Kela Punjab Shake" data-price="5.50">Kela Punjab Shake (Banana) — £5.50</option>
+          <option value="Pataka Strawberry Shake" data-price="5.50">Pataka Strawberry Shake — £5.50</option>
         </select>
         <div class="qty-row">
           <button class="qty-btn minus">−</button>
@@ -356,7 +359,13 @@ body{background:var(--cream);color:var(--text-dark);font-family:'Crimson Text',G
         <textarea name="notes" class="form-input" rows="3" placeholder="Any allergies, no onions, extra sauce etc."></textarea>
       </div>
 
-      <button type="submit" class="place-order-btn">Place My Order</button>
+      <div style="background:var(--green-dark);border:2px solid var(--gold);padding:1.2rem;text-align:center;margin-top:0.5rem;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.2em;color:var(--gold-light);margin-bottom:0.5rem;">💳 Pay at the Van</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:900;font-size:2.5rem;color:white;line-height:1;" id="form-total-display">£0.00</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:0.75rem;letter-spacing:0.15em;color:rgba(240,250,240,0.6);margin-top:0.3rem;">YOUR TOTAL</div>
+        <p style="color:rgba(240,250,240,0.75);font-size:0.82rem;font-style:italic;margin-top:0.6rem;">Cash and card accepted at the van.</p>
+      </div>
+      <button type="submit" class="place-order-btn" style="margin-top:0.8rem;">Place My Order</button>
       <p class="order-note">Your order will be prepared fresh. We'll bring it to your table or let you know when it's ready at the van.</p>
     </form>
   </div>
@@ -408,10 +417,11 @@ body{background:var(--cream);color:var(--text-dark);font-family:'Crimson Text',G
 
     <p class="success-msg" id="success-msg" style="margin-bottom:1.2rem;"></p>
 
-    <a id="square-pay-btn" href="https://square.link/u/nzOcxGlb" target="_blank" style="display:block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--green-dark);font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.2em;padding:1rem;text-decoration:none;text-align:center;margin-bottom:0.8rem;">
-      💳 Pay Now with Square
-    </a>
-    <p style="font-size:0.78rem;color:var(--text-mid);font-style:italic;margin-bottom:1rem;">Secure payment processed by Square. Your order is held until payment is confirmed.</p>
+    <div style="background:var(--green-dark);border:2px solid var(--gold);padding:1rem;margin:1rem 0;text-align:center;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:0.2em;color:var(--gold-light);margin-bottom:0.3rem;">💳 Amount to Pay at the Van</div>
+      <div style="font-family:'Playfair Display',serif;font-weight:900;font-size:2.8rem;color:white;line-height:1;">£<span id="modal-pay-total">0.00</span></div>
+      <p style="color:rgba(240,250,240,0.7);font-size:0.78rem;margin-top:0.4rem;">Cash and card accepted.</p>
+    </div>
     <button class="success-close" onclick="closeSuccess()">✦ Close ✦</button>
   </div>
 </div>
@@ -512,6 +522,7 @@ function updateBasket() {
   document.getElementById('bar-count').textContent = count;
   document.getElementById('bar-total').textContent = total.toFixed(2);
   document.getElementById('panel-total').textContent = total.toFixed(2);
+  document.getElementById('form-total-display').textContent = '£' + total.toFixed(2);
 
   const container = document.getElementById('basket-items');
   if(count === 0) {
@@ -585,6 +596,7 @@ function showSuccess(orderBasket) {
 
   const total = orderBasket.reduce((s, i) => s + i.price, 0);
   document.getElementById('success-total').textContent = total.toFixed(2);
+  document.getElementById('modal-pay-total').textContent = total.toFixed(2);
 
   const itemsHtml = orderBasket.map(i =>
     `<div style="display:flex;justify-content:space-between;">
