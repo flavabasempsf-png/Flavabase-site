@@ -7172,6 +7172,60 @@ page-break-before:always;
 
 }
 
+.checkbox-group{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+    gap:.8rem;
+
+    margin-top:.8rem;
+
+}
+
+.checkbox-group label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-weight:400;
+
+    cursor:pointer;
+
+}
+
+.checkbox-group input{
+
+    width:auto;
+
+}
+
+.card img{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+    border-radius:14px 14px 0 0;
+
+    display:block;
+
+    transition:.35s ease;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.05);
+
+}
+
 /*=========================================================
   END OF FILE
 =========================================================*/

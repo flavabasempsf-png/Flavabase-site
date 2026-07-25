@@ -8,7 +8,7 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Contact Flava Base | Request a Catering Quote</title>
+<title>Book Flava Base | Request a Catering Quote</title>
 
 <meta name="description"
       content="Contact Flava Base for weddings, corporate events, private parties and pub partnerships. Request your personalised catering quotation today.">
@@ -74,11 +74,11 @@
 
 <div class="hero-content">
 
-<span class="hero-badge">GET IN TOUCH</span>
+<span class="hero-badge">REQUEST A CATERING QUOTE</span>
 
-<h1 class="hero-title">Let's Talk About Your Event</h1>
+<h1 class="hero-title">Book Flava Base</h1>
 
-<p class="hero-subtitle">Whether you're planning a wedding, corporate event, private celebration or pub food night, we'd love to hear from you.</p>
+<p class="hero-subtitle">Tell us about your event and we'll get back to you with a tailored quote. Whether it's a wedding, corporate event, private party or pub pop-up, we'd love to help.</p>
 
 </div>
 
@@ -152,7 +152,15 @@
 
 <div class="contact-form">
 
-<form>
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
+
+<input type="hidden" name="form-name" value="contact">
+
+<p hidden>
+
+<label>Don't fill this in: <input name="bot-field"></label>
+
+</p>
 
 <div class="form-group">
 
@@ -252,23 +260,29 @@
 
 <div class="form-group">
 
-<label>Estimated Budget (Optional)</label>
+<label>Menu Requirements</label>
 
-<select class="form-control" name="budget">
+<textarea class="form-control" name="menu_requirements" rows="4" placeholder="Tell us what you're looking for. For example: Punjabi Street Food, Vegetarian options, Children's menu, Desserts, Drinks, Late-night food, or any dietary requirements."></textarea>
 
-<option>Please Select</option>
+</div>
 
-<option>Under £500</option>
+<div class="form-group">
 
-<option>£500 - £1,000</option>
+<label>Additional Services Required</label>
 
-<option>£1,000 - £2,500</option>
+<div class="checkbox-group">
 
-<option>£2,500+</option>
+<label><input type="checkbox" name="extras[]" value="Balloon Arch"> Balloon Arch</label>
 
-<option>Let's Discuss</option>
+<label><input type="checkbox" name="extras[]" value="Venue Decorations"> Venue Decorations</label>
 
-</select>
+<label><input type="checkbox" name="extras[]" value="Sweet Cart"> Sweet Cart</label>
+
+<label><input type="checkbox" name="extras[]" value="Event Planning"> Event Planning Assistance</label>
+
+<label><input type="checkbox" name="extras[]" value="Not Sure Yet"> Not Sure Yet</label>
+
+</div>
 
 </div>
 
@@ -297,6 +311,66 @@
 <div class="error-message">Something went wrong. Please try again or email us directly.</div>
 
 </form>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="journey">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-label">WHAT HAPPENS NEXT?</span>
+
+<h2 class="section-title">Booking With Confidence</h2>
+
+</div>
+
+<div class="journey-grid">
+
+<div class="journey-step">
+
+<span>1</span>
+
+<h3>Complete the Enquiry Form</h3>
+
+<p>Tell us about your event and what you're looking for.</p>
+
+</div>
+
+<div class="journey-step">
+
+<span>2</span>
+
+<h3>We'll Be In Touch</h3>
+
+<p>We aim to respond within 24&ndash;48 hours, often sooner.</p>
+
+</div>
+
+<div class="journey-step">
+
+<span>3</span>
+
+<h3>Discuss the Details</h3>
+
+<p>We'll talk through your menu, guest numbers and event details.</p>
+
+</div>
+
+<div class="journey-step">
+
+<span>4</span>
+
+<h3>Confirm Your Booking</h3>
+
+<p>Once you're happy, we'll confirm and get everything ready.</p>
+
+</div>
 
 </div>
 
