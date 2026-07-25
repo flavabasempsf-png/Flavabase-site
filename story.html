@@ -1,143 +1,718 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flava Base – Our Story</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <style>
-    :root { --green-dark:#1a4a1a;--green-mid:#2d7a2d;--green-light:#4a9e4a;--gold:#c8902a;--gold-light:#e8b84b;--orange:#d4531a;--cream:#fdf6e8;--cream-alt:#fffdf5;--text-dark:#0f2e0f;--text-mid:#1a4a1a;--text-light:#2d5a2d; }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{background:var(--cream);color:var(--text-dark);font-family:'Crimson Text',Georgia,serif;font-size:18px;line-height:1.7;}
-    .site-header{background:var(--green-dark);border-bottom:3px solid var(--gold);padding:0.75rem 1.5rem;position:sticky;top:0;z-index:100;}
-    .nav-wrap{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;flex-wrap:wrap;gap:0.5rem;}
-    .site-logo{height:52px;width:auto;}
-    .site-nav{display:flex;gap:1.2rem;flex-wrap:wrap;}
-    .site-nav a{color:var(--cream);text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.08em;transition:color 0.2s;}
-    .site-nav a:hover,.site-nav a.active{color:var(--gold-light);}
-    .flag-strip{height:4px;background:linear-gradient(90deg,var(--orange),var(--gold-light),white,var(--green-mid),var(--green-dark));}
-    .logo-hero{background:var(--cream);border-bottom:3px solid rgba(200,144,42,0.3);text-align:center;padding:2.5rem 1.5rem;}
-    .logo-hero img{height:clamp(120px,18vw,190px);width:auto;display:block;margin:0 auto 0.8rem;}
-    .gold-divider{display:flex;align-items:center;gap:1rem;justify-content:center;margin:0.8rem auto;max-width:400px;}
-    .gold-divider::before,.gold-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-    .gold-dot{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);}
-    .hero-tagline{color:var(--text-mid);font-style:italic;font-size:1rem;}
-    .phulkari{background-color:var(--cream);background-image:repeating-linear-gradient(45deg,rgba(200,144,42,0.06) 0px,rgba(200,144,42,0.06) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(-45deg,rgba(200,144,42,0.06) 0px,rgba(200,144,42,0.06) 1px,transparent 1px,transparent 20px),radial-gradient(circle at 10px 10px,rgba(212,83,26,0.05) 1.5px,transparent 1.5px),radial-gradient(circle at 30px 30px,rgba(212,83,26,0.05) 1.5px,transparent 1.5px);background-size:40px 40px;}
-    .phulkari-alt{background-color:var(--cream-alt);background-image:repeating-linear-gradient(45deg,rgba(200,144,42,0.05) 0px,rgba(200,144,42,0.05) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(-45deg,rgba(200,144,42,0.05) 0px,rgba(200,144,42,0.05) 1px,transparent 1px,transparent 20px);background-size:40px 40px;}
-    .band{padding:3.5rem 1.5rem;}
-    .band-inner{max-width:800px;margin:0 auto;}
-    .band-inner.wide{max-width:1000px;}
-    .band.dark{background:var(--green-dark);background-image:radial-gradient(ellipse at 50% 0%,rgba(74,158,74,0.15) 0%,transparent 60%);position:relative;}
-    .band.dark::before,.band.dark::after{content:'';position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-    .band.dark::before{top:0;}.band.dark::after{bottom:0;}
-    .section-label{font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:0.3em;color:var(--green-mid);margin-bottom:0.4rem;}
-    .band.dark .section-label{color:var(--gold-light);}
-    .section-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--text-dark);margin-bottom:1.2rem;line-height:1.2;border-bottom:2px solid rgba(45,122,45,0.2);padding-bottom:0.5rem;}
-    .section-title span{color:var(--orange);}
-    .band.dark .section-title{color:var(--gold-light);border-color:rgba(200,144,42,0.2);}
-    .body-text{color:var(--text-mid);margin-bottom:1rem;font-size:1rem;font-weight:500;}
-    .band.dark .body-text{color:rgba(240,250,240,0.9);}
-    .icon-list{list-style:none;margin-top:0.8rem;}
-    .icon-list li{padding:0.6rem 0;border-bottom:1px dashed rgba(45,122,45,0.2);display:flex;align-items:center;gap:0.8rem;color:var(--text-mid);font-size:1rem;font-weight:500;}
-    .icon-list li:last-child{border-bottom:none;}
-    .icon-list li::before{content:"✦";color:var(--green-mid);font-size:0.6rem;flex-shrink:0;}
-    .band.dark .icon-list li{color:rgba(240,250,240,0.9);border-color:rgba(74,158,74,0.2);}
-    .band.dark .icon-list li::before{color:var(--gold-light);}
-    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.5rem;}
-    .info-card{border:1px solid rgba(45,122,45,0.3);padding:1.5rem;background:white;position:relative;}
-    .info-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green-mid),var(--gold));}
-    .info-card .card-icon{font-size:1.8rem;margin-bottom:0.6rem;display:block;}
-    .info-card h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green-dark);font-size:1.05rem;margin-bottom:0.4rem;}
-    .info-card p{color:var(--text-mid);font-size:0.95rem;line-height:1.6;font-weight:500;}
-    .band.dark .info-card{background:rgba(26,74,26,0.6);border-color:rgba(74,158,74,0.3);}
-    .band.dark .info-card h3{color:var(--gold-light);}
-    .band.dark .info-card p{color:rgba(240,250,240,0.9);}
-    .package-card{border:1px solid rgba(45,122,45,0.3);padding:1.5rem;margin:1.2rem 0;background:white;position:relative;}
-    .package-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--green-mid),var(--gold));}
-    .package-card h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green-dark);font-size:1.1rem;margin-bottom:0.5rem;}
-    .package-card p{color:var(--text-mid);font-size:0.95rem;margin-bottom:0.5rem;font-weight:500;}
-    .band.dark .package-card{background:rgba(26,74,26,0.6);border-color:rgba(74,158,74,0.3);}
-    .band.dark .package-card h3{color:var(--gold-light);}
-    .band.dark .package-card p{color:rgba(240,250,240,0.9);}
-    .story-quote{border-left:4px solid var(--green-mid);padding:1.5rem 1.5rem 1.5rem 2rem;margin:2rem 0;background:rgba(45,122,45,0.06);position:relative;}
-    .story-quote::before{content:'"';font-family:'Playfair Display',serif;font-size:4rem;color:var(--green-mid);opacity:0.2;position:absolute;top:-0.5rem;left:0.8rem;line-height:1;}
-    .story-quote p{font-style:italic;color:var(--text-mid);font-size:1.05rem;margin:0;font-weight:500;}
-    .contact-section{padding:3rem 1.5rem;}
-    .contact-inner{max-width:800px;margin:0 auto;text-align:center;}
-    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0.8rem;margin:1.5rem 0;}
-    .contact-item{border:1px solid rgba(45,122,45,0.3);padding:1rem 1.2rem;background:white;position:relative;}
-    .contact-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green-mid);}
-    .contact-label{font-family:'Bebas Neue',sans-serif;letter-spacing:0.15em;font-size:0.72rem;color:var(--green-mid);margin-bottom:0.3rem;}
-    .contact-item a{color:var(--text-dark);text-decoration:none;font-size:0.95rem;font-weight:600;}
-    .contact-item a:hover{color:var(--green-mid);}
-    .cta-section{background:var(--green-dark);background-image:radial-gradient(ellipse at 50% 50%,rgba(74,158,74,0.2) 0%,transparent 70%);text-align:center;padding:4rem 1.5rem;position:relative;}
-    .cta-section::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-    .cta-ornament{color:var(--gold);font-size:1rem;letter-spacing:1rem;margin-bottom:1.2rem;opacity:0.6;}
-    .cta-section h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--gold-light);margin-bottom:0.8rem;}
-    .cta-section p{color:rgba(240,250,240,0.85);font-style:italic;max-width:500px;margin:0 auto 0.5rem;}
-    .btn-gold{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--green-dark);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.2em;padding:0.85rem 2.2rem;text-decoration:none;transition:all 0.2s;margin-top:1rem;font-weight:bold;}
-    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,144,42,0.4);}
-    .zero-bar{background:var(--green-dark);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:1.2rem 1.5rem;text-align:center;}
-    .zero-bar p{font-family:'Bebas Neue',sans-serif;font-size:clamp(1rem,2.5vw,1.6rem);letter-spacing:0.2em;color:var(--cream);}
-    .footer-strip{background:var(--green-dark);border-top:3px solid var(--gold);text-align:center;padding:1.5rem;color:rgba(240,250,240,0.5);font-size:0.8rem;font-family:'Bebas Neue',sans-serif;letter-spacing:0.15em;}
-    @media(max-width:650px){.cards-grid{grid-template-columns:1fr;}.band{padding:2.5rem 1.2rem;}.site-nav a{font-size:0.85rem;}}
 
-      .punjabi-label { font-family: 'Dancing Script', cursive; font-size: 0.85rem; color: var(--gold-light); letter-spacing: 0.05em; display: block; text-align: center; line-height: 1; margin-bottom: -12px; opacity: 0.95; transform: rotate(-8deg) translateX(-6px); transform-origin: left center; position: relative; z-index: 2; }
-    .logo-wrap { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
-  </style>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Our Story | Flava Base
+
+    </title>
+
+    <meta name="description"
+          content="Discover the story behind Flava Base, a family-run Modern Punjabi Street Kitchen inspired by generations of authentic Punjabi cooking.">
+
+    <link rel="stylesheet"
+          href="assets/css/style.css">
+
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="nav-wrap">
-      <a href="index.html" class="logo-wrap"><span class="punjabi-label">Punjabi</span><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
-      <nav class="site-nav">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="story.html" class="active">Our Story</a>
-        <a href="bookings.html">Bookings</a>
-        <a href="outdoor-experience.html">Outdoor</a>
-      </nav>
-    </div>
-  </header>
-  <div class="flag-strip"></div>
 
-  <section class="logo-hero phulkari">
-    <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" />
-    <div class="gold-divider"><div class="gold-dot"></div></div>
-    <p class="hero-tagline">Inspired by Mum's Kitchen 🇮🇳</p>
-  </section>
-  <div class="band phulkari">
-    <div class="band-inner">
-      <p class="section-label">Where It All Began</p>
-      <h2 class="section-title">From Mum's Kitchen<br>to the <span>Streets</span></h2>
-      <p class="body-text">Flava Base is inspired by recipes from my mum's kitchen, brought to life with a modern Punjabi street food twist.</p>
-      <p class="body-text">The flavours, spices and techniques behind every dish come from real home cooking — bold, authentic and full of flavour, using fresh, locally sourced ingredients wherever possible.</p>
-      <div class="story-quote">
-        <p>Food has always been my connection to home. Flava Base is built in memory of my mum — keeping those flavours and that feeling alive.</p>
-      </div>
-      <p class="body-text">What started as an idea to share those flavours became a proper mission — converting a van from scratch, developing a full menu rooted in authentic Punjabi cooking, and building everything from the ground up.</p>
-      <p class="body-text">Every dish on the menu is a nod to those recipes. The Flava Box, the wraps, the loaded fries — all of it carries those original flavours forward, served fresh, served bold, served street style.</p>
-    </div>
-  </div>
+<header class="site-header">
 
-  <section class="contact-section phulkari-alt">
-    <div class="contact-inner">
-      <p class="section-label">Get In Touch</p>
-      <h2 style="font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--green-dark);margin-bottom:1rem;">Contact <span style="color:var(--orange)">Flava Base</span></h2>
-      <div class="contact-grid">
-        <div class="contact-item"><div class="contact-label">General Enquiries</div><a href="/cdn-cgi/l/email-protection#523b3c343d7471646669343e332433303321377c313d7c2739">info&#64;flavabase.co.uk</a></div>
-        <div class="contact-item"><div class="contact-label">Event Bookings</div><a href="/cdn-cgi/l/email-protection#721704171c06015451444649141e130413101301175c111d5c0719">events&#64;flavabase.co.uk</a></div>
-        <div class="contact-item"><div class="contact-label">Pub Pop-Ups</div><a href="/cdn-cgi/l/email-protection#34445b44414447121702000f5258554255565547511a575b1a415f">popups&#64;flavabase.co.uk</a></div>
-      </div>
+<div class="header-inner container">
+
+<a href="index.html" class="logo">
+
+<img src="assets/images/logo.png" alt="Flava Base">
+
+<span class="logo-text">
+
+<span class="logo-title">Flava Base</span>
+
+<span class="logo-tag">Modern Punjabi Street Kitchen</span>
+
+</span>
+
+</a>
+
+<nav class="site-nav">
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="story.html" class="active">Our Story</a></li>
+
+<li><a href="menu.html">Menu</a></li>
+
+<li><a href="catering.html">Catering</a></li>
+
+<li><a href="weddings.html">Weddings</a></li>
+
+<li><a href="corporate.html">Corporate</a></li>
+
+<li><a href="private-parties.html">Private Parties</a></li>
+
+<li><a href="pub-popups.html">Pub Pop-Ups</a></li>
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="experience.html">Leave a Review</a></li>
+
+<li><a href="contact.html" class="nav-button">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<button class="mobile-toggle" aria-label="Open Navigation">☰</button>
+
+</div>
+
+</header>
+
+
+<main>
+
+<section class="hero" style="background-image:url('assets/images/story-hero.jpg');">
+
+<div class="hero-content">
+
+<span class="hero-badge">OUR STORY</span>
+
+<h1 class="hero-title">Built on Passion.
+            Driven by Family.</h1>
+
+<p class="hero-subtitle">Every dish we serve is inspired by generations
+            of Punjabi cooking, bringing authentic flavours
+            and warm hospitality to every event.</p>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<div class="container two-column">
+
+<div class="about-image">
+
+<img src="assets/images/family.jpg"
+     alt="Flava Base Family">
+
+</div>
+
+<div class="about-content">
+
+<span class="section-label">
+
+FROM FAMILY KITCHEN
+
+</span>
+
+<h2>
+
+From Family Kitchen to Flava Base
+
+</h2>
+
+<p>
+
+Flava Base began with a simple idea:
+share the flavours that brought our own
+family together with people celebrating
+their most important moments.
+
+</p>
+
+<p>
+
+Inspired by traditional Punjabi recipes,
+our menu blends authentic cooking with a
+modern street food experience that's perfect
+for weddings, corporate events, festivals
+and private celebrations.
+
+</p>
+
+<p>
+
+Every meal is prepared with care,
+quality ingredients and the same pride
+that has always been at the heart of our
+family kitchen.
+
+</p>
+
+</div>
+
+</div>
+
+</section> <!-- ==========================================================
+     MORE THAN GREAT FOOD
+=========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                MORE THAN GREAT FOOD
+
+            </span>
+
+            <h2>
+
+                Bringing People Together
+
+            </h2>
+
+        </div>
+
+        <div class="content-section">
+
+            <p>
+
+                Food has always been at the centre of Punjabi
+                culture. It's how we celebrate milestones,
+                welcome guests and bring families together.
+
+            </p>
+
+            <p>
+
+                At Flava Base, we believe every event deserves
+                freshly prepared food served with genuine warmth,
+                creating memorable experiences for every guest.
+
+            </p>
+
+            <p>
+
+                Whether we're catering for an intimate family
+                gathering or serving hundreds of guests at a
+                wedding or corporate event, our goal remains
+                exactly the same — deliver authentic Punjabi
+                flavours with exceptional service.
+
+            </p>
+
+        </div>
+
     </div>
-  </section>
-  <section class="cta-section">
-    <div class="cta-ornament">✦ ✦ ✦</div>
-    <h2>Book Flava Base for Your Event</h2>
-    <p>Bring bold Punjabi street food to your event with a fully branded setup and fast, fresh service.</p>
-    <a href="bookings.html" class="btn-gold">Make a Booking</a>
-  </section>
-  <div class="zero-bar"><p>⚡ ZERO EMISSION FLAVA &nbsp;·&nbsp; 100% ELECTRIC VAN &nbsp;·&nbsp; BOLD FLAVOUR. ZERO GUILT.</p></div>
-  <div class
+
+</section>
+
+
+<!-- ==========================================================
+     MEET THE FAMILY
+=========================================================== -->
+
+<section class="why-us">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                MEET THE FAMILY
+
+            </span>
+
+            <h2>
+
+                Family Is At The Heart Of Everything We Do
+
+            </h2>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <h3>
+
+                    Passion
+
+                </h3>
+
+                <p>
+
+                    Every dish is cooked with the same care,
+                    attention and pride as if we were serving
+                    our own family.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Hospitality
+
+                </h3>
+
+                <p>
+
+                    Genuine Punjabi hospitality means every
+                    guest is welcomed with warmth, kindness
+                    and exceptional service.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Authenticity
+
+                </h3>
+
+                <p>
+
+                    Traditional recipes combined with a modern
+                    street food experience that respects our
+                    heritage.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Family
+
+                </h3>
+
+                <p>
+
+                    Flava Base is proudly family-run, and every
+                    member of our team shares the same commitment
+                    to quality and customer experience.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     IN LOVING MEMORY
+=========================================================== -->
+
+<section class="cta-card">
+
+    <div class="container">
+
+        <span class="section-label">
+
+            IN LOVING MEMORY
+
+        </span>
+
+        <h2>
+
+            The Heart Behind Flava Base
+
+        </h2>
+
+        <p>
+
+            Flava Base is dedicated to the loving memory of my
+            mum, whose passion for Punjabi cooking continues to
+            inspire every dish we prepare today.
+
+        </p>
+
+        <p>
+
+            Her recipes, generosity and love for bringing people
+            together remain at the heart of everything we do.
+            Every meal we serve is a tribute to the values she
+            passed on to our family.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     OUR VALUES
+=========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                OUR VALUES
+
+            </span>
+
+            <h2>
+
+                What We Stand For
+
+            </h2>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <h3>
+
+                    Fresh Ingredients
+
+                </h3>
+
+                <p>
+
+                    We use quality ingredients and prepare food
+                    fresh for every event.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Honest Service
+
+                </h3>
+
+                <p>
+
+                    Friendly, reliable and professional from your
+                    first enquiry through to the final guest served.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Community
+
+                </h3>
+
+                <p>
+
+                    We love working with local venues,
+                    businesses and communities across
+                    Northamptonshire and beyond.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Authentic Flavour
+
+                </h3>
+
+                <p>
+
+                    Every recipe celebrates the rich flavours,
+                    traditions and hospitality of Punjab.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section> <!-- ==========================================================
+     WHY CHOOSE FLAVA BASE
+========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                WHY CHOOSE FLAVA BASE
+
+            </span>
+
+            <h2>
+
+                Authentic Food. Personal Service. Lasting Memories.
+
+            </h2>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <h3>
+
+                    Family Run
+
+                </h3>
+
+                <p>
+
+                    Every booking is personally managed from your
+                    first enquiry through to the final guest served.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Freshly Prepared
+
+                </h3>
+
+                <p>
+
+                    We cook fresh for every event using authentic
+                    Punjabi recipes and carefully selected ingredients.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Tailored Menus
+
+                </h3>
+
+                <p>
+
+                    Every celebration is unique, which is why we
+                    create menus around your guests and your event.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Professional Catering
+
+                </h3>
+
+                <p>
+
+                    Fully insured, food hygiene compliant and committed
+                    to delivering exceptional customer service.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     FINAL CTA
+========================================================== -->
+
+<section class="cta-card">
+
+    <div class="container">
+
+        <h2>
+
+            We'd Love To Cater Your Next Event
+
+        </h2>
+
+        <p>
+
+            Whether you're planning a wedding,
+            birthday celebration, corporate event
+            or community gathering, Flava Base is
+            ready to bring the Flava of Punjab
+            to your guests.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="contact.html"
+               class="btn btn-primary">
+
+                Request a Quote
+
+            </a>
+
+            <a href="menu.html"
+               class="btn btn-secondary">
+
+                Explore Our Menu
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ==========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="site-footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-logo">
+
+<img src="assets/images/logo-footer.png" alt="Flava Base Logo">
+
+<p>Modern Punjabi Street Kitchen. Inspired by generations of Punjabi cooking, crafted for today's celebrations.</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<ul class="footer-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="story.html">Our Story</a></li>
+
+<li><a href="menu.html">Menu</a></li>
+
+<li><a href="catering.html">Catering</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Company</h3>
+
+<ul class="footer-links">
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="experience.html">Leave a Review</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Contact</h3>
+
+<div class="footer-contact">
+
+<div>bookings@flavabase.co.uk</div>
+
+<div>Northamptonshire, England</div>
+
+</div>
+
+<div class="footer-social">
+
+<a href="https://instagram.com/flavabaseuk" target="_blank" aria-label="Instagram">IG</a>
+
+<a href="https://tiktok.com/@flavabaseuk" target="_blank" aria-label="TikTok">TT</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+
+<p>&copy; 2026 Flava Base. All Rights Reserved.</p>
+
+<div class="footer-bottom-links">
+
+<a href="faq.html">FAQ</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<a href="contact.html" class="sticky-book-btn">Book Us</a>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

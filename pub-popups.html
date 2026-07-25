@@ -1,187 +1,991 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flava Base – Pub Pop-Ups</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <style>
-    :root { --green-dark:#1a4a1a;--green-mid:#2d7a2d;--green-light:#4a9e4a;--gold:#c8902a;--gold-light:#e8b84b;--orange:#d4531a;--cream:#fdf6e8;--cream-alt:#fffdf5;--text-dark:#0f2e0f;--text-mid:#1a4a1a;--text-light:#2d5a2d; }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{background:var(--cream);color:var(--text-dark);font-family:'Crimson Text',Georgia,serif;font-size:18px;line-height:1.7;}
-    .site-header{background:var(--green-dark);border-bottom:3px solid var(--gold);padding:0.75rem 1.5rem;position:sticky;top:0;z-index:100;}
-    .nav-wrap{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;flex-wrap:wrap;gap:0.5rem;}
-    .site-logo{height:52px;width:auto;}
-    .site-nav{display:flex;gap:1.2rem;flex-wrap:wrap;}
-    .site-nav a{color:var(--cream);text-decoration:none;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.08em;transition:color 0.2s;}
-    .site-nav a:hover,.site-nav a.active{color:var(--gold-light);}
-    .flag-strip{height:4px;background:linear-gradient(90deg,var(--orange),var(--gold-light),white,var(--green-mid),var(--green-dark));}
-    .logo-hero{position:relative;overflow:hidden;min-height:320px;display:flex;align-items:center;justify-content:center;text-align:center;padding:2.5rem 1.5rem;border-bottom:3px solid rgba(200,144,42,0.3);}
-    .logo-hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
-    .logo-hero .hero-overlay{position:absolute;inset:0;background:rgba(26,74,26,0.78);z-index:1;}
-    .logo-hero .hero-content{position:relative;z-index:2;}
-    .logo-hero .hero-logo{height:clamp(100px,15vw,160px);width:auto;display:block;margin:0 auto 0.8rem;}
-    .hero-tagline{font-family:'Playfair Display',serif;font-style:italic;color:rgba(253,248,240,0.9);font-size:clamp(1rem,2.5vw,1.3rem);max-width:600px;margin:0 auto;}
-    .phulkari{background-color:var(--cream);background-image:repeating-linear-gradient(45deg,rgba(200,144,42,0.06) 0px,rgba(200,144,42,0.06) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(-45deg,rgba(200,144,42,0.06) 0px,rgba(200,144,42,0.06) 1px,transparent 1px,transparent 20px),radial-gradient(circle at 10px 10px,rgba(212,83,26,0.05) 1.5px,transparent 1.5px),radial-gradient(circle at 30px 30px,rgba(212,83,26,0.05) 1.5px,transparent 1.5px);background-size:40px 40px;}
-    .phulkari-alt{background-color:var(--cream-alt);background-image:repeating-linear-gradient(45deg,rgba(200,144,42,0.05) 0px,rgba(200,144,42,0.05) 1px,transparent 1px,transparent 20px),repeating-linear-gradient(-45deg,rgba(200,144,42,0.05) 0px,rgba(200,144,42,0.05) 1px,transparent 1px,transparent 20px);background-size:40px 40px;}
-    .band{padding:3.5rem 1.5rem;}
-    .band-inner{max-width:800px;margin:0 auto;}
-    .band-inner.wide{max-width:1000px;}
-    .band.dark{background:var(--green-dark);background-image:radial-gradient(ellipse at 50% 0%,rgba(74,158,74,0.15) 0%,transparent 60%);position:relative;}
-    .band.dark::before,.band.dark::after{content:'';position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-    .band.dark::before{top:0;}.band.dark::after{bottom:0;}
-    .section-label{font-family:'Bebas Neue',sans-serif;font-size:0.8rem;letter-spacing:0.3em;color:var(--green-mid);margin-bottom:0.4rem;}
-    .band.dark .section-label{color:var(--gold-light);}
-    .section-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--text-dark);margin-bottom:1.2rem;line-height:1.2;border-bottom:2px solid rgba(45,122,45,0.2);padding-bottom:0.5rem;}
-    .section-title span{color:var(--orange);}
-    .band.dark .section-title{color:var(--gold-light);border-color:rgba(200,144,42,0.2);}
-    .body-text{color:var(--text-mid);margin-bottom:1rem;font-size:1rem;font-weight:500;}
-    .band.dark .body-text{color:rgba(240,250,240,0.9);}
-    .icon-list{list-style:none;margin-top:0.8rem;}
-    .icon-list li{padding:0.6rem 0;border-bottom:1px dashed rgba(45,122,45,0.2);display:flex;align-items:center;gap:0.8rem;color:var(--text-mid);font-size:1rem;font-weight:500;}
-    .icon-list li:last-child{border-bottom:none;}
-    .icon-list li::before{content:"✦";color:var(--green-mid);font-size:0.6rem;flex-shrink:0;}
-    .band.dark .icon-list li{color:rgba(240,250,240,0.9);border-color:rgba(74,158,74,0.2);}
-    .band.dark .icon-list li::before{color:var(--gold-light);}
-    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.5rem;}
-    .info-card{border:1px solid rgba(45,122,45,0.3);background:white;position:relative;overflow:hidden;}
-    .info-card .card-photo{width:100%;height:150px;object-fit:cover;display:block;transition:transform 0.4s ease;}
-    .info-card:hover .card-photo{transform:scale(1.04);}
-    .info-card .card-body{padding:1.1rem 1.4rem 1.4rem;}
-    .info-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green-mid),var(--gold));}
-    .info-card .card-icon{font-size:1.8rem;margin-bottom:0.6rem;display:block;}
-    .info-card h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green-dark);font-size:1.05rem;margin-bottom:0.4rem;}
-    .info-card p{color:var(--text-mid);font-size:0.95rem;line-height:1.6;font-weight:500;}
-    .band.dark .info-card{background:rgba(26,74,26,0.6);border-color:rgba(74,158,74,0.3);}
-    .band.dark .info-card h3{color:var(--gold-light);}
-    .band.dark .info-card p{color:rgba(240,250,240,0.9);}
-    .package-card{border:1px solid rgba(45,122,45,0.3);padding:1.5rem;margin:1.2rem 0;background:white;position:relative;}
-    .package-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--green-mid),var(--gold));}
-    .package-card h3{font-family:'Playfair Display',serif;font-weight:700;color:var(--green-dark);font-size:1.1rem;margin-bottom:0.5rem;}
-    .package-card p{color:var(--text-mid);font-size:0.95rem;margin-bottom:0.5rem;font-weight:500;}
-    .band.dark .package-card{background:rgba(26,74,26,0.6);border-color:rgba(74,158,74,0.3);}
-    .band.dark .package-card h3{color:var(--gold-light);}
-    .band.dark .package-card p{color:rgba(240,250,240,0.9);}
-    .story-quote{border-left:4px solid var(--green-mid);padding:1.5rem 1.5rem 1.5rem 2rem;margin:2rem 0;background:rgba(45,122,45,0.06);position:relative;}
-    .story-quote::before{content:'"';font-family:'Playfair Display',serif;font-size:4rem;color:var(--green-mid);opacity:0.2;position:absolute;top:-0.5rem;left:0.8rem;line-height:1;}
-    .story-quote p{font-style:italic;color:var(--text-mid);font-size:1.05rem;margin:0;font-weight:500;}
-    .contact-section{padding:3rem 1.5rem;}
-    .contact-inner{max-width:800px;margin:0 auto;text-align:center;}
-    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0.8rem;margin:1.5rem 0;}
-    .contact-item{border:1px solid rgba(45,122,45,0.3);padding:1rem 1.2rem;background:white;position:relative;}
-    .contact-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green-mid);}
-    .contact-label{font-family:'Bebas Neue',sans-serif;letter-spacing:0.15em;font-size:0.72rem;color:var(--green-mid);margin-bottom:0.3rem;}
-    .contact-item a{color:var(--text-dark);text-decoration:none;font-size:0.95rem;font-weight:600;}
-    .contact-item a:hover{color:var(--green-mid);}
-    .cta-section{background:var(--green-dark);background-image:radial-gradient(ellipse at 50% 50%,rgba(74,158,74,0.2) 0%,transparent 70%);text-align:center;padding:4rem 1.5rem;position:relative;}
-    .cta-section::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-    .cta-ornament{color:var(--gold);font-size:1rem;letter-spacing:1rem;margin-bottom:1.2rem;opacity:0.6;}
-    .cta-section h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--gold-light);margin-bottom:0.8rem;}
-    .cta-section p{color:rgba(240,250,240,0.85);font-style:italic;max-width:500px;margin:0 auto 0.5rem;}
-    .btn-gold{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--green-dark);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.2em;padding:0.85rem 2.2rem;text-decoration:none;transition:all 0.2s;margin-top:1rem;font-weight:bold;}
-    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(200,144,42,0.4);}
-    .zero-bar{background:var(--green-dark);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:1.2rem 1.5rem;text-align:center;}
-    .zero-bar p{font-family:'Bebas Neue',sans-serif;font-size:clamp(1rem,2.5vw,1.6rem);letter-spacing:0.2em;color:var(--cream);}
-    .footer-strip{background:var(--green-dark);border-top:3px solid var(--gold);text-align:center;padding:1.5rem;color:rgba(240,250,240,0.5);font-size:0.8rem;font-family:'Bebas Neue',sans-serif;letter-spacing:0.15em;}
-    @media(max-width:650px){.cards-grid{grid-template-columns:1fr;}.band{padding:2.5rem 1.2rem;}.site-nav a{font-size:0.85rem;}}
 
-      .punjabi-label { font-family: 'Dancing Script', cursive; font-size: 0.85rem; color: var(--gold-light); letter-spacing: 0.05em; display: block; text-align: center; line-height: 1; margin-bottom: -12px; opacity: 0.95; transform: rotate(-8deg) translateX(-6px); transform-origin: left center; position: relative; z-index: 2; }
-    .logo-wrap { display: flex; flex-direction: column; align-items: center; text-decoration: none; }
-  </style>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Pub Pop-Ups | Flava Base</title>
+
+    <meta name="description"
+          content="Partner with Flava Base to host authentic Punjabi street food pop-up nights at your pub. Increase footfall, delight customers and create memorable events.">
+
+    <link rel="stylesheet"
+          href="assets/css/style.css">
+
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="nav-wrap">
-      <a href="index.html" class="logo-wrap"><span class="punjabi-label">Punjabi</span><img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="site-logo" /></a>
-      <nav class="site-nav">
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="story.html">Our Story</a>
-        <a href="bookings.html">Bookings</a>
-      </nav>
-    </div>
-  </header>
-  <div class="flag-strip"></div>
 
-  <section class="logo-hero phulkari">
-    <img src="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=1200&q=80" alt="Pub atmosphere" class="hero-bg" />
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <img src="assets/flava_base_logo-removebg-preview.png" alt="Flava Base" class="hero-logo" />
-      <div class="gold-divider"><div class="gold-dot"></div></div>
-      <p class="hero-tagline">Punjabi street food pop-ups and venue partnerships that bring customers back</p>
-    </div>
-  </section>
-  <div class="band phulkari">
-    <div class="band-inner">
-      <p class="section-label">Pub Food With Personality</p>
-      <h2 class="section-title">Give Your Venue Something <span>Different</span></h2>
-      <p class="body-text">Flava Base is available for pub pop-ups, venue partnerships and repeat food residencies.</p>
-      <p class="body-text">We bring bold Punjabi street food, strong branding and a reliable setup that helps drive footfall and gives your customers something they can't get anywhere else locally.</p>
-    </div>
-  </div>
-  <div class="band dark">
-    <div class="band-inner wide">
-      <p class="section-label">Two Ways to Work With Us</p>
-      <h2 class="section-title">Choose Your <span>Setup</span></h2>
-      <div class="cards-grid">
-        <div class="info-card"><img src="https://images.unsplash.com/photo-1575444758702-4a6b9222336e?w=400&q=80" alt="Standard Setup" class="card-photo"/><div class="card-body"><h3>Standard Setup</h3><p>Wraps, Flava Box, loaded fries, samosas, signature shakes and Punjabi chai from a clean branded van. Perfect for regular Friday or weekend nights.</p></div></div>
-        <div class="info-card"><img src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?w=400&q=80" alt="Enhanced Setup" class="card-photo"/><div class="card-body"><h3>Enhanced Setup</h3><p>Everything in the Standard Setup plus signature freakshakes, premium shakes and ambient lighting. Ideal for themed nights and special events.</p></div></div>
-      </div>
-    </div>
-  </div>
-  <div class="band phulkari-alt">
-    <div class="band-inner">
-      <p class="section-label">Why It Works</p>
-      <h2 class="section-title">What You <span>Get</span></h2>
-      <ul class="icon-list">
-        <li>Bold Punjabi flavour that stands out from the usual pub food</li>
-        <li>Clean, professional branded setup that looks the part</li>
-        <li>Fast, reliable service designed for busy venues</li>
-        <li>Flexible menu options for different nights and events</li>
-        <li>Ideal for repeat weekly nights and special events</li>
-        <li>Drives footfall and gives customers a reason to come back</li>
-      </ul>
-    </div>
-  </div>
-  <div class="band phulkari">
-    <div class="band-inner">
-      <p class="section-label">Pop-Up Event Menu — A Taste of Flava Base</p>
-      <h2 class="section-title">What We <span>Serve</span></h2>
-      <p style="font-style:italic;color:rgba(253,248,240,0.7);margin-bottom:1.5rem;font-size:0.95rem;">Other menus and packages available — enquire for more information</p>
-      <ul class="icon-list">
-        <li>🌯 Wraps — Chicken tikka, tandoori, lamb kebab, keema or paneer tikka</li>
-        <li>🍛 Flava Box — Curry of the day with basmati rice and house sauces</li>
-        <li>🍟 Loaded Fries — Keema, chicken tikka or tandoori chicken</li>
-        <li>🥟 Veg Samosa — Served with mint & tamarind chutney</li>
-        <li>🥟 Meat Samosa — Served with mint & tamarind chutney</li>
-        <li>🧋 Freakshakes — Lotus Biscoff, Oreo Madness, The Maharaja & more from £7.50</li>
-        <li>🧋 Premium & Classic Shakes — From £5.00</li>
-        <li>☕ Punjabi Chai, Masala Chai & Chai Latte — From £2.50</li>
-        <li>💧 Water — £1.00</li>
-      </ul>
-      <p style="font-style:italic;color:rgba(253,248,240,0.5);margin-top:1.2rem;font-size:0.85rem;">No cans sold from the van — your bar trade is fully protected</p>
-    </div>
-  </div>
+<header class="site-header">
 
-  <section class="contact-section phulkari-alt">
-    <div class="contact-inner">
-      <p class="section-label">Get In Touch</p>
-      <h2 style="font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--green-dark);margin-bottom:1rem;">Contact <span style="color:var(--orange)">Flava Base</span></h2>
-      <div class="contact-grid">
-        <div class="contact-item"><div class="contact-label">General Enquiries</div><a href="/cdn-cgi/l/email-protection#ef86818980c9ccd9dbd489838e998e8d8e9c8ac18c80c19a84">info&#64;flavabase.co.uk</a></div>
-        <div class="contact-item"><div class="contact-label">Event Bookings</div><a href="/cdn-cgi/l/email-protection#1e7b687b706a6d383d282a2578727f687f7c7f6d7b307d71306b75">events&#64;flavabase.co.uk</a></div>
-        <div class="contact-item"><div class="contact-label">Pub Pop-Ups</div><a href="/cdn-cgi/l/email-protection#5e2e312e2b2e2d787d686a6538323f283f3c3f2d3b703d31702b35">popups&#64;flavabase.co.uk</a></div>
-      </div>
+<div class="header-inner container">
+
+<a href="index.html" class="logo">
+
+<img src="assets/images/logo.png" alt="Flava Base">
+
+<span class="logo-text">
+
+<span class="logo-title">Flava Base</span>
+
+<span class="logo-tag">Modern Punjabi Street Kitchen</span>
+
+</span>
+
+</a>
+
+<nav class="site-nav">
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="story.html">Our Story</a></li>
+
+<li><a href="menu.html">Menu</a></li>
+
+<li><a href="catering.html">Catering</a></li>
+
+<li><a href="weddings.html">Weddings</a></li>
+
+<li><a href="corporate.html">Corporate</a></li>
+
+<li><a href="private-parties.html">Private Parties</a></li>
+
+<li><a href="pub-popups.html" class="active">Pub Pop-Ups</a></li>
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="experience.html">Leave a Review</a></li>
+
+<li><a href="contact.html" class="nav-button">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<button class="mobile-toggle" aria-label="Open Navigation">☰</button>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero" style="background-image:url('assets/images/pub-popup-hero.jpg');">
+
+<div class="hero-content">
+
+<span class="hero-badge">PUB POP-UPS</span>
+
+<h1 class="hero-title">Bring Authentic Punjabi Street Food
+            To Your Pub</h1>
+
+<p class="hero-subtitle">Partner with Flava Base to host regular food nights that
+            attract new customers, encourage repeat visits and create
+            a fantastic atmosphere for your venue.</p>
+
+</div>
+
+</section>
+
+
+<!-- ==========================================================
+     INTRODUCTION
+========================================================== -->
+
+<section>
+
+    <div class="container two-column">
+
+        <div class="about-content">
+
+            <span class="section-label">
+
+                PARTNERSHIPS
+
+            </span>
+
+            <h2>
+
+                Helping Local Pubs Stand Out
+
+            </h2>
+
+            <p>
+
+                Great food brings people together. Our Punjabi street food
+                pop-ups help pubs offer something different without the need
+                for a permanent kitchen.
+
+            </p>
+
+            <p>
+
+                Whether it's a monthly food night, a bank holiday event or
+                a seasonal celebration, we'll work alongside your team to
+                create an experience your customers will remember.
+
+            </p>
+
+            <p>
+
+                We bring the equipment, the food and the friendly service—
+                you enjoy the extra footfall and increased bar sales.
+
+            </p>
+
+        </div>
+
+        <div class="about-image">
+
+            <img src="assets/images/pub-partnership.jpg"
+                 alt="Pub Food Night">
+
+        </div>
+
     </div>
-  </section>
-  <section class="cta-section">
-    <div class="cta-ornament">✦ ✦ ✦</div>
-    <h2>Book Flava Base for Your Event</h2>
-    <p>Bring bold Punjabi street food to your event with a fully branded setup and fast, fresh service.</p>
-    <a href="bookings.html" class="btn-gold">Make a Booking</a>
-  </section>
-  <div class="zero-bar"><p>⚡ ZERO EMISSION FLAVA &nbsp;·&nbsp; 100% ELECTRIC VAN &nbsp;·&nbsp; BOLD FLAVOUR. ZERO GUILT.</p></div>
-  <div class
+
+</section>
+
+
+<!-- ==========================================================
+     WHY PARTNER WITH US
+========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                BENEFITS
+
+            </span>
+
+            <h2>
+
+                Why Pubs Choose Flava Base
+
+            </h2>
+
+            <p>
+
+                We make hosting food events simple, reliable and enjoyable.
+
+            </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+
+                <h3>
+
+                    Increase Footfall
+
+                </h3>
+
+                <p>
+
+                    Attract new visitors and encourage repeat customers
+                    with unique Punjabi food nights.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Boost Bar Sales
+
+                </h3>
+
+                <p>
+
+                    Delicious food encourages guests to stay longer
+                    and enjoy more drinks.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    No Kitchen Required
+
+                </h3>
+
+                <p>
+
+                    We bring our own professional catering setup,
+                    so you don't need to provide cooking facilities.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Fully Self-Contained
+
+                </h3>
+
+                <p>
+
+                    Our mobile catering setup is designed for efficient,
+                    professional service at your venue.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Family-Run Service
+
+                </h3>
+
+                <p>
+
+                    Friendly, approachable and passionate about delivering
+                    a great experience for every customer.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Authentic Punjabi Food
+
+                </h3>
+
+                <p>
+
+                    Freshly cooked street food inspired by generations
+                    of Punjabi family recipes.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section> <!-- ==========================================================
+     HOW OUR PARTNERSHIPS WORK
+========================================================== -->
+
+<section>
+
+    <div class="container two-column">
+
+        <div class="about-image">
+
+            <img src="assets/images/pub-night.jpg"
+                 alt="Punjabi Food Night">
+
+        </div>
+
+        <div class="about-content">
+
+            <span class="section-label">
+
+                HOW IT WORKS
+
+            </span>
+
+            <h2>
+
+                A Simple Partnership That Works
+
+            </h2>
+
+            <p>
+
+                We make running food nights easy. Our team arrives,
+                sets up our professional catering unit, prepares
+                everything fresh and serves your customers while your
+                staff focus on the bar.
+
+            </p>
+
+            <p>
+
+                There is minimal disruption to your venue and no need
+                for kitchen facilities. We bring everything required
+                for a smooth and professional service.
+
+            </p>
+
+            <p>
+
+                At the end of the evening we pack away, leaving your
+                venue clean and ready for the next day.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     REGULAR FOOD NIGHTS
+========================================================== -->
+
+<section>
+
+    <div class="container two-column">
+
+        <div class="about-content">
+
+            <span class="section-label">
+
+                MONTHLY EVENTS
+
+            </span>
+
+            <h2>
+
+                Build a Loyal Following
+
+            </h2>
+
+            <p>
+
+                Regular food nights give customers something to look
+                forward to each month, helping build repeat visits and
+                creating a real buzz around your venue.
+
+            </p>
+
+            <p>
+
+                Whether it's the last Friday of every month or a
+                special seasonal event, we'll work with you to create
+                a schedule that suits your pub.
+
+            </p>
+
+            <p>
+
+                Consistency helps build momentum and encourages guests
+                to return again and again.
+
+            </p>
+
+        </div>
+
+        <div class="about-image">
+
+            <img src="assets/images/monthly-food-night.jpg"
+                 alt="Monthly Food Night">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     WE HELP PROMOTE YOUR EVENT
+========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                MARKETING SUPPORT
+
+            </span>
+
+            <h2>
+
+                We'll Help Spread the Word
+
+            </h2>
+
+            <p>
+
+                Great food deserves great promotion. We'll work with
+                you to help make every event a success.
+
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <h3>
+
+                    Social Media Promotion
+
+                </h3>
+
+                <p>
+
+                    We promote upcoming food nights across our social
+                    media channels to help generate interest.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Posters & Digital Graphics
+
+                </h3>
+
+                <p>
+
+                    Professionally designed promotional artwork ready
+                    for your pub and social media.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Repeat Events
+
+                </h3>
+
+                <p>
+
+                    Regular appearances help build customer loyalty
+                    and establish your venue as a destination.
+
+                </p>
+
+            </div>
+
+            <div class="service-card">
+
+                <h3>
+
+                    Family Friendly
+
+                </h3>
+
+                <p>
+
+                    A welcoming atmosphere for families, friends,
+                    couples and local communities.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     WHY CUSTOMERS LOVE IT
+========================================================== -->
+
+<section>
+
+    <div class="container two-column">
+
+        <div class="about-image">
+
+            <img src="assets/images/happy-customers.jpg"
+                 alt="Happy Customers">
+
+        </div>
+
+        <div class="about-content">
+
+            <span class="section-label">
+
+                THE FLAVA BASE EXPERIENCE
+
+            </span>
+
+            <h2>
+
+                Fresh Food That Keeps Guests Coming Back
+
+            </h2>
+
+            <p>
+
+                Our menu combines authentic Punjabi flavours with a
+                modern street food twist, giving customers something
+                different from the usual pub menu.
+
+            </p>
+
+            <p>
+
+                Freshly cooked wraps, curries, samosas, loaded fries
+                and signature specials create an experience people
+                remember and recommend to friends.
+
+            </p>
+
+            <p>
+
+                Our aim is simple: great food, friendly service and
+                successful events that benefit both your pub and our
+                family business.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section> <!-- ==========================================================
+     DESSERTS
+========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                DESSERTS
+
+            </span>
+
+            <h2>
+
+                A Sweet Finish
+
+            </h2>
+
+        </div>
+
+        <div class="card-grid">
+
+            <article class="card">
+
+                <img src="assets/images/gulab-jamun.jpg"
+                     alt="Warm Gulab Jamun">
+
+                <h3>
+
+                    Warm Gulab Jamun
+                    & Vanilla Ice Cream
+
+                </h3>
+
+                <p>
+
+                    Traditional warm Gulab Jamun served with
+                    creamy vanilla ice cream.
+
+                </p>
+
+            </article>
+
+            <article class="card">
+
+                <img src="assets/images/rasmalai.jpg"
+                     alt="Rasmalai">
+
+                <h3>
+
+                    Rasmalai
+
+                </h3>
+
+                <p>
+
+                    Soft cheese dumplings served in sweet
+                    saffron flavoured milk with pistachios.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     MILKSHAKES
+========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                MILKSHAKES
+
+            </span>
+
+            <h2>
+
+                Thick. Creamy. Delicious.
+
+            </h2>
+
+        </div>
+
+        <div class="card-grid">
+
+            <article class="card"><h3>Mango Milkshake</h3></article>
+
+            <article class="card"><h3>Strawberry Milkshake</h3></article>
+
+            <article class="card"><h3>Chocolate Milkshake</h3></article>
+
+            <article class="card"><h3>Banana Milkshake</h3></article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     TRADITIONAL DRINKS
+========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                TRADITIONAL DRINKS
+
+            </span>
+
+            <h2>
+
+                Taste of Punjab
+
+            </h2>
+
+        </div>
+
+        <div class="card-grid">
+
+            <article class="card">
+
+                <h3>
+
+                    Mango Lassi
+
+                </h3>
+
+            </article>
+
+            <article class="card">
+
+                <h3>
+
+                    Punjabi Chai
+
+                </h3>
+
+            </article>
+
+            <article class="card">
+
+                <h3>
+
+                    Masala Chai
+
+                </h3>
+
+            </article>
+
+            <article class="card">
+
+                <h3>
+
+                    Chai Latte
+
+                </h3>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     SOFT DRINKS
+========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+
+                SOFT DRINKS
+
+            </span>
+
+            <h2>
+
+                Refreshments
+
+            </h2>
+
+        </div>
+
+        <div class="card-grid">
+
+            <article class="card">
+
+                <h3>
+
+                    Cans
+
+                </h3>
+
+            </article>
+
+            <article class="card">
+
+                <h3>
+
+                    Bottled Water
+
+                </h3>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     MENU NOTE
+========================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="content-section">
+
+            <p style="text-align:center;">
+
+                <strong>Please note:</strong>
+
+                Our menus may vary depending on the event,
+                season and availability of fresh ingredients.
+                Dietary requirements can be catered for upon request.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     CTA
+========================================================== -->
+
+<section class="cta-card">
+
+    <div class="container">
+
+        <h2>
+
+            Ready to Experience the Flava of Punjab?
+
+        </h2>
+
+        <p>
+
+            Whether you're planning a wedding,
+            corporate event or private celebration,
+            we'd love to cater for you.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="contact.html"
+               class="btn btn-primary">
+
+                Request a Quote
+
+            </a>
+
+            <a href="catering.html"
+               class="btn btn-secondary">
+
+                Explore Catering
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer class="site-footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-logo">
+
+<img src="assets/images/logo-footer.png" alt="Flava Base Logo">
+
+<p>Modern Punjabi Street Kitchen. Inspired by generations of Punjabi cooking, crafted for today's celebrations.</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<ul class="footer-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="story.html">Our Story</a></li>
+
+<li><a href="menu.html">Menu</a></li>
+
+<li><a href="catering.html">Catering</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Company</h3>
+
+<ul class="footer-links">
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="experience.html">Leave a Review</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Contact</h3>
+
+<div class="footer-contact">
+
+<div>bookings@flavabase.co.uk</div>
+
+<div>Northamptonshire, England</div>
+
+</div>
+
+<div class="footer-social">
+
+<a href="https://instagram.com/flavabaseuk" target="_blank" aria-label="Instagram">IG</a>
+
+<a href="https://tiktok.com/@flavabaseuk" target="_blank" aria-label="TikTok">TT</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+
+<p>&copy; 2026 Flava Base. All Rights Reserved.</p>
+
+<div class="footer-bottom-links">
+
+<a href="faq.html">FAQ</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<a href="contact.html" class="sticky-book-btn">Book Us</a>
+
+<script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

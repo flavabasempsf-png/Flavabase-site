@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Flava Experience | Flava Base</title>
+
+    <meta name="description"
+        content="Share your Flava Experience. Your feedback helps our family business grow and helps us serve even better Punjabi street food.">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/experience.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+
+<body>
+
+<!-- ==========================================
+HEADER
+========================================== -->
+
+<header class="site-header">
+
+<div class="header-inner container">
+
+<a href="index.html" class="logo">
+
+<img src="assets/images/logo.png" alt="Flava Base">
+
+<span class="logo-text">
+
+<span class="logo-title">Flava Base</span>
+
+<span class="logo-tag">Modern Punjabi Street Kitchen</span>
+
+</span>
+
+</a>
+
+<nav class="site-nav">
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="story.html">Our Story</a></li>
+
+<li><a href="menu.html">Menu</a></li>
+
+<li><a href="catering.html">Catering</a></li>
+
+<li><a href="weddings.html">Weddings</a></li>
+
+<li><a href="corporate.html">Corporate</a></li>
+
+<li><a href="private-parties.html">Private Parties</a></li>
+
+<li><a href="pub-popups.html">Pub Pop-Ups</a></li>
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="experience.html" class="active">Leave a Review</a></li>
+
+<li><a href="contact.html" class="nav-button">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<button class="mobile-toggle" aria-label="Open Navigation">☰</button>
+
+</div>
+
+</header>
+
+<!-- ==========================================
+HERO
+========================================== -->
+
+<section class="experience-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+        <span class="hero-badge">
+
+            ❤️ THE FLAVA EXPERIENCE
+
+        </span>
+
+        <h1>
+
+            Tell Us About Your
+            Flava Experience
+
+        </h1>
+
+        <p>
+
+            Every meal we serve is prepared with pride by our family.
+
+            Whether you visited us at a village pub night,
+            wedding, private celebration or corporate event,
+            we'd love to hear about your experience.
+
+        </p>
+
+        <a href="#experience-form"
+            class="btn btn-primary">
+
+            Share Your Experience
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+OUR PROMISE
+========================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="promise-card">
+
+            <h2>
+
+                ❤️ Our Promise
+
+            </h2>
+
+            <p>
+
+                At Flava Base, we believe great food is about
+                more than flavour.
+
+            </p>
+
+            <p>
+
+                It's about bringing people together,
+                sharing our Punjabi heritage,
+                and creating memories around freshly
+                cooked street food.
+
+            </p>
+
+            <p>
+
+                Every wrap.
+
+                Every curry.
+
+                Every samosa.
+
+                Every smile.
+
+            </p>
+
+            <p>
+
+                Is served with pride.
+
+            </p>
+
+            <p>
+
+                Thank you for supporting
+                our family business.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+WHY YOUR FEEDBACK MATTERS
+========================================== -->
+
+<section class="section section-light">
+
+    <div class="container">
+
+        <div class="intro-grid">
+
+            <div class="intro-card">
+
+                <div class="intro-icon">⭐</div>
+
+                <h3>Your Opinion Matters</h3>
+
+                <p>
+
+                    Every review helps us improve our food,
+                    service and customer experience.
+
+                </p>
+
+            </div>
+
+            <div class="intro-card">
+
+                <div class="intro-icon">❤️</div>
+
+                <h3>Support Local</h3>
+
+                <p>
+
+                    Every piece of feedback helps our
+                    family business continue to grow.
+
+                </p>
+
+            </div>
+
+            <div class="intro-card">
+
+                <div class="intro-icon">🎁</div>
+
+                <h3>Monthly Prize Draw</h3>
+
+                <p>
+
+                    Every completed experience is entered
+                    into our monthly giveaway.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+EXPERIENCE FORM
+========================================== -->
+
+<section
+    id="experience-form"
+    class="section">
+
+<div class="container">
+
+<form
+
+id="flavaExperienceForm"
+
+name="flava-experience"
+
+method="POST"
+
+data-netlify="true"
+
+netlify-honeypot="bot-field"
+
+class="experience-form">
+
+<input
+type="hidden"
+name="form-name"
+value="flava-experience">
+
+<p hidden>
+
+<label>
+
+Don't fill this in:
+
+<input name="bot-field">
+
+</label>
+
+</p>
+
+<!-- ==========================================
+OVERALL EXPERIENCE
+========================================== -->
+
+<div class="experience-card">
+
+    <h2>⭐ Overall Experience</h2>
+
+    <p>How would you rate your visit today?</p>
+
+    <div class="star-rating" data-rating="overall"></div>
+
+    <input
+        type="hidden"
+        id="overallRating"
+        name="overallRating">
+
+</div>
+
+<!-- ==========================================
+WHAT DID YOU ENJOY?
+========================================== -->
+
+<div class="experience-card">
+
+    <h2>🍛 What did you enjoy today?</h2>
+
+    <p>Select everything you ordered.</p>
+
+    <div class="checkbox-grid">
+
+        <label><input type="checkbox" name="menu[]" value="Flava Box"> Flava Box</label>
+
+        <label><input type="checkbox" name="menu[]" value="Keema Box"> Keema Box</label>
+
+        <label><input type="checkbox" name="menu[]" value="Chicken Tandoori Wrap"> Chicken Tandoori Wrap</label>
+
+        <label><input type="checkbox" name="menu[]" value="Gobi Wrap"> Gobi Wrap</label>
+
+        <label><input type="checkbox" name="menu[]" value="Flava Noodles"> Flava Noodles</label>
+
+        <label><input type="checkbox" name="menu[]" value="Veg Samosas"> Veg Samosas</label>
+
+        <label><input type="checkbox" name="menu[]" value="Meat Samosas"> Meat Samosas</label>
+
+        <label><input type="checkbox" name="menu[]" value="Aloo Tikki Chaat"> Aloo Tikki Chaat</label>
+
+        <label><input type="checkbox" name="menu[]" value="Samosa Chaat"> Samosa Chaat</label>
+
+        <label><input type="checkbox" name="menu[]" value="Loaded Keema Fries"> Loaded Keema Fries</label>
+
+        <label><input type="checkbox" name="menu[]" value="Masala Fries"> Masala Fries</label>
+
+        <label><input type="checkbox" name="menu[]" value="Cheesy Fries"> Cheesy Fries</label>
+
+        <label><input type="checkbox" name="menu[]" value="Mango Lassi"> Mango Lassi</label>
+
+        <label><input type="checkbox" name="menu[]" value="Milkshake"> Milkshake</label>
+
+        <label><input type="checkbox" name="menu[]" value="Gulab Jamun"> Gulab Jamun</label>
+
+        <label><input type="checkbox" name="menu[]" value="Rasmalai"> Rasmalai</label>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+RATE YOUR EXPERIENCE
+========================================== -->
+
+<div class="experience-card">
+
+    <h2>🌟 Rate Your Experience</h2>
+
+    <div class="rating-item">
+
+        <span>Food Quality</span>
+
+        <div class="star-rating" data-rating="food"></div>
+
+        <input type="hidden" id="foodRating" name="foodRating">
+
+    </div>
+
+    <div class="rating-item">
+
+        <span>Friendly Service</span>
+
+        <div class="star-rating" data-rating="service"></div>
+
+        <input type="hidden" id="serviceRating" name="serviceRating">
+
+    </div>
+
+    <div class="rating-item">
+
+        <span>Speed of Service</span>
+
+        <div class="star-rating" data-rating="speed"></div>
+
+        <input type="hidden" id="speedRating" name="speedRating">
+
+    </div>
+
+    <div class="rating-item">
+
+        <span>Value for Money</span>
+
+        <div class="star-rating" data-rating="value"></div>
+
+        <input type="hidden" id="valueRating" name="valueRating">
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+WHERE DID YOU VISIT US?
+========================================== -->
+
+<div class="experience-card">
+
+    <h2>📍 Where did you visit us?</h2>
+
+    <select name="eventType" required>
+
+        <option value="">Please select...</option>
+
+        <option>Village Pub Night</option>
+
+        <option>Wedding</option>
+
+        <option>Corporate Event</option>
+
+        <option>Private Party</option>
+
+        <option>Festival</option>
+
+        <option>Community Event</option>
+
+        <option>Other</option>
+
+    </select>
+
+</div>
+
+<!-- ==========================================
+YOUR STORY
+========================================== -->
+
+<div class="experience-card">
+
+    <h2>❤️ Tell Us About Your Experience</h2>
+
+    <textarea
+        name="comments"
+        rows="7"
+        placeholder="What made your visit memorable? We'd love to hear your thoughts..."></textarea>
+
+</div>
+
+<!-- ==========================================
+ONE WORD
+========================================== -->
+
+<div class="experience-card">
+
+    <h2>💚 One Word</h2>
+
+    <p>Choose the word that best describes your Flava Experience.</p>
+
+    <select name="experienceWord">
+
+        <option value="">Choose one...</option>
+
+        <option>Amazing</option>
+
+        <option>Delicious</option>
+
+        <option>Fresh</option>
+
+        <option>Authentic</option>
+
+        <option>Friendly</option>
+
+        <option>Outstanding</option>
+
+        <option>Excellent</option>
+
+        <option>Fantastic</option>
+
+        <option>Family</option>
+
+        <option>Memorable</option>
+
+    </select>
+
+</div>
+
+<!-- ==========================================
+ABOUT YOU
+========================================== -->
+
+<div class="experience-card">
+
+    <h2>👤 About You</h2>
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name (Optional)">
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Email Address (Optional)">
+
+    <label class="checkbox">
+
+        <input
+            type="checkbox"
+            name="futureEvents">
+
+        Keep me updated about future Flava Base events.
+
+    </label>
+
+</div>
+
+<!-- ==========================================
+SHARE YOUR PHOTOS
+========================================== -->
+
+<div class="experience-card">
+
+    <h2>📸 Share Your Flava</h2>
+
+    <p>
+
+        Got a great photo of your food or your visit?
+
+        We'd love to see it!
+
+    </p>
+
+    <input
+        type="file"
+        name="customerPhoto"
+        accept="image/*">
+
+    <label class="checkbox">
+
+        <input
+            type="checkbox"
+            name="photoPermission">
+
+        I give Flava Base permission to use my photo on social media
+        and the website.
+
+    </label>
+
+</div>
+
+<!-- ==========================================
+FOLLOW US
+========================================== -->
+
+<div class="experience-card social-card">
+
+    <h2>📱 Follow Flava Base</h2>
+
+    <p>
+
+        Tag us in your photos and videos.
+
+    </p>
+
+    <div class="social-links">
+
+        <a href="https://instagram.com/flavabaseuk"
+           target="_blank">
+
+            📸 Instagram
+            <strong>@flavabaseuk</strong>
+
+        </a>
+
+        <a href="https://tiktok.com/@flavabaseuk"
+           target="_blank">
+
+            🎵 TikTok
+            <strong>@flavabaseuk</strong>
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+MONTHLY GIVEAWAY
+========================================== -->
+
+<div class="experience-card giveaway-card">
+
+    <h2>🎁 Monthly Flava Giveaway</h2>
+
+    <p>
+
+        Every completed Flava Experience is automatically entered
+        into our monthly prize draw.
+
+    </p>
+
+    <ul>
+
+        <li>🥙 FREE Flava Box</li>
+
+        <li>🥤 FREE Milkshake</li>
+
+        <li>🎟️ £25 Flava Base Voucher</li>
+
+    </ul>
+
+</div>
+
+<!-- ==========================================
+SUBMIT
+========================================== -->
+
+<div class="submit-section">
+
+    <button
+        type="submit"
+        class="btn btn-primary btn-large">
+
+        ❤️ Share My Flava Experience
+
+    </button>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+FROM OUR FAMILY TO YOURS
+========================================== -->
+
+<section class="family-message">
+
+    <div class="container">
+
+        <div class="family-card">
+
+            <h2>
+
+                ❤️ From Our Family To Yours
+
+            </h2>
+
+            <p>
+
+                Every wrap we roll.
+
+            </p>
+
+            <p>
+
+                Every curry we serve.
+
+            </p>
+
+            <p>
+
+                Every samosa we fry.
+
+            </p>
+
+            <p>
+
+                Every smile we see.
+
+            </p>
+
+            <p>
+
+                Every review you leave.
+
+            </p>
+
+            <p>
+
+                Helps our dream become reality.
+
+            </p>
+
+            <h3>
+
+                Thank You.
+
+            </h3>
+
+            <p>
+
+                The Flava Base Family
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+FOOTER
+========================================== -->
+
+<footer class="site-footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-logo">
+
+<img src="assets/images/logo-footer.png" alt="Flava Base Logo">
+
+<p>Modern Punjabi Street Kitchen. Inspired by generations of Punjabi cooking, crafted for today's celebrations.</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Quick Links</h3>
+
+<ul class="footer-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="story.html">Our Story</a></li>
+
+<li><a href="menu.html">Menu</a></li>
+
+<li><a href="catering.html">Catering</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Company</h3>
+
+<ul class="footer-links">
+
+<li><a href="faq.html">FAQ</a></li>
+
+<li><a href="experience.html">Leave a Review</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Contact</h3>
+
+<div class="footer-contact">
+
+<div>bookings@flavabase.co.uk</div>
+
+<div>Northamptonshire, England</div>
+
+</div>
+
+<div class="footer-social">
+
+<a href="https://instagram.com/flavabaseuk" target="_blank" aria-label="Instagram">IG</a>
+
+<a href="https://tiktok.com/@flavabaseuk" target="_blank" aria-label="TikTok">TT</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-divider"></div>
+
+<div class="footer-bottom">
+
+<p>&copy; 2026 Flava Base. All Rights Reserved.</p>
+
+<div class="footer-bottom-links">
+
+<a href="faq.html">FAQ</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<a href="contact.html" class="sticky-book-btn">Book Us</a>
+
+<script src="assets/js/experience.js"></script>
+
+</body>
+
+</html>
