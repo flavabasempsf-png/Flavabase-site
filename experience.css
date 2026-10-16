@@ -1,0 +1,1192 @@
+/* ==========================================================
+   FLAVA BASE
+   EXPERIENCE PAGE
+   experience.css
+========================================================== */
+
+/* ==========================================================
+   VARIABLES
+========================================================== */
+
+:root{
+
+    --flava-green:#0E5A36;
+    --flava-dark:#103222;
+    --flava-gold:#D9A441;
+    --flava-light:#F8F8F8;
+    --flava-white:#FFFFFF;
+    --flava-text:#333333;
+    --flava-grey:#777777;
+
+    --radius:18px;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+body{
+
+    background:#f7f7f7;
+
+    color:var(--flava-text);
+
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.experience-hero{
+
+    position:relative;
+
+    min-height:72vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:url("../images/experience-hero.jpg")
+    center center/cover no-repeat;
+
+    overflow:hidden;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.65)
+        );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    max-width:850px;
+
+    padding:40px;
+
+    color:white;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    padding:10px 24px;
+
+    background:var(--flava-gold);
+
+    color:white;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-content h1{
+
+    font-size:3.4rem;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+}
+
+.hero-content p{
+
+    font-size:1.25rem;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+.btn-primary{
+
+    margin-top:35px;
+
+    background:var(--flava-green);
+
+    color:white;
+
+    padding:18px 38px;
+
+    border-radius:40px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--flava-gold);
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+
+.section{
+
+    padding:90px 20px;
+
+}
+
+.section-light{
+
+    background:white;
+
+}
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.container{
+
+    width:min(1180px,92%);
+
+    margin:auto;
+
+}
+
+/* ==========================================================
+   INTRO GRID
+========================================================== */
+
+.intro-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.intro-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.30s;
+
+}
+
+.intro-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.intro-icon{
+
+    font-size:2.8rem;
+
+    margin-bottom:20px;
+
+}
+
+.intro-card h3{
+
+    margin-bottom:18px;
+
+    color:var(--flava-green);
+
+}
+
+.intro-card p{
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   PROMISE CARD
+========================================================== */
+
+.promise-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:var(--radius);
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.promise-card h2{
+
+    color:var(--flava-green);
+
+    margin-bottom:30px;
+
+}
+
+.promise-card p{
+
+    font-size:1.1rem;
+
+    line-height:2;
+
+    margin-bottom:15px;
+
+}
+
+/* ==========================================================
+   EXPERIENCE CARD
+========================================================== */
+
+.experience-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:40px;
+
+    margin-bottom:35px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.experience-card h2{
+
+    color:var(--flava-green);
+
+    margin-bottom:15px;
+
+}
+
+.experience-card p{
+
+    color:var(--flava-grey);
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.experience-form{
+
+    margin-top:40px;
+
+}
+
+/* ==========================================================
+   STAR RATINGS
+========================================================== */
+
+.star-rating{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+
+    margin-bottom:10px;
+
+}
+
+.star{
+
+    font-size:2.2rem;
+
+    cursor:pointer;
+
+    color:#d6d6d6;
+
+    transition:.25s;
+
+    user-select:none;
+
+}
+
+.star:hover{
+
+    transform:scale(1.18);
+
+}
+
+.star.active{
+
+    color:var(--flava-gold);
+
+}
+
+.rating-item{
+
+    margin-top:35px;
+
+}
+
+.rating-item span{
+
+    display:block;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    color:var(--flava-dark);
+
+}
+
+/* ==========================================================
+   INPUTS
+========================================================== */
+
+.experience-form input[type=text],
+.experience-form input[type=email],
+.experience-form select,
+.experience-form textarea{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    margin-top:15px;
+
+    border:2px solid #e6e6e6;
+
+    border-radius:12px;
+
+    font-size:1rem;
+
+    background:white;
+
+    transition:.30s;
+
+    box-sizing:border-box;
+
+}
+
+.experience-form textarea{
+
+    resize:vertical;
+
+    min-height:180px;
+
+    font-family:inherit;
+
+}
+
+.experience-form input:focus,
+.experience-form textarea:focus,
+.experience-form select:focus{
+
+    outline:none;
+
+    border-color:var(--flava-green);
+
+    box-shadow:0 0 0 4px rgba(14,90,54,.10);
+
+}
+
+/* ==========================================================
+   CHECKBOX GRID
+========================================================== */
+
+.checkbox-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(230px,1fr));
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.checkbox-grid label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#fafafa;
+
+    padding:14px 16px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    border:2px solid transparent;
+
+}
+
+.checkbox-grid label:hover{
+
+    background:#f1f7f4;
+
+    border-color:rgba(14,90,54,.18);
+
+}
+
+.checkbox-grid input{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+/* ==========================================================
+   STANDARD CHECKBOX
+========================================================== */
+
+.checkbox{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    margin-top:25px;
+
+    line-height:1.6;
+
+    cursor:pointer;
+
+}
+
+.checkbox input{
+
+    margin-top:4px;
+
+}
+
+/* ==========================================================
+   FILE UPLOAD
+========================================================== */
+
+input[type=file]{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:18px;
+
+    border:2px dashed var(--flava-green);
+
+    border-radius:14px;
+
+    background:#fafafa;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================================
+   SOCIAL CARD
+========================================================== */
+
+.social-card{
+
+    text-align:center;
+
+}
+
+.social-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    margin-top:25px;
+
+}
+
+.social-links a{
+
+    min-width:220px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:var(--flava-green);
+
+    padding:18px 24px;
+
+    border-radius:14px;
+
+    transition:.30s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.social-links a strong{
+
+    display:block;
+
+    margin-top:8px;
+
+}
+
+.social-links a:hover{
+
+    background:var(--flava-gold);
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================================================
+   GIVEAWAY
+========================================================== */
+
+.giveaway-card{
+
+    background:linear-gradient(
+        135deg,
+        var(--flava-green),
+        #19764a
+    );
+
+    color:white;
+
+}
+
+.giveaway-card h2{
+
+    color:white;
+
+}
+
+.giveaway-card p{
+
+    color:white;
+
+}
+
+.giveaway-card ul{
+
+    margin-top:25px;
+
+    padding-left:20px;
+
+}
+
+.giveaway-card li{
+
+    margin-bottom:14px;
+
+    font-size:1.05rem;
+
+}
+
+/* ==========================================================
+   SUBMIT BUTTON
+========================================================== */
+
+.submit-section{
+
+    text-align:center;
+
+    margin-top:50px;
+
+}
+
+.btn-large{
+
+    font-size:1.15rem;
+
+    padding:20px 55px;
+
+    border-radius:50px;
+
+}
+
+.btn-large:hover{
+
+    transform:translateY(-5px) scale(1.02);
+
+}
+
+/* ==========================================================
+   FAMILY MESSAGE
+========================================================== */
+
+.family-message{
+
+    padding:100px 20px;
+
+    background:linear-gradient(
+        180deg,
+        #f7f7f7,
+        white
+    );
+
+}
+
+.family-card{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.family-card h2{
+
+    color:var(--flava-green);
+
+    margin-bottom:30px;
+
+}
+
+.family-card h3{
+
+    margin-top:35px;
+
+    color:var(--flava-gold);
+
+}
+
+.family-card p{
+
+    line-height:1.9;
+
+}
+
+/* ==========================================================
+   SUCCESS MESSAGE
+========================================================== */
+
+.success-screen{
+
+    display:none;
+
+    max-width:850px;
+
+    margin:80px auto;
+
+    padding:60px;
+
+    background:white;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeUp .8s ease;
+
+}
+
+.success-screen.show{
+
+    display:block;
+
+}
+
+.success-screen h2{
+
+    color:var(--flava-green);
+
+    font-size:2.3rem;
+
+    margin-bottom:20px;
+
+}
+
+.success-screen p{
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+.review-button{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:18px 36px;
+
+    background:var(--flava-gold);
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.review-button:hover{
+
+    background:var(--flava-green);
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+.loading{
+
+    display:none;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+}
+
+.loading.show{
+
+    display:block;
+
+}
+
+.spinner{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    border:7px solid #ececec;
+
+    border-top:7px solid var(--flava-green);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+.loading p{
+
+    margin-top:25px;
+
+    font-size:1.1rem;
+
+    color:var(--flava-grey);
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.site-footer{
+
+    background:var(--flava-dark);
+
+    color:white;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+}
+
+.site-footer img{
+
+    max-width:180px;
+
+    margin-bottom:25px;
+
+}
+
+.site-footer nav{
+
+    margin:30px 0;
+
+}
+
+.site-footer nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:0 15px;
+
+    transition:.3s;
+
+}
+
+.site-footer nav a:hover{
+
+    color:var(--flava-gold);
+
+}
+
+/* ==========================================================
+   FADE ANIMATIONS
+========================================================== */
+
+.experience-card,
+.promise-card,
+.intro-card,
+.family-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================================
+   PHULKARI BACKGROUND
+========================================================== */
+
+.experience-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.experience-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+        radial-gradient(circle at 25% 25%,
+        rgba(217,164,65,.05) 2px,
+        transparent 2px),
+
+        radial-gradient(circle at 75% 75%,
+        rgba(14,90,54,.04) 2px,
+        transparent 2px);
+
+    background-size:70px 70px;
+
+    pointer-events:none;
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:992px){
+
+.hero-content h1{
+
+    font-size:2.7rem;
+
+}
+
+.promise-card{
+
+    padding:40px;
+
+}
+
+.family-card{
+
+    padding:40px;
+
+}
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:768px){
+
+.section{
+
+    padding:70px 18px;
+
+}
+
+.hero-content{
+
+    padding:25px;
+
+}
+
+.hero-content h1{
+
+    font-size:2.2rem;
+
+}
+
+.hero-content p{
+
+    font-size:1rem;
+
+}
+
+.promise-card{
+
+    padding:30px;
+
+}
+
+.family-card{
+
+    padding:30px;
+
+}
+
+.experience-card{
+
+    padding:28px;
+
+}
+
+.checkbox-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.social-links{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.social-links a{
+
+    width:100%;
+
+}
+
+.star{
+
+    font-size:2rem;
+
+}
+
+}
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width:480px){
+
+.hero-content h1{
+
+    font-size:1.9rem;
+
+}
+
+.hero-badge{
+
+    font-size:.85rem;
+
+}
+
+.btn-primary{
+
+    width:100%;
+
+}
+
+.btn-large{
+
+    width:100%;
+
+}
+
+.family-card h2{
+
+    font-size:1.7rem;
+
+}
+
+.promise-card h2{
+
+    font-size:1.7rem;
+
+}
+
+}
+
+/* ==========================================================
+   NICE SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#efefef;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--flava-green);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--flava-gold);
+
+}
+
+/* ==========================================================
+   END OF FILE
+========================================================== */
